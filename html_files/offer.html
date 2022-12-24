@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Offer List</title>
+
+    <link rel ="stylesheet" type= "text/css"
+     href="/css_files/parentNavbar.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+    <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
+        <nav>
+            <ul class = "nav_links">
+                <li><a href = "#"> Home</a></li>
+                <li><a href = "#"> Profile</a></li>
+                <li><a href = "#"> Requests</a></li>
+                <li><a href = "#"> Offers</a></li>
+                <li><a href = "#"> Booking</a></li>
+                
+                </a></li>
+            </ul>
+        </nav>
+        <a class= "out" href="#"><button>Logout</button></a>
+</header>
+
+    <!--Upper Menue-->
+
+    <h2>Choose a Request to display offer</h2>
+    
+<div id="content">
+
+ 
+
+<div> 
+<p class='req'>
+     
+<label class='serviceLabel'>Type Of Service: </label>
+<label class='nameLabel'>No. Kid/s : </label>
+
+<label class='dayLabel'>Day: </label>
+<label class='timeLabel'>Time: </label>
+<br><br>
+<a style=" font-size: medium;
+    text-decoration:none;
+    color: #2f06e9;" href='http://localhost/BabySitterProject/HTML_Files/OfferDetails.php?id=<?php echo($row[$id])?>'> view offers </a>
+</p>
+
+</div>
+
+
+  
+</body>
+</html>
