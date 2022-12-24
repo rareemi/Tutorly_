@@ -23,9 +23,9 @@ h4{
 #content div   {
 
     background-color:#98C1D9;
-    width: 200px;
+    width: 230px;
     position: relative;
-    height: 220px;
+    height: 260px;
     border-radius: 30px;
   margin: 10% 42%  ;
     padding: 1px ;
@@ -37,8 +37,7 @@ h4{
   {
    color:#293241;
    background-color: #98C1D9;
-  
-}
+    }
 
     .Name, .Age, .Type, .duration 
 {
