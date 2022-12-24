@@ -42,17 +42,24 @@ li, a , button {
             .nav_links li a { transition: all 0.3s ease 0s ;}
 
 
-            .nav_links li a:hover {  color: #98C1D9; 
-         }
+            .nav_links li a:hover {     color: #98C1D9; 
+                font-size: 18px;
+                background-color:#293241;
+                border-radius: 30px;
+                padding: 5px;
+                transition: all 0.3s ease 0s; }
 
-            button {margin: 15px;
+                button {margin: 15px;
                 padding: 9px 25px; 
-                    background-color:#7290a2 ;
+                background-color:#7290a2 ;
                 border-radius: 50px;
                 border: none;
-                cursor: pointer;
-                transition: all 0.3s ease 0s;}
+                cursor: pointer; }
 
-                button:hover {  
-                    color:#F5FBFF;  
-                    background-color:#293241 }
+
+    button:hover {  color: #98C1D9; 
+                    font-size: 18px;
+                    background-color:#293241;
+                    border-radius: 30px;
+                    padding: 9px 25px; 
+                    transition: all 0.3s ease 0s; }

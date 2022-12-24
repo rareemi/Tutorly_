@@ -32,24 +32,31 @@ h4{
 
 }
 
-#content div .NameLabel, #content div .PriceLabel , #content div .StartDateLabel ,#content div .EndDateLabel ,#content div .timeslotslabel 
-,#content div .timeslotslabel2, #content div .serviceLabel , #content div .dayLabel,#content div .timeLabel,
- #content div .req .nameLabel, #content div .req .ageLabel {
-   
-  
-   color:#F5FBFF;
+     .nameLabel, .ageLabel,
+     .classLabel, .durationLabel 
+  {
+   color:#293241;
    background-color: #98C1D9;
   
 }
-a   {
-    font-size: 16px;
+
+    .Name, .Age, .Type, .duration 
+{
+    background-color:#98C1D9;
+    color: #F5FBFF;
+    font-size: 15px;
+    
+}
+a.Offer  {
+    font-size: 15px;
     border-radius: 30px;
-    padding: 6px;
+    padding: 5px;
     transition: all 0.3s ease 0s;
+  
 
     }
-a:hover {  
-   
+a.Offer:hover {  
+    font-size: 18px;
     color:#F5FBFF;    
     background-color:#293241; }
 
