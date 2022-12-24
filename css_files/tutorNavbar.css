@@ -49,4 +49,5 @@ li, a , button {
                 cursor: pointer;
                 transition: all 0.3s ease 0s;}
 
-                button:hover {  background-color: #434343; }
+                button:hover {  color:#F5FBFF;  
+                                background-color: #293241; }

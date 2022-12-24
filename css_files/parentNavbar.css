@@ -33,14 +33,17 @@ li, a , button {
 
              .nav_links { list-style: none;}
 
-             .nav_links li {display: inline-block;
-                        padding: 40px 30px;
+             .nav_links li {
+                display: inline-block;
+                        padding: 40px 30px
+                        ;
 
              }
             .nav_links li a { transition: all 0.3s ease 0s ;}
 
 
-            .nav_links li a:hover {  color: #98C1D9;  }
+            .nav_links li a:hover {  color: #98C1D9; 
+         }
 
             button {margin: 15px;
                 padding: 9px 25px; 
@@ -50,4 +53,6 @@ li, a , button {
                 cursor: pointer;
                 transition: all 0.3s ease 0s;}
 
-                button:hover {  background-color: #434343; }
+                button:hover {  
+                    color:#F5FBFF;  
+                    background-color:#293241 }
