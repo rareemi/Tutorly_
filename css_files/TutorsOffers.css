@@ -19,13 +19,18 @@ h4{
 
 }
 
+.container {background: none;
+            padding: 0px;
+            border: #293241
+            
 
+
+        ;}
 #content div   {
-
     background-color:#98C1D9;
-    width: 230px;
+    width: 350px;
     position: relative;
-    height: 260px;
+    height: px;
     border-radius: 30px;
   margin: 10% 42%  ;
     padding: 1px ;
@@ -54,7 +59,7 @@ a.Offer  {
   
 
     }
-a.Offer:hover {  
+a.profile:hover {  
     font-size: 18px;
     color:#F5FBFF;    
     background-color:#293241; }
@@ -66,7 +71,7 @@ a.Offer:hover {
 
 }
 
-#content div .req{
+#content div .offer{
 
     margin-top: 30px;
 }
