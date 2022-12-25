@@ -3,21 +3,21 @@
 Body{
     background-color: #F5FBFF ;
 }
-h4, div{
+h2, div{
     font-family: "Montserrat", sans-serif;
   
 }
-h4{
-    height: 25px; 
+h2{    height: 40px; 
     background-color:#98C1D9;
     color: #293241;
     text-align: center;
-    padding-inline: 30px;
-    font-weight: normal;
-    font-size: 18px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: -5px;
     
 
-}
+} /* such an amazing and perfect values!! (: */
 
 
 #content div   {
