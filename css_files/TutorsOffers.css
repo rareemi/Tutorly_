@@ -19,51 +19,87 @@ h4{
 
 }
 
-.container {background: none;
-            padding: 0px;
-            border: #293241
-            
 
-
-        ;}
 #content div   {
     background-color:#98C1D9;
-    width: 350px;
-    position: relative;
-    height: px;
+    width: 380px;
+
+    height: 600px;
     border-radius: 30px;
-  margin: 10% 42%  ;
+    margin: 4% 37%;
     padding: 1px ;
 
-}
+}  
+ .pic     {
+   
+    margin:auto;
+    background-color:#98C1D9;
+    padding: 0px;
 
-     .nameLabel, .ageLabel,
-     .classLabel, .durationLabel 
+    }
+
+
+        .nameLabel, .ratingLabel, .priceLabel
   {
    color:#293241;
    background-color: #98C1D9;
     }
 
-    .Name, .Age, .Type, .duration 
+    .Name, .Rate, .Price
 {
     background-color:#98C1D9;
     color: #F5FBFF;
-    font-size: 15px;
+    font-size: 16px;
     
 }
-a.Offer  {
+
+
+.profile {
     font-size: 15px;
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 5px;
     transition: all 0.3s ease 0s;
   
 
     }
 a.profile:hover {  
-    font-size: 18px;
-    color:#F5FBFF;    
-    background-color:#293241; }
+    font-size: 16px;
+    border-width: 2px;
+    color: #F5FBFF;
+    background-color:#293241;
+    }
+.accept, .reject {
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2%;
+    transition: all 0.3s ease 0s;
+    margin-top: 5%;
+}
+.accept
+    {   
+        color: rgb(29, 159, 29);    
+        border:solid 2px rgb(29, 159, 29);    
+      
+    }
+ .accept:hover
+        {
+            color: #F5FBFF;
+            background-color: rgb(29, 159, 29);
+            font-size: 20px;
+        }  
+        
+ .reject    {
+                color:red;
+                border: solid 2px red
 
+            }
+
+   .reject:hover{ color: #F5FBFF;
+                background-color: red;
+                font-size: 20px;
+
+                }         
 #content div p{
     line-height: 30px;
     text-align: center;
