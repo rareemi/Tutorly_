@@ -20,16 +20,21 @@ h2{
 }
 
 
-#content div   {
+.offer  {
     background-color:#98C1D9;
-    width: 400px;
-
-    height: 550px;
+    width: 300px;
+    height: 500px;
     border-radius: 30px;
-    margin: 4% 37%;
-    padding: 1px ;
+    margin: 10% 40%;
+    padding: 25px ;
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #98C1D9;
 
-}  
+}
+
+
  .pic     {
    
     margin:auto;
@@ -45,7 +50,7 @@ h2{
    background-color: #98C1D9;
     }
 
-    .Name, .Rate, .Price
+    .Name, .Rate, .Price 
 {
     background-color:#98C1D9;
     color: #F5FBFF;
@@ -55,15 +60,15 @@ h2{
 
 
 .profile {
-    font-size: 15px;
+    font-size: 19px;
     border-radius: 20px;
     padding: 5px;
+    
     transition: all 0.3s ease 0s;
   
-
     }
 a.profile:hover {  
-    font-size: 16px;
+    font-size: 22px;
     border-width: 2px;
     color: #F5FBFF;
     background-color:#293241;
@@ -100,15 +105,3 @@ a.profile:hover {
                 font-size: 20px;
 
                 }         
-#content div p{
-    line-height: 30px;
-    text-align: center;
-    background-color: #98C1D9;
-
-}
-
-#content div .offer{
-
-    margin-top: 30px;
-}
-
