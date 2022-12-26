@@ -1,8 +1,8 @@
 .container {
     position:relative;
-    width:40%;
+    width:60%;
     height:500px;
-    margin:20px 30%;
+    margin: 20px 20%;
     padding:20px;
     background-color:#98C1D9;
     border-radius: 10px;
@@ -17,7 +17,8 @@
     width:100%;
     text-align:center;
     font-family: "Montserrat", sans-serif;
-    color: #293241;}
+    color: #F3F5F7;
+    background-color:#293241;}
         
     input[type=text]{
     width: 100%;
