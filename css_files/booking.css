@@ -1,73 +1,69 @@
-#content {
-    position:relative;
-	width:100%;
-    text-align:center;
-	font-family: "Montserrat", sans-serif;
-    color: #293241;}
+Body{
+    background-color: #F5FBFF ;
+}
+h2, div{
+    font-family: "Montserrat", sans-serif;
+}
 
-#content h2{
-	font-size:30px;
-    padding-bottom:10px;
-    background-color:#293241;
-	color: #F5FBFF;}
-
-.view {
-    position:relative;
-    width:40%;
-	height:200px;
-    margin-top:20px;
-	padding:20px;
+h2{
+    height: 40px; 
     background-color:#98C1D9;
-	border-radius: 10px;
-	text-align:left;
-    display:inline-block;}
+    color: #293241;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: -5px;
+    
+}
 
-.view p{background-color:#98C1D9;}
+.booking ,.jobs{
+	background-color:#98C1D9;
+    width: 320px;
+    height: 540px;
+    border-radius: 30px;
+    margin: 10% 40%;
+    padding: 25px ;
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #98C1D9;
+    
 	
-.list {
-position:relative;
-    width:15%;
-    margin-top:30px;
-	margin-left:42%;
-    padding: 20px;
-    border-left: 2px solid #98C1D9;
-	border-right: 2px solid #98C1D9;
-	text-align:center;
-	background-color:#E1ECF3;}
+    
+    }
+	.CurrentBooking,.PreviousBooking{
+	display:inline-block;
+	margin-top: 6px;
+	margin-left: 8%;
+		}
+
+.pic {
+	margin:auto;
+	background-color:#98C1D9;
+	padding: 0px;}
 	
-.NameLabel,.PriceLabel,.DateLabel,.TimeLabel{font-weight: bold;}
+.NameLabel,.PriceLabel,.DateLabel,.TimeLabel{
+	font-weight: bold;
+	color:#293241;
+	background-color: #98C1D9;}
 	
-.NameLabel,.PriceLabel,.DateLabel,.TimeLabel,.Name,.Price,.Date,.Time
-{   line-height: 30px;
-	font-size:16px;
-	text-align:left;
-	background-color:#98C1D9;}
+.Name,.Price,.Date,.Time
+{   background-color:#98C1D9;
+    color: #F5FBFF;
+    font-size: 16px;}
 	
-	.image1 {
-    height:120px; 
-    width:15%;
-    float:left;
-	padding:4px 2px;
-	background-color:#F5FBFF;}
+
 
 .email, .review{
-	position:relative;
-    width:20%;
-    border:hidden;
-	border-radius: 10px;
-	text-align:center;
-	float:right;
-	top: 10px;
-	padding: 5px; 
-	margin-left:5px;
-    background-color:#F5FBFF ;
-	font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: #293241;
-}
-input:hover {color: #98C1D9; /* make it biggir font, and biggir size */
-background-color:#293241;}
+	font-size: 19px;
+    border-radius: 20px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;}
 
-.list p a , .list p{background-color:#E1ECF3;}
-.list p a:hover{color:#98C1D9;}
+a.email:hover,a.review:hover {  
+    font-size: 22px;
+    border-width: 2px;
+    color: #F5FBFF;
+    background-color:#293241;
+    }
