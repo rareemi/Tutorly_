@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); 
+
+Body{
+    background-color: #F5FBFF ;
+}
+h2, div{
+    font-family: "Montserrat", sans-serif;
+  
+}
+h2{
+    height: 40px; 
+    background-color:#98C1D9;
+    color: #293241;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: -5px;
+    
+}
+
+
+.offer  {
+    background-color:#98C1D9;
+    width: 300px;
+    height: 500px;
+    border-radius: 30px;
+    margin: 10% 40%;
+    padding: 25px ;
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #98C1D9;
+
+}
+
+
+ .pic     {
+   
+    margin:auto;
+    background-color:#98C1D9;
+    padding: 0px;
+
+    }
+
+
+        .nameLabel, .ratingLabel, .priceLabel
+  {
+   color:#293241;
+   background-color: #98C1D9;
+    }
+
+    .Name, .Rate, .Price 
+{
+    background-color:#98C1D9;
+    color: #F5FBFF;
+    font-size: 16px;
+    
+}
+
+
+.profile {
+    font-size: 19px;
+    border-radius: 20px;
+    padding: 5px;
+    
+    transition: all 0.3s ease 0s;
+  
+    }
+a.profile:hover {  
+    font-size: 22px;
+    border-width: 2px;
+    color: #F5FBFF;
+    background-color:#293241;
+    }
+.accept, .reject {
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2%;
+    transition: all 0.3s ease 0s;
+    margin-top: 5%;
+}
+.accept
+    {   
+        color: rgb(29, 159, 29);    
+        border:solid 2px rgb(29, 159, 29);    
+      
+    }
+ .accept:hover
+        {
+            color: #F5FBFF;
+            background-color: rgb(29, 159, 29);
+            font-size: 20px;
+        }  
+        
+ .reject    {
+                color:red;
+                border: solid 2px red
+
+            }
+
+   .reject:hover{ color: #F5FBFF;
+                background-color: red;
+                font-size: 20px;
+
+                }         

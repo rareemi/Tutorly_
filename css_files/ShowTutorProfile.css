@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); 
+
+Body{
+    background-color: #F5FBFF ;
+}
+*{
+    font-family: "Montserrat", sans-serif;
+  
+}
+h2{    height: 40px; 
+    background-color:#98C1D9;
+    color: #293241;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: -5px;
+    
+
+} /* such an amazing and perfect values!! (: */
+
+.holder  {
+    background-color:#F5FBFF;
+    width: 900px;
+    height: 290px;
+    border-radius: 30px;
+    position:relative;
+    padding: 5px ;
+    margin-top: 20px;
+    line-height: 30px;
+ display: flex;
+border: solid 5px #98C1D9;
+margin-left: 15%;
+
+
+}
+.detail{
+    
+    text-align: left;
+    height: 250px;
+    width: 700px;
+    padding: 10px;
+}
+
+ .pic  {
+   
+
+    padding: 0px;
+    border: solid #98C1D9;
+
+    }
+
+.holder2
+{
+     display:flex;
+     margin: 2%;
+margin-left: 22%;        }
+
+
+.rev1, .rev2   {
+
+
+background-color:#98C1D9;
+width: 320px;
+position: relative;
+height: 350px;
+border-radius: 30px;
+padding: 10px ;
+line-height: 50px;
+text-align: center;
+margin: 45px;
+}
+
+    .pic, .detail{
+border-radius: 20px;
+border: solid #98C1D9 8px;
+margin: 1%;
+                }
+        .nameLabel, .ratingLabel, .priceLabel
+  {
+   color:#293241;
+   background-color: #98C1D9;
+    }
+
+    .Name, .Rate, .Price 
+{
+    background-color:#98C1D9;
+    color: #F5FBFF;
+    font-size: 16px;
+    
+}
+
+
+
+.accept, .reject {
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2%;
+    transition: all 0.3s ease 0s;
+    margin-top: 5%;
+}
+.accept
+    {   
+        color: rgb(29, 159, 29);    
+        border:solid 2px rgb(29, 159, 29);    
+      
+    }
+ .accept:hover
+        {
+            color: #F5FBFF;
+            background-color: rgb(29, 159, 29);
+            font-size: 20px;
+        }  
+        
+ .reject    {
+                color:red;
+                border: solid 2px red
+
+            }
+
+   .reject:hover{ color: #F5FBFF;
+                background-color: red;
+                font-size: 20px;
+
+                }         

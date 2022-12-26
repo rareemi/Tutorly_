@@ -1,0 +1,73 @@
+#content {
+    position:relative;
+	width:100%;
+    text-align:center;
+	font-family: "Montserrat", sans-serif;
+    color: #293241;}
+
+#content h2{
+	font-size:30px;
+    padding-bottom:10px;
+    background-color:#293241;
+	color: #F5FBFF;}
+
+.view {
+    position:relative;
+    width:40%;
+	height:200px;
+    margin-top:20px;
+	padding:20px;
+    background-color:#98C1D9;
+	border-radius: 10px;
+	text-align:left;
+    display:inline-block;}
+
+.view p{background-color:#98C1D9;}
+	
+.list {
+position:relative;
+    width:15%;
+    margin-top:30px;
+	margin-left:42%;
+    padding: 20px;
+    border-left: 2px solid #98C1D9;
+	border-right: 2px solid #98C1D9;
+	text-align:center;
+	background-color:#E1ECF3;}
+	
+.NameLabel,.PriceLabel,.DateLabel,.TimeLabel{font-weight: bold;}
+	
+.NameLabel,.PriceLabel,.DateLabel,.TimeLabel,.Name,.Price,.Date,.Time
+{   line-height: 30px;
+	font-size:16px;
+	text-align:left;
+	background-color:#98C1D9;}
+	
+	.image1 {
+    height:120px; 
+    width:15%;
+    float:left;
+	padding:4px 2px;
+	background-color:#F5FBFF;}
+
+.email, .review{
+	position:relative;
+    width:20%;
+    border:hidden;
+	border-radius: 10px;
+	text-align:center;
+	float:right;
+	top: 10px;
+	padding: 5px; 
+	margin-left:5px;
+    background-color:#F5FBFF ;
+	font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #293241;
+}
+input:hover {color: #98C1D9; /* make it biggir font, and biggir size */
+background-color:#293241;}
+
+.list p a , .list p{background-color:#E1ECF3;}
+.list p a:hover{color:#98C1D9;}

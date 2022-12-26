@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- drop down menu insted of stars-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css_files/parentNavbar.css">
+    <link rel = "stylesheet" type = "text/css" href = "../css_files/ShowTutorProfile.css">
+
+    <title>Show Tutor Profile</title>
+</head>
+<body>
+    <header>
+        <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "#"> Home</a></li>
+                    <li><a href = "#"> Profile</a></li>
+                <li><a href = "#"> Requests</a></li>
+                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
+                    <li><a href = "#"> Booking</a></li>
+                    
+                    </a></li>
+                </ul>
+            </nav>
+            <a class= "out" href="#"><button>Logout</button></a>
+    </header>
+    <h2> Show Tutor Prifile</h2>
+    <div class="holder"> 
+<img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250">
+     <p class = "detail">  <label class="nameLabel">Tutor Name: </label><label class="Name"></label>Sara Mohammed</label><br>
+        <label class="ratingLabel">Rating: </label><label class="Rate">4.91</label>
+<br>
+     </p>  </div>
+    <!--End of image&name-->
+    
+
+
+   
+<br>
+
+        <h2>Reviews</h2>
+     
+
+<div class = "holder2"> 
+    <p class ="rev1">
+     <label class = "titleLabel">Request</label><br> 
+ <label class="nameLabel">Kid name: </label><label class="Name">Ali</label><br>
+ <label class="ageLabel">Age: </label><label class="Age">8 Years</label><br>
+ <label class="classLabel">Type Of Class: </label><label class = "Type">Math</label><br>
+ <label class="durationLabel">Duration: </label> <label class="duration">3 Hours</label>
+ <br>
+ <a class ="Offer1" href="../html_files/TutorsOffers.html">Show Offers</a>
+    </p>
+ 
+ <p class = "rev2"> 
+     <label class = "titleLabel">Request</label><br> 
+     <label class="nameLabel">Kid name: </label><label class="Name">Judy</label><br>
+     <label class="ageLabel">Age: </label><label class="Age">10 Years</label><br>
+     <label class="classLabel">Type Of Class: </label><label class = "Type">Biology</label><br>
+     <label class="durationLabel">Duration: </label> <label class="duration">1 Hour</label>
+     <br>
+     <a class ="Offer2" href="../html_files/NoCurrentOffers.html">Show Offers</a>
+ </p>
+     </div>
+
+    <!--End of Reviews-->
+
+<br><br>
+        <h2>Rating</h2>
+
+
+
+
+
+    <div id="shareProfile">
+        <h2>Share this profile</h2>
+
+        <a href="https://facebook.com" target="_blank">
+            <i class="fa-brands fa-facebook fa-2x"></i>
+        </a>
+
+        <a href="https://twitter.com" target="_blank">
+            <i class="fa-brands fa-twitter fa-2x"></i>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+            <i class="fa-brands fa-instagram fa-2x"></i>
+        </a>
+
+        <a href="https://web.whatsapp.com" target="_blank">
+            <i class="fa-brands fa-whatsapp fa-2x"></i>
+        </a>
+
+    </div>
+    <!--End of Share Profile-->
+
+
+    <div id="ContactBar">
+
+    <?php 
+    
+    $reqID = $_GET['id'];
+    $q3 = "SELECT  `price`  FROM  `offers` WHERE `babySitterEmail` = '$email' AND `RequestID` =$reqID ";
+    $result3 = mysqli_query($connection,  $q3);
+    $row3 = mysqli_fetch_row($result3);
+    $pr = key($row3);
+    ?>
+
+        <label><?php echo($row3[$pr])?> SAR/hr</label>
+        <a href="tel:<?php echo($row[$phone ]);?>"><button type="button">call <?php echo($row[$fname]) ?><i class="fa-solid fa-phone fa-lg" style="color: white"></i></button></a>
+        <a style="position:absolute; margin-left:800px;"href="https://api.whatsapp.com/send/?phone=<?php echo($row[$phone ]);?>&text=hi&type=phone_number&app_absent=0'target='_blank"><button type="button">messaging <?php echo($row[$fname]) ?><i class="fa-brands fa-whatsapp fa-lg" style="color: white;"></i></button></a>
+    </div>
+   </div>
+</body>
+</html>
