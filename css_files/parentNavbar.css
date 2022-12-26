@@ -42,12 +42,20 @@ li, a , button {
             .nav_links li a { transition: all 0.3s ease 0s ;}
 
 
-            .nav_links li a:hover {     color: #98C1D9; 
+            .nav_links li a:hover{     color: #98C1D9; 
                 font-size: 18px;
                 background-color:#293241;
                 border-radius: 30px;
                 padding: 5px;
                 transition: all 0.3s ease 0s; }
+
+         
+                /* .nav_links li a:active {     color: #98C1D9; 
+                    font-size: 18px;
+                    background-color:#293241;
+                    border-radius: 30px;
+                    padding: 5px;
+                    } لازم أرحع أتفاهم معه!*/
 
                 button {margin: 15px;
                 padding: 9px 25px; 

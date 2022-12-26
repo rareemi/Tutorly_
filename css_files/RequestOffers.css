@@ -3,34 +3,53 @@
 Body{
     background-color: #F5FBFF ;
 }
-h4, div{
+h2, div{
     font-family: "Montserrat", sans-serif;
   
 }
-h4{
-    height: 25px; 
+h2{    height: 40px; 
     background-color:#98C1D9;
     color: #293241;
     text-align: center;
-    padding-inline: 30px;
-    font-weight: normal;
-    font-size: 18px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: -5px;
     
 
-}
+} /* such an amazing and perfect values!! (: */
+
+.holder 
+        {
+             display:flex;
+             margin: 4%;
+margin-left: 22%;        }
 
 
-#content div   {
+.req1, .req2   {
 
+ 
     background-color:#98C1D9;
-    width: 230px;
+    width: 320px;
     position: relative;
-    height: 260px;
+    height: 430px;
     border-radius: 30px;
-  margin: 10% 42%  ;
-    padding: 1px ;
-
+    padding: 50px ;
+    line-height: 50px;
+    text-align: center;
+   margin: 45px;
 }
+
+.titleLabel {    background-color:#98C1D9;
+
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+                color: #293241;
+
+
+            }           
+
 
      .nameLabel, .ageLabel,
      .classLabel, .durationLabel 
@@ -46,7 +65,7 @@ h4{
     font-size: 15px;
     
 }
-a.Offer  {
+a.Offer1, a.Offer2  {
     font-size: 15px;
     border-radius: 30px;
     padding: 5px;
@@ -54,20 +73,15 @@ a.Offer  {
   
 
     }
-a.Offer:hover {  
+a.Offer1:hover, a.Offer2:hover {  
     font-size: 18px;
     color:#F5FBFF;    
     background-color:#293241; }
 
-#content div p{
-    line-height: 30px;
-    text-align: center;
-    background-color: #98C1D9;
 
-}
 
-#content div .req{
+ /* useless.req{
 
     margin-top: 30px;
 }
-
+*/
