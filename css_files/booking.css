@@ -66,7 +66,7 @@ position:relative;
     font-size: 14px;
     color: #293241;
 }
-input:hover {color: #98C1D9; 
+input:hover {color: #98C1D9; /* make it biggir font, and biggir size */
 background-color:#293241;}
 
 .list p a , .list p{background-color:#E1ECF3;}
