@@ -13,6 +13,7 @@ i, a , button {
     color: #293241;
     text-decoration: none;
     background-color: #F5FBFF;
+   
 
 }
 
@@ -46,4 +47,5 @@ border: none;
 cursor: pointer;
 transition: all 0.3s ease 0s;}
 
-button:hover {  background-color: #434343; }
+button:hover {  background-color: #434343;
+    color:#F5FBFF; }
