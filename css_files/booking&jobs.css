@@ -32,7 +32,7 @@ h2{
 	
     
     }
-	.CurrentBooking,.PreviousBooking{
+	.CurrentBooking,.PreviousBooking,.CurrentJobs,.Previousjobs{
 	display:inline-block;
 	margin-top: 6px;
 	margin-left: 8%;
