@@ -49,3 +49,14 @@ transition: all 0.3s ease 0s;}
 
 button:hover {  background-color: #434343;
     color:#F5FBFF; }
+
+
+
+    .icons{
+        background-color:#7290a2;
+        font-size: 19px;
+        border-radius: 30px;
+        padding: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        transition: all 0.3s ease 0s;}
