@@ -1,8 +1,9 @@
-div{
+footer{
     /*Verdana,sans-serif*/
 
     
     background-color:#98C1D9 ;
+
 }
 
     
@@ -11,16 +12,28 @@ div{
         font-weight: 500;
        /* font-size: 16px; it's the defult size */
        color: #293241;
-        margin: 80px;
+        margin: 20px;
         padding: 11px 25px; 
         transition: all 0.3s ease 0s;
         text-decoration: none ;
         color: #293241;
+
     }
     .con:hover{
+      
 
-font-size: 20px ;
 color: gray ;
-
+text-decoration: underline;
 
     }
+    .ionicons {
+
+        color: #536584;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .ionicons:hover{
+color: #000;
+
+      }
