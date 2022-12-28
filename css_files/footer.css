@@ -11,16 +11,21 @@ div{
         font-weight: 500;
        /* font-size: 16px; it's the defult size */
        color: #293241;
-        margin: 80px;
+        margin: 20px;
         padding: 11px 25px; 
         transition: all 0.3s ease 0s;
         text-decoration: none ;
         color: #293241;
+
     }
     .con:hover{
+      
 
-font-size: 20px ;
 color: gray ;
-
+text-decoration: underline;
 
     }
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
