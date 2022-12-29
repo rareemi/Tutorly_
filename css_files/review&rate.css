@@ -1,17 +1,16 @@
 .review {
     position:relative;
-    width:45%;
-    height:540px;
-    margin: 40px 30%;
+    width:40%;
+    height:560px;
+    margin: 20px 30%;
     padding:20px;
     background-color:#98C1D9;
     border-radius: 10px;
     text-align:left;
     font-family: "Montserrat", sans-serif;
-    color: #293241;
-    font-weight: bold;}
-      
-    h2{
+    color: #293241;} 
+        
+h2{
     height: 40px; 
     background-color:#98C1D9;
     color: #293241;
@@ -21,7 +20,7 @@
     font-size: 20px;
     margin: -5px;}
         
-    input[type=text]{
+input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0px;
@@ -30,9 +29,47 @@
     border-radius: 4px;
     box-sizing:border-box;
     background-color: #F5FBFF;}
-      
     
-    textarea{
+div.stars{
+  width: 150px;
+  display:block;
+  background-color:#98C1D9;}
+
+input.star,.tooltip{display: none;}
+
+label.star {
+  float: right;
+  padding: 2px;
+  font-size: 26px;
+  color: #444;}
+
+input.star:checked ~ label.star:before {
+	content:'\f005';
+  color: yellow;}
+
+label.star:before{
+  content:'\f006';
+  font-family: FontAwesome;}
+
+label.star:hover .tooltip{
+  position:absolute;
+  display:block;
+  top: 40%;
+  right: 60%; 
+  color:#F5FBFF;
+  background-color:#293241;
+  border-style:hidden;
+  padding: 10px 5px;
+  border-radius: 10px;
+  text-align:center;
+  
+  font-size: 14px;}
+  
+input.star-5:checked ~ label.star:before {color: #5EFFA9;}
+
+input.star-1:checked ~ label.star:before { color: #FF5E64;}
+    
+textarea{
     width:100%;
     height:150px;
     resize: none;
@@ -40,9 +77,9 @@
     border-radius: 4px;
     overflow-y: scroll;}
 
-    label,form {background-color:#98C1D9;}
+label,form {background-color:#98C1D9;}
       
-    input[type=submit] {
+input[type=submit] {
     width: 100%;
     color: #293241;
     padding: 14px 20px;
@@ -53,10 +90,9 @@
     color:#293241;
 	background-color: #F5FBFF;
     font-family: "Montserrat", sans-serif;
-    transition: all 0.3s ease 0s;
-}
+    transition: all 0.3s ease 0s;}
     
-    input[type=submit]:hover {
+input[type=submit]:hover {
         font-size: 22px;
         border-width: 2px;
         color: #F5FBFF;
