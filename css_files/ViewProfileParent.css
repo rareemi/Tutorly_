@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-h2 {   height: 40px; 
+h1 {   height: 40px;
+    
     background-color:#98C1D9;
     color: #293241;
     text-align: center;
@@ -11,3 +12,66 @@ h2 {   height: 40px;
     
 
 } 
+
+holder  {
+    background-color:#F5FBFF;
+    width: 900px;
+    height: 290px;
+    border-radius: 30px;
+    position:relative;
+    padding: 5px ;
+    margin-top: 2px;
+    line-height: 30px;
+ display: flex;
+border: solid 5px #98C1D9;
+margin-left: 15%;
+
+
+}
+.detail{
+    
+    text-align: left;
+    height: 500px;
+    width: 700px;
+    padding: 10px;
+    
+}
+
+
+
+
+ .pic  {
+   
+
+    padding: 0px;
+    border: solid #98C1D9;
+    align-items: center;
+
+    }
+
+
+
+
+
+
+    .pic, .detail{
+border-radius: 20px;
+border: solid #98C1D9 8px;
+margin: 1%;
+                }
+        .nameLabel, .e-mail, .citylabel,.locationlabel
+  {
+   color:#293241;
+   background-color: #98C1D9;
+    }
+    .back{
+        margin: 50%;
+    }
+
+
+
+
+ 
+        
+ 
+         

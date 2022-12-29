@@ -73,8 +73,10 @@ h1 {    height: 40px;
 h2{    color: #293241;;
     text-align: center;
     padding: 16px;
-    font-size: 100px; 
+    font-size: 90px; 
     font-weight: bolder;
     margin: -5px;
 
 }
+h3{
+     cursor: pointer; }
