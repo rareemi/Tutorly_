@@ -8,10 +8,9 @@
     border-radius: 10px;
     text-align:left;
     font-family: "Montserrat", sans-serif;
-    color: #293241;
-    font-weight: bold;}
-      
-    h2{
+    color: #293241;} 
+        
+h2{
     height: 40px; 
     background-color:#98C1D9;
     color: #293241;
@@ -30,7 +29,6 @@ input[type=text]{
     border-radius: 4px;
     box-sizing:border-box;
     background-color: #F5FBFF;}
-      
     
 div.stars{
   width: 150px;
@@ -92,7 +90,6 @@ input[type=submit] {
     color:#293241;
 	background-color: #F5FBFF;
     font-family: "Montserrat", sans-serif;
-    transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;}
     
 input[type=submit]:hover {
