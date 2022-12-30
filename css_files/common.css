@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); 
+
+ *  {   box-sizing: border-box;
+        margin: 0;
+        padding : 0;
+        background-color:  #F5FBFF;
+        font-family: "Montserrat", sans-serif;
+    }
+/*Start header*/
+
+li, a , button { 
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #293241;
+                    text-decoration: none;
+
+                }
+
+
+
+             header {display: flex;
+                    justify-content: space-between;
+                    text-align: center;
+                    padding: 5px 8%;
+
+             }   
+
+
+             .logo{ cursor: pointer; }
+
+             .nav_links { list-style: none;}
+
+             .nav_links li {display: inline-block;
+                padding: 40px 30px;
+            }
+
+            .nav_links li a { transition: all 0.3s ease 0s ;}
+
+
+            .nav_links li a:hover {     color: #98C1D9; 
+                                        font-size: 18px;
+                                        background-color:#293241;
+                                        border-radius: 30px;
+                                        padding: 5px;
+                                        transition: all 0.3s ease 0s; }
+
+            button {margin: 15px;
+                padding: 9px 25px; 
+                    background-color:#7290a2 ;
+                border-radius: 50px;
+                border: none;
+                cursor: pointer;
+                }
+
+                button:hover {  color: #98C1D9; 
+                    font-size: 18px;
+                    background-color:#293241;
+                    border-radius: 30px;
+                    padding: 9px 25px; 
+                    transition: all 0.3s ease 0s; }
+
+ /*end header*/
+
+
+ /*start page bar*/
+                    h2{    height: 40px; 
+                        background-color:#98C1D9;
+                        color: #293241;
+                        text-align: center;
+                        padding: 8px;
+                        font-weight: bold;
+                        font-size: 20px;
+                        margin: -5px;
+                        
+                    
+ }  /*end page bar*/ 
+
+
+ /*start footer*/
+
+ footer{
+
+    .con{
+    
+        font-weight: 500;
+        font-size: 16px; 
+       color: #293241;
+        margin: 20px;
+        padding: 11px 25px; 
+        transition: all 0.3s ease 0s;
+        text-decoration: none ;
+        color: #293241;
+
+    }
+    .con:hover{
+      
+
+color: gray ;
+text-decoration: underline;
+
+    }
+    .ionicons {
+
+        color: #536584;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .ionicons:hover{
+color: #000;
+
+      }
+    }
+      /*end footer*/
