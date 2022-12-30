@@ -1,0 +1,41 @@
+<label for="FName">First Name:</label><br>
+    <input type="text" id="FName" name="FName"><br>
+
+    <label for="LName">Last Name:</label><br>
+    <input type="text" id="LName" name="LName">
+
+    <br> <label for="email">E-mail:</label><br>
+    <input type="text" id="email" name="email"><br>
+
+    <label for="pass">Password:</label><br>
+    <input type="text" id="pass" name="pass">
+
+
+
+
+
+
+    <div class="holder"> 
+    <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250">
+         <p class = "det
+        ail">  <label class="nameLabel">First Name: </label><label class="Name"></label>lama </label>
+            <br>
+            <br>
+            <br>
+              <label class="nameLabel">Last Name: </label><label class="Name"></label>ahmed </label><br> <br> <br>
+
+            <label class="e-mail">E-mail: </label><label class="email">***@gmail.com</label>
+    <br>
+    <br>
+    <br>
+    <label class="pass">Password: </label><label class="password">********</label>
+    <br>
+    <br>
+    <br>
+    <label class="citylabel">City: </label><label class="city">Riyadh</label>
+<br>
+<br>
+<br>
+<label class="locationlabel">Location: </label><label class="location">https://*******</label>
+<br>
+<br>
