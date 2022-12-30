@@ -22,7 +22,7 @@ h2{
     width: 320px;
     height: 540px;
     border-radius: 30px;
-    margin: 10% 40%;
+    margin: 2% 40%;
     padding: 25px ;
     margin-top: 30px;
     line-height: 30px;
@@ -52,16 +52,22 @@ h2{
 {   background-color:#98C1D9;
     color: #F5FBFF;
     font-size: 16px;}
-	
 
+.list{
+    position: relative;
+	margin-left:240px;
+    left:18%;
+    border:2px solid #98C1D9;
+}
 
-.email, .review{
+.email, .review,.list{
 	font-size: 19px;
     border-radius: 20px;
     padding: 5px;
     transition: all 0.3s ease 0s;}
 
-a.email:hover,a.review:hover {  
+
+a.email:hover,a.review:hover ,a.list:hover{  
     font-size: 22px;
     border-width: 2px;
     color: #F5FBFF;
