@@ -1,22 +1,11 @@
  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-h1 {   height: 40px;
-    
-    background-color:#98C1D9;
-    color: #293241;
-    text-align: center;
-    padding: 8px;
-    font-weight: bold;
-    font-size: 20px;
-    margin: -5px;
-    
 
-} 
 
 .detail{
     
     text-align: left;
-    height: 600px;
+    height: 620px;
     width: 700px;
     padding: 10px;
     
@@ -52,3 +41,17 @@ margin: 1%;
     .back{
         margin: 50%;
     }
+    .holder{
+        
+        padding: 25px ;
+        margin-top: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color:#98C1D9;
+        width: 750px;
+        height: 930px;
+        border-radius: 30px;
+        margin: 2% 25%;
+     
+        background-color: #98C1D9;
+                                }
