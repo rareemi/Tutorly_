@@ -28,3 +28,34 @@ textarea{
   border: hidden;
   border-radius: 4px;
   background-color:#f8f9f9;}
+
+
+.holder2{
+  display:flex;
+             margin: 4%;
+margin-left: 22%; 
+}
+
+.req3{
+  background-color:#98C1D9;
+    width: 320px;
+    position: relative;
+    height: 630px;
+    border-radius: 30px;
+    padding: 50px ;
+    line-height: 50px;
+   
+   margin: 45px;
+}
+
+.titleLabell{
+ background-color:#98C1D9;
+            text-align: center;
+                font-weight: bold;
+                color: #293241;
+                font-size: 21px;
+
+}
+
+
+
