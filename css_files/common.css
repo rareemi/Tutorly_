@@ -78,13 +78,12 @@ li, a , button {
 
  /*start footer*/
 
- footer{
+ 
 
     .con{
     
         font-weight: 500;
         font-size: 16px; 
-       color: #293241;
         margin: 20px;
         padding: 11px 25px; 
         transition: all 0.3s ease 0s;
@@ -110,5 +109,5 @@ text-decoration: underline;
 color: #000;
 
       }
-    }
+ 
       /*end footer*/
