@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); 
  body{ background-color:#F5FBFF;
-
+/*خلاااص بحذفه ما أحتاجه*/
  }
 a  {
     font-family: "Montserrat", sans-serif;
@@ -27,4 +27,9 @@ header{text-align: center;
         
         }
 
-        .icons:hover{color: #F5FBFF;}
+        .icons:hover{color: #F5FBFF;
+            font-size: 22px;}
+
+
+    
+        
