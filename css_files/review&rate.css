@@ -14,8 +14,7 @@ input[type=text]{
     padding: 12px 20px;
     margin: 8px 0px;
     border: hidden;
-    border-radius: 4px;
-    background-color: #F5FBFF;}
+    border-radius: 4px;}
     
 div.stars{
   width: 150px;
@@ -49,7 +48,6 @@ label.star:hover .tooltip{
   padding: 10px 5px;
   border-radius: 10px;
   text-align:center;
-  
   font-size: 14px;}
   
 input.star-5:checked ~ label.star:before {color: #5EFFA9;}
