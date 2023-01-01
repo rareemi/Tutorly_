@@ -65,7 +65,7 @@ margin-left: 22%;        }
    background-color: #98C1D9;
     }
 
-    .Name, .Age, .Type, .duration 
+    .Name, .Age, .Type, .duration , .textarea , .textO
 {
     background-color:#98C1D9;
     color: #F5FBFF;
@@ -85,7 +85,12 @@ a.Offer1:hover, a.Offer2:hover {
     color:#F5FBFF;    
     background-color:#293241; }
 
-
+    .textarea{
+        
+margin-left: -22px;
+color: #293241;
+    }
+    
 
  /* useless.req{
 
