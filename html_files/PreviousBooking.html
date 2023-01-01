@@ -4,7 +4,7 @@
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previous Booking</title>
-    <link rel ="stylesheet" type= "text/css" href="/css_files/parentNavbar.css">
+    <link rel ="stylesheet" type= "text/css" href="/css_files/common.css">
     <link rel ="stylesheet" type= "text/css" href="/css_files/booking&jobs.css">
      </html>
      
@@ -13,11 +13,21 @@
             <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
                 <nav>
                     <ul class = "nav_links">
-                        <li><a href = "#"> Home</a></li>
-                        <li><a href = "#"> Profile</a></li>
+                        <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
+                        <li><a href = "#"> Profile</a>
+                            <ul>
+                                <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
+                                <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
+                            </ul>
+                        </li>
                         <li><a href = "#"> Requests</a></li>
                         <li><a href = "#"> Offers</a></li>
-                        <li><a href = "/html_files/Booking.html"> Booking</a></li>
+                        <li><a href = "/html_files/Booking.html"> Booking</a>
+                            <ul>
+                                <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
+                                <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
+                            </ul>
+                        </li>
                         
                         </a></li>
                     </ul>

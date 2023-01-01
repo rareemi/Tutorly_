@@ -53,12 +53,7 @@ h2{
     color: #F5FBFF;
     font-size: 16px;}
 
-.list{
-    position: relative;
-	margin-left:240px;
-    left:18%;
-    border:2px solid #98C1D9;
-}
+
 
 .email, .review,.list{
 	font-size: 19px;
@@ -67,7 +62,7 @@ h2{
     transition: all 0.3s ease 0s;}
 
 
-a.email:hover,a.review:hover ,a.list:hover{  
+a.email:hover,a.review:hover {  
     font-size: 22px;
     border-width: 2px;
     color: #F5FBFF;
