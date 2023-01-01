@@ -48,14 +48,18 @@ li, a , button {
                                         transition: all 0.3s ease 0s;
                                      }
 
-            .nav_links ul {display: none;}
+            .nav_links ul {
+                display: none;
+                background: rgba(152,193,217,0.8);}
 
             .nav_links ul  li {
              display: block;
              padding: 10px 30px;
              margin: 25px;
              float: none;
+             background: rgba(152,193,217,0);
              }
+             .nav_links ul li a{background: rgba(152,193,217,0);}
 
             .nav_links li:hover ul {
                 display: block;
