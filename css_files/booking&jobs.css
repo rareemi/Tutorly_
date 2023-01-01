@@ -1,37 +1,16 @@
-Body{
-    background-color: #F5FBFF ;
-}
-h2, div{
-    font-family: "Montserrat", sans-serif;
-}
-
-h2{
-    height: 40px; 
-    background-color:#98C1D9;
-    color: #293241;
-    text-align: center;
-    padding: 8px;
-    font-weight: bold;
-    font-size: 20px;
-    margin: -5px;
-    
-}
 
 .booking ,.jobs{
 	background-color:#98C1D9;
     width: 320px;
     height: 540px;
     border-radius: 30px;
-    margin: 2% 40%;
+    margin: 10% 40%;
     padding: 25px ;
     margin-top: 30px;
     line-height: 30px;
     text-align: center;
-    background-color: #98C1D9;
+    } 
     
-	
-    
-    }
 	.CurrentBooking,.PreviousBooking,.CurrentJobs,.Previousjobs{
 	display:inline-block;
 	margin-top: 6px;
@@ -44,14 +23,12 @@ h2{
 	padding: 0px;}
 	
 .NameLabel,.PriceLabel,.DateLabel,.TimeLabel{
-	font-weight: bold;
 	color:#293241;
 	background-color: #98C1D9;}
 	
-.Name,.Price,.Date,.Time
-{   background-color:#98C1D9;
-    color: #F5FBFF;
-    font-size: 16px;}
+.Name,.Price,.Date,.Time{   
+    background-color:#98C1D9;
+    color: #F5FBFF;}
 
 
 
