@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <he  ad>
+    <head>
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile Parent</title>
@@ -10,32 +10,50 @@
      href="/css_files/EditProfileParent.css">
      
      </html>
-     
+    </head>
      <body>
         <header>
             <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
                 <nav>
                     <ul class = "nav_links">
                         <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
-                        <li><a href = "#"> Profile</a></li>
-                    <li><a href = "#"> Requests</a></li>
+                        <li><a href = "#"> Profile</a>
+                            <ul> <!--this for drop-down menu-->
+                                <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
+                                <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href = "#"> Requests</a>
+                            <ul> 
+                                <li><a href = "#"> Post</a></li>
+                                <li><a href = "#"> Edit</a></li>
+                            </ul>
+                        </li> 
                         <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
-                        <li><a href = "#"> Booking</a></li>
+                        <li><a href = "/html_files/Booking.html"> Booking</a>
+                            <ul> 
+                                <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
+                                <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li> </ul> </li></ul></nav>
                         
                         </a></li>
                     </ul>
                 </nav>
                 <a class= "out" href="#"><button>Logout</button></a>
         </header>
+        
         <h2>
  
                 Edit Profile
             </h2>
             <h3>
                 <div class="holder"> 
+
                     <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250">
                          <p class = "det
-                        ail">
+                        ail">  <a class= "changephoto" href="/html_files/changePhoto.html" id="7"><button>Change Photo</button></a>
+                       
+
+                     <br>  
                 <label for="FName">First Name:</label><br>
                 <input type="text" id="FName" name="FName" value="Lama"><br>
             
@@ -47,7 +65,8 @@
             
                 <label for="pass">Password:</label><br>
                 <input type="text" id="pass" name="pass" value="******">
-                <a class ="change" href ="/html_files/Changepass.html">Change password</a>
+                <br>
+                <a class ="change" href ="/html_files/ChangepassParent.html">Change password</a>
                 <br> <label for="city">City:</label><br>
                 <input type="text" id="city" name="city" value="Riyadh">
 
@@ -64,9 +83,51 @@
    
             <h5>
                 
-                <a class= "delet" href="/html_files/HomePageParent.html"><button>Delete</button></a>
- 
+                <a class= "delet" href="/html_files/DeletProfileParent.html"><button>Delete Profile</button></a>
+ <br>
             </h5>
+            <footer > 
+       
+      
+
+                <p>
+                    <table>
+                        <tr>
+                     <th><a href="#" class = "con">ContactUs</a>  </th>
+                     <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
+                     <th> <a href="#" class = "con">FAQs</a> </th> 
+                        </tr> 
+                        </table> <br>
+                
+
+                         <center> 
+                            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+                           
+                
+                <a href="https://twitter.com" target="_blank" class = "ionicons">
+                            
+                    <ion-icon name="logo-twitter"></ion-icon> </a>
+                        
+                            <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
+                                <ion-icon name="logo-whatsapp"></ion-icon>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class = "ionicons">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                
+                            <a href="https://snapchat.com" target="_blank" class = "ionicons">
+                                <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
+                            </a>
+                
+                            &copy; A  Tutorly, 2022
+                            </center>
+                            
+                             
+                   
+                        </p>
+                
+                    </footer>
      </body>
 </html>
 
