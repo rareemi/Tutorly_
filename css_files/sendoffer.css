@@ -1,0 +1,61 @@
+.offers{ /*div*/
+  width:30%;
+    height:250px;
+    margin: 20px 30%;
+    padding:20px;
+    background-color:#98C1D9;
+    border-radius: 10px;
+
+}
+
+label{/*p*/
+
+  font-weight: bold;
+	color:#f8f9f9;
+	background-color: #98C1D9;
+}
+input[type=text]{
+  width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: hidden;
+    border-radius: 4px;
+    background-color:#f8f9f9;}
+
+textarea{
+  width:100%;
+  resize: none;
+  border: hidden;
+  border-radius: 4px;
+  background-color:#f8f9f9;}
+
+
+.holder2{
+  display:flex;
+             margin: 4%;
+margin-left: 22%; 
+}
+
+.req3{
+  background-color:#98C1D9;
+    width: 320px;
+    position: relative;
+    height: 630px;
+    border-radius: 30px;
+    padding: 50px ;
+    line-height: 50px;
+   
+   margin: 45px;
+}
+
+.titleLabell{
+ background-color:#98C1D9;
+            text-align: center;
+                font-weight: bold;
+                color: #293241;
+                font-size: 21px;
+
+}
+
+
+
