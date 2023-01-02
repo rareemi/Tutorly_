@@ -6,9 +6,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Parent</title>
-<link rel ="stylesheet" type= "text/css" href="../css_files/LoginParent.css">
 
-
+<link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
+<style> label,p,b{
+   background-color:#98C1D9;}
+   t{background-color:#98C1D9;
+   text-decoration: underline;}</style>
     </head>
 
     <body>
@@ -16,17 +19,19 @@
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             
     </header>
-        <h3>Login</h3>
-        <form>
-          <label for="email">E-mail:</label><br>
+        <h2>Login</h2>
+        <form class="containers">
+          
+          <label for="email">E-mail: </label><br>
           <input type="text" id="email" name="email"><br>
           <label for="pass">Password:</label><br>
           <input type="password" id="pass" name="pass">
 
           <br> <br><input type="submit" value="Submit">
+  
 
-          <p> <a href=".com"> Forget Password? </a></p> <!--Try to do something-->
-          <p>you don't have an acc? <a href="SignUpParent.html"> Sign up </a></p>
+          <br>   <br>  <br>  <br> <p> <a href="ChangepassParent.html"><t> Forget Password? </t></a></p> <br>
+          <p>you don't have an acc? <a href="SignUpParent.html"> <t>Sign up </t></a></p>
         </form>
 
            <hr> 
