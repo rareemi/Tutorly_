@@ -101,19 +101,18 @@ li, a , button {
 
  /*start footer*/
 
- 
+ footer{
+    display: inline-block;
+    margin: 6px 38%;}
 
     .con{
     
         font-weight: 500;
         font-size: 16px; 
-        margin: 20px;
-        padding: 11px 60px; 
+        padding: 11px 25px; 
         transition: all 0.3s ease 0s;
         text-decoration: none ;
         color: #293241;
- position: relative;
- margin-left: 250%;
     }
     
     .con:hover{
