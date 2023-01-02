@@ -1,8 +1,8 @@
 
-.booking ,.jobs{
+.booking ,.jobs{ /*delete*/
 	background-color:#98C1D9;
-    width: 320px;
-    height: 540px;
+    width: 320px; /*inline style*/
+    height: 540px; /*inline style*/
     border-radius: 30px;
     margin: 10% 40%;
     padding: 25px ;
@@ -11,13 +11,12 @@
     text-align: center;
     } 
     
-	.CurrentBooking,.PreviousBooking,.CurrentJobs,.Previousjobs{
+	#CurrentBooking,#PreviousBooking,#CurrentJobs,#Previousjobs{/*add this*/
 	display:inline-block;
 	margin-top: 6px;
-	margin-left: 8%;
-		}
+	margin-left: 10%;}
 
-.pic {
+.pic {/*delete*/
 	margin:auto;
 	background-color:#98C1D9;
 	padding: 0px;}
@@ -25,14 +24,14 @@
 .NameLabel,.PriceLabel,.DateLabel,.TimeLabel{
 	color:#293241;
 	background-color: #98C1D9;}
-	
+	/*edit label name in html*/
 .Name,.Price,.Date,.Time{   
     background-color:#98C1D9;
     color: #F5FBFF;}
 
 
 
-.email, .review,.list{
+.email, .review,.list{/*delete list*/
 	font-size: 19px;
     border-radius: 20px;
     padding: 5px;
