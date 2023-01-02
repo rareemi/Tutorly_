@@ -136,3 +136,18 @@ color: #000;
       }
  
       /*end footer*/
+
+.section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto; 
+      position:relative;
+    width:40%;
+    height:560px;
+    margin: 20px 30%;
+    padding:20px;
+    background-color:#98C1D9;
+    border-radius: 10px;} 
+      
+      
