@@ -2,11 +2,11 @@
 
 Body{
     background-color: #F5FBFF ;
-}
-*{
     font-family: "Montserrat", sans-serif;
-  
+
 }
+
+
 h2{    height: 40px; 
     background-color:#98C1D9;
     color: #293241;
@@ -26,12 +26,11 @@ h2{    height: 40px;
     border-radius: 30px;
     position:relative;
     padding: 5px ;
-    margin-top: 20px;
+    margin-top: 1%;
     line-height: 30px;
  display: flex;
 border: solid 5px #98C1D9;
 margin-left: 15%;
-
 
 }
 .detail{
@@ -54,23 +53,45 @@ margin-left: 15%;
 {
      display:flex;
      margin: 2%;
-margin-left: 22%;        }
+margin-left: 15%;        }
 
 
-.rev1, .rev2   {
+.rev1, .rev2, .rev3   {
 
 
 background-color:#98C1D9;
-width: 320px;
+width: 280px;
 position: relative;
-height: 350px;
+height: 290px;
 border-radius: 30px;
 padding: 10px ;
 line-height: 50px;
 text-align: center;
-margin: 45px;
+margin: 2%;
 }
 
+.holder3
+{
+
+             display:flex;
+            margin: 1%; 
+            padding: 20px;
+            margin-left: 26%;
+
+}
+
+    .call, .msg{
+        background-color:#98C1D9;
+        width: 200px;
+        position: relative;
+        height: 200px;
+        border-radius: 30px;
+        padding: 50px ;
+        line-height: 50px;
+        text-align: center;
+       margin: 45px;        
+
+    }
     .pic, .detail{
 border-radius: 20px;
 border: solid #98C1D9 8px;

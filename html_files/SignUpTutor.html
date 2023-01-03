@@ -4,26 +4,19 @@
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> Sign Up Tutor</title>
-   <link rel ="stylesheet" type= "text/css" href="../css_files/SignUpParent.css">
    <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
 </head>
 <body>
   <header>
     <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-        <nav>
-            <ul class = "nav_links">
-                <li><a href = "#"> Home</a></li>
-                <li><a href = "#"> Profile</a></li>
-                <li><a href = "#"> Offers</a></li>
-                <li><a href = "#"> Jobs</a></li>
-                <li><a href = "#"> Rate &amp Reviews </a></li>
-                
-                </a></li>
-            </ul>
-        </nav>
+    <style> label,p,b{
+      background-color:#98C1D9;}
+      t {background-color:#98C1D9;
+      text-decoration: underline;}
+</style>
 </header>
 <h2>Sign up as a Totur: </h2><br><br>
-<form>
+<form class="containers">
 <!--Labels-->
     <label for="FName">First Name:</label><br>
     <input type="text" id="FName" name="FName"><br><br>
@@ -31,14 +24,15 @@
     <label for="LName">Last Name:</label><br>
     <input type="text" id="LName" name="LName"><br><br>
 
+    <label for="Tid">Age :</label><br>
+    <input type="text" id="age" name="age"><br><br>
+    
     <label for="Tid">ID :</label><br>
     <input type="text" id="Tid" name="Tid"><br><br>
 
     <label for="gender">Gender:</label><br>
     <input type="text" id="gender" name="gender"><br><br>
 
-    <label for="FName">First Name:</label><br>
-    <input type="text" id="FName" name="FName"><br><br>
 
     <label for="email">E-mail:</label><br>
     <input type="text" id="email" name="email"><br><br>
@@ -53,7 +47,11 @@
     <input type="text" id="city" name="city"><br><br>
 
     <label for="bio"> Bio:</label><br>
-    <input type="text" id="bio" name="bio"><br>
+    <input type="text" id="bio" name="bio"><br> <br>
+
+    <img src="/images/TutorPic1.png" class="pic" height="90" alt="defult picture"><br>
+<p>uplod picture: (optinal)</p>
+<input type="file" accept="image/*"> 
 
 <!--Location-->
 

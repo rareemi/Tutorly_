@@ -26,7 +26,7 @@
             </nav>
             <a class= "out" href="#"><button>Logout</button></a>
     </header>
-    <h2> Show Tutor Prifile</h2>
+    <h2> Show Tutor Prifile</h2> <br>
     <div class="holder"> 
 <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250">
      <p class = "detail">  <label class="nameLabel">Tutor Name: </label><label class="Name"></label>Sara Mohammed</label><br>
@@ -38,9 +38,9 @@
 
 
    
-<br>
+<br><br>
 
-        <h2>Reviews</h2>
+        <h2>Reviews &amp Rating</h2>
      
 
 <div class = "holder2"> 
@@ -63,59 +63,38 @@
      <br>
      <a class ="Offer2" href="../html_files/NoCurrentOffers.html">Show Offers</a>
  </p>
+ <p class = "rev3"> 
+    <label class = "titleLabel">Request</label><br> 
+    <label class="nameLabel">Kid name: </label><label class="Name">Judy</label><br>
+    <label class="ageLabel">Age: </label><label class="Age">10 Years</label><br>
+    <label class="classLabel">Type Of Class: </label><label class = "Type">Biology</label><br>
+    <label class="durationLabel">Duration: </label> <label class="duration">1 Hour</label>
+    <br>
+    <a class ="Offer2" href="../html_files/NoCurrentOffers.html">Show Offers</a>
+</p>
      </div>
 
     <!--End of Reviews-->
 
 <br><br>
-        <h2>Rating</h2>
+        <h2>Contact &amp; Interview</h2>
+
+<div class = "holder3">
 
 
+ <p class = "call"> 
+    <a href="tel:<?php echo($row[$phone ]);?>"><button type="button">call</button></a>
 
+</p>
 
+<p class = "msg"> 
 
-    <div id="shareProfile">
-        <h2>Share this profile</h2>
+    <button type="button">messaging</i></button></a>
+</p>
+</div>
 
-        <a href="https://facebook.com" target="_blank">
-            <i class="fa-brands fa-facebook fa-2x"></i>
-        </a>
-
-        <a href="https://twitter.com" target="_blank">
-            <i class="fa-brands fa-twitter fa-2x"></i>
-        </a>
-
-        <a href="https://linkedin.com" target="_blank">
-            <i class="fa-brands fa-linkedin fa-2x"></i>
-        </a>
-
-        <a href="https://instagram.com" target="_blank">
-            <i class="fa-brands fa-instagram fa-2x"></i>
-        </a>
-
-        <a href="https://web.whatsapp.com" target="_blank">
-            <i class="fa-brands fa-whatsapp fa-2x"></i>
-        </a>
-
-    </div>
-    <!--End of Share Profile-->
-
-
-    <div id="ContactBar">
-
-    <?php 
-    
-    $reqID = $_GET['id'];
-    $q3 = "SELECT  `price`  FROM  `offers` WHERE `babySitterEmail` = '$email' AND `RequestID` =$reqID ";
-    $result3 = mysqli_query($connection,  $q3);
-    $row3 = mysqli_fetch_row($result3);
-    $pr = key($row3);
-    ?>
-
-        <label><?php echo($row3[$pr])?> SAR/hr</label>
-        <a href="tel:<?php echo($row[$phone ]);?>"><button type="button">call <?php echo($row[$fname]) ?><i class="fa-solid fa-phone fa-lg" style="color: white"></i></button></a>
-        <a style="position:absolute; margin-left:800px;"href="https://api.whatsapp.com/send/?phone=<?php echo($row[$phone ]);?>&text=hi&type=phone_number&app_absent=0'target='_blank"><button type="button">messaging <?php echo($row[$fname]) ?><i class="fa-brands fa-whatsapp fa-lg" style="color: white;"></i></button></a>
-    </div>
-   </div>
+<div class = "holder3">
+    <p class = ""
+</div>
 </body>
 </html>

@@ -1,67 +1,81 @@
 <!DOCTYPE html>
 <html>
     <head>
-       
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page Tutor</title>
-    
-     <link rel ="stylesheet" type= "text/css"
-     href="/css_files/common.css">
-     
-     </html>
-     <style>
-        h3{
-color: #293241;;
-text-align: center;
-padding: 16px;
-font-size: 90px; 
-font-weight: bolder;
-margin: -5px;
- cursor: pointer; }
-    </style>
-     
-     <body>
-        <header>
-            <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
+<title> Change Photo</title>
+<link rel ="stylesheet" type= "text/css"
+ href="/css_files/common.css">
+ </head>
+ <style>
+    .Submit,.bac{
+background-color: #98C1D9;}
+#upload,#uploadlabel{
+    background-color: #98C1D9;
+}
+ </style>
+ <body>
+    <header>
+        <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             <nav>
                 <ul class = "nav_links">
-                    <li><a href = "/html_files/HomePageTutor.html"> Home</a></li>
+                    <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
                     <li><a href = "#"> Profile</a>
                         <ul> <!--this for drop-down menu-->
-                            <li><a href = "/html_files/ViewProfileTutor.html"> View</a></li>
-                            <li><a href = "/html_files/EditProfileTutor.html"> Edit</a></li>
+                            <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
+                            <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
                         </ul> 
                     </li>
-                    <li><a href = "#"> Requests</a></li>
-                    <li><a href = "/html_files/ViewJobs.html"> Jobs </a>
+                    <li><a href = "#"> Requests</a>
                         <ul> 
-                            <li><a href = "/html_files/CurrentJobs.html"> Current</a></li>
-                            <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
-                        </ul> 
-                    </li>
-                    <li><a href = "#"> Rate &amp Reviews </a></li>
-                    
-                </a></li>
+                            <li><a href = "#"> Post</a></li>
+                            <li><a href = "#"> Edit</a></li>
+                        </ul>
+                    </li> 
 
+                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
+                    <li><a href = "/html_files/Booking.html"> Booking</a>
+                        <ul> 
+                            <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
+                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li> </ul> </li></ul></nav>
+                    
+                    </a></li>
                 </ul>
             </nav>
             <a class= "out" href="#"><button>Logout</button></a>
     </header>
-        </header>
-     </body>
-     
-     <h2>
+    
+       <h2>
+ 
+        Change Profile Photo
+    </h2>
+<div class="container">
+Uploud Photo
+<img class = "pic" src="../images/TutorPic1.png" class="TutorPic" alt="Profile Picture" height="250"><br>
+<label for="upload" id="uploadlabel">chose Photo</label>
+<input type="file" id="upload">
 
-     </h2>
-     <h3>
-        Welcome to Tutorly
-     </h3>
-     <footer > 
+<a class= "Submit" href="/html_files/HomePageParent.html"><button>Submit</button></a>
+    <a class= "bac" href="/html_files/EditProfileParent.html"><button>Back</button></a>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+    
+    <footer > 
        
       
 
-        <p class = "p">
+        <p>
             <table>
                 <tr>
              <th><a href="#" class = "con">ContactUs</a>  </th>
@@ -100,12 +114,7 @@ margin: -5px;
                 </p>
         
             </footer>
-</html>
-
-
-
-
-
 
 
 </html>
+ 
