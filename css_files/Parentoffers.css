@@ -33,12 +33,18 @@
     font-size: 16px;
     
 }
-.buton{ 
+.boton {
     font-size: 19px;
     border-radius: 20px;
     padding: 5px;
     
     transition: all 0.3s ease 0s;
   
+    }
+a.boton:hover {  
+    font-size: 22px;
+    border-width: 2px;
+    color: #F5FBFF;
+    background-color:#293241;
     }
 
