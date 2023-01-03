@@ -7,15 +7,24 @@
     <link rel ="stylesheet" type= "text/css"
      href="/css_files/common.css">
      
-     </html>
-    </head>
+     
+    
     <style>
-        .holder{
+.holder{
         
         width: 700px;
-        height: 850px;
+        height: 900px;
        }
-    </style>
+.detail{
+    
+    text-align:center;
+    height:850px;
+    width: 700px;
+    padding: 10px;
+    margin: 4% -3.8%;
+}
+</style>
+    </head>
      <body>
         <header>
             <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
@@ -23,10 +32,10 @@
                     <ul class = "nav_links">
                         <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
                         <li><a href = "#"> Profile</a>
-                            <ul> <!--this for drop-down menu-->
+                            <ul>
                                 <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
                                 <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
-                            </ul> 
+                            </ul>
                         </li>
                         <li><a href = "#"> Requests</a>
                             <ul> 
@@ -35,15 +44,17 @@
                             </ul>
                         </li> 
                         <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
-                        <li><a href = "/html_files/Booking.html"> Booking</a>
-                            <ul> 
+                        <li><a href = "#"> Booking</a>
+                            <ul>
                                 <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
-                                <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li> </ul> </li></ul></nav>
+                                <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
+                            </ul>
+                        </li>
                         
                         </a></li>
                     </ul>
                 </nav>
-                <a class= "out" href="#"><button>Logout</button></a>
+                <a class= "out" href="/html_files/index.html"><button>Logout</button></a>
         </header>
         
         <h2>
@@ -52,10 +63,9 @@
             </h2>
             <h3>
                 <div class="holder"> 
-
-                    <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250">
-                         <p class = "det
-                        ail">  <a class= "changephoto" href="/html_files/changePhotoParent.html" id="7"><button>Change Photo</button></a>
+                    <p class = "detail"> 
+                    <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250"><br>
+                         <a class= "changephoto" href="/html_files/changePhotoParent.html" id="7"><button>Change Photo</button></a>
                        
 
                      <br>  
@@ -89,7 +99,7 @@
             <h5>
                 
                 <a class= "delet" href="/html_files/DeletProfileParent.html"><button>Delete Profile</button></a>
- <br>
+ <br> <br> <br>
             </h5>
             <footer > 
        

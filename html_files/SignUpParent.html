@@ -5,20 +5,22 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> Sign Up Parent</title>
    <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
+   <link rel ="stylesheet" type= "text/css" href="../css_files/review&rate.css">
 </head>
 <body>
   <header>
-    <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
+    <img src = "../images/logo.png" class ="logo" width = "400px"  height= "400px" alt="logo" style="margin: 2px 34%;" >
     <style> label,p,b{
         background-color:#98C1D9;}
-        t {background-color:#98C1D9;
+        a.Submit {background-color:#98C1D9;
         text-decoration: underline;}
 
 
 </style>  
 </header>
 <h2>Sign up as a Parent</h2>
-<form class="containers">
+<div class="containers" style="width: 400px ; height:700px ;">
+<form >
 <!--Labels-->
     <label for="FName">First Name:</label><br>
     <input type="text" id="FName" name="FName"><br>
@@ -38,13 +40,15 @@
 <!--Location-->
 <!--Photo--> 
 <img src="/images/TutorPic1.png" class="pic" height="90" alt="defult picture"><br>
-<p>uplod picture: (optinal)</p>
+<p>upload picture: (optional)</p>
 <input type="file" accept="image/*"> 
 <!--Buttons-->
-<br> <br> <br><input type="submit" value="Submit">
-<input type="reset" value="Clear">
+<br> <br> <br>
+<a class= "Submit" href="#"><button>Clear</button></a>
+<a class= "Submit" href="/html_files/LoginParent.html"><button>Submit</button></a>
 
-  </form>
+
+  </form> </div>
   <hr>
   <footer> 
        

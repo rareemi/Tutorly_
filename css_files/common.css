@@ -103,7 +103,8 @@ li, a , button {
 
  footer{
     display: inline-block;
-    margin: 6px 38%;}
+    margin: 6px 38%;
+}
 
     .con{
     
@@ -148,6 +149,42 @@ color: #000;
         text-align: center;
         background-color: #98C1D9;
     
+<<<<<<< HEAD
+    }
+    
+    .pic  {
+   
+
+        padding: 0px;
+        border: solid #98C1D9;
+        align-items: center;
+    
+        }
+        .pic, .detail{
+            border-radius: 20px;
+            border: solid #98C1D9 5px;
+            }
+            .back,.Submit,.changephoto{
+                font-size: 19px;
+                border-radius: 20px;
+                padding: 5px;
+                transition: all 0.3s ease 0s;
+                
+              }
+              .back{
+               
+                margin-left:240px;
+                left:18%;
+                }
+                .change{
+                    font-size: 14px;
+                transition: all 0.3s ease 0s;}
+                .delet{
+                    align-items: center;
+                  margin: 45% 45%;
+                }
+                .holder{
+=======
         }
         .detail{
     
@@ -164,6 +201,7 @@ color: #000;
             padding: 0px;
             border: solid #98C1D9;
             align-items: center;
+>>>>>>> 24cc6f7ee08ec912bf9c40486d145161a8a50363
         
             }
             .pic, .detail{
