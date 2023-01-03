@@ -149,6 +149,7 @@ color: #000;
         text-align: center;
         background-color: #98C1D9;
     
+<<<<<<< HEAD
     }
     
     .pic  {
@@ -183,12 +184,74 @@ color: #000;
                   margin: 45% 45%;
                 }
                 .holder{
+=======
+        }
+        .detail{
+    
+            
+            text-align: left;
+            height:500px;
+            width: 700px;
+            padding: 10px;
+            
+        }
+        .pic  {
+       
+    
+            padding: 0px;
+            border: solid #98C1D9;
+            align-items: center;
+>>>>>>> 24cc6f7ee08ec912bf9c40486d145161a8a50363
         
-                    padding: 25px ;
-                    margin-top: 30px;
-                    line-height: 30px;
-                    text-align: center;
-                    background-color:#98C1D9;
-                    border-radius: 30px;
-                   margin: 2% 25%;}
-      
+            }
+            .pic, .detail{
+                border-radius: 20px;
+                border: solid #98C1D9 5px;
+                margin: 1% -3.5%;}
+                .back,.Submit,.changephoto{
+                    font-size: 19px;
+                    border-radius: 20px;
+                    padding: 5px;
+                    transition: all 0.3s ease 0s;
+                    
+                  }
+                  .back{
+                   
+                    margin-left:240px;
+                    left:18%;
+                    }
+                    .change{
+                        font-size: 14px;
+                    transition: all 0.3s ease 0s;}
+                    .delet{
+                        align-items: center;
+                      margin: 45% 45%;
+                    }
+                    .holder{
+            
+                        padding: 25px ;
+                        margin-top: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        background-color:#98C1D9;
+                        border-radius: 30px;
+                       margin: 2% 25%;}
+
+                       /*FAQs & SignUp*/
+   .containers {
+    width: 90%;
+   margin: 30px auto;
+   border-radius: 20px;
+   background-color:#98C1D9;
+   padding: 15px;}
+   t{background-color:#98C1D9;}
+   n{background-color:#98C1D9; font-size: 20px; }
+ 
+   h3{    height: 40px; 
+     background-color:#98C1D9;
+     color: #293241;
+     text-align:left;
+     padding: 8px;
+     font-weight: bold;
+     font-size: 20px;
+     margin: -5px;}

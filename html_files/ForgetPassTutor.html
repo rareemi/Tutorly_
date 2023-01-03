@@ -1,79 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+    <head>
+    <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutors Offers</title>
-    <link rel ="stylesheet" type="text/css" href = "../css_files/common.css">
-    <link rel ="stylesheet" type="text/css" href = "../css_files/TutorsOffers.css">
-</head>
-<body>
+<title> Forget Password</title>
+<link rel ="stylesheet" type= "text/css"
+ href="/css_files/common.css">
+
+ </head>
+ <style>
+    .holder{
+    width: 700px;}
+    
+ </style>
+ <body>
     <header>
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             <nav>
                 <ul class = "nav_links">
                     <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
                     <li><a href = "#"> Profile</a>
-                        <ul>
+                        <ul> <!--this for drop-down menu-->
                             <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
                             <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
-                        </ul>
+                        </ul> 
                     </li>
                     <li><a href = "#"> Requests</a>
                         <ul> 
-                            <li><a href = "#"> Post</a></li>
-                            <li><a href = "#"> Edit</a></li>
+                            <li><a href = "/html_files/JobRequest.html"> Post</a></li>
+                            <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
                         </ul>
                     </li> 
+
                     <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
                     <li><a href = "/html_files/Booking.html"> Booking</a>
-                        <ul>
+                        <ul> 
                             <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
-                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
-                        </ul>
-                    </li>
-                   
+                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li> </ul> </li></ul></nav>
+                    
+                    </a></li>
                 </ul>
             </nav>
             <a class= "out" href="#"><button>Logout</button></a>
     </header>
- 
-    <h2>Tutor Profile</h2><br><br>
     
-
-
+        <h2>
  
+            Forget Password
+                    </h2>
+                    <h3>
+                        <h3>
+                            <div class="holder"> 
+                            <p>  
+                            <label for="cpas"> Enter verificaton code we sent to your E-mail:</label><br>
+                            <input type="text" id="cpass" name="cpass" value="******"><br>
 
-<div> 
-<p class="offer">
-    <img src="../images/TutorPic1.png" class="pic" height="190" alt = "Tutor Picture"><br>
-<label class="nameLabel">Tutor Name: </label><br><label class="Name">Sara Mohammed</label><br>
-<label class="ratingLabel">Rating: </label><br><label class="Rate">4.91</label>
-<br>
-<label class="priceLabel">Offerd Price: </label><br><label class="Price">200SR</label>
-<br><br>
-<a class ="profile" href="../html_files/ShowTutorProfile.html">Show Profile</a><br><br>
-<br>
-<!-- 
-<a class ="accept" href="#">Accept</a>
-<a class="reject" href="#"> Reject </a>
-<br> -->
-</p>
-
-</div>
-<footer> 
+                            
+                            <a class= "Submit" href=#><button>Submit</button></a>
+    <a class= "back" href="LoginTutor.html"><button>Back</button></a> </p>
+             
+</h3>
+<footer > 
        
       
-    <p class = "p">
+
+    <p>
         <table>
             <tr>
          <th><a href="#" class = "con">ContactUs</a>  </th>
          <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-         <th> <a href="#" class = "con">FAQs</a> </th> 
+         <th> <a href="/html_files/FAQ.html" class = "con">FAQs</a> </th> 
             </tr> 
             </table> <br>
     
-             <center > 
+        
+             <center> 
     
               
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -103,6 +104,5 @@
             </p>
     
         </footer>
-
-</body>
+   
 </html>

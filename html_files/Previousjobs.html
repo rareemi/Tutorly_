@@ -4,38 +4,58 @@
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previous jobs</title>
-    <link rel ="stylesheet" type= "text/css" href="../css_files/tutorNavbar.css">
-    <link rel ="stylesheet" type= "text/css" href="/css_files/booking&jobs.css">
-     </html>
+    <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
+    <link rel ="stylesheet" type= "text/css" href="/css_files/TutorsOffers.css">
+    <style>
+        .back {background-color:#7290a2 ;
+                cursor: pointer;
+                padding: 6px 25px;
+                }
+        a.back:hover {  
+            color: #98C1D9; 
+            background-color:#293241;
+            padding: 9px 25px;
+            transition: all 0.3s ease 0s; }
+    </style>
+    </head>
      
      <body>
         <header>
             <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-                <nav>
-                    <ul class = "nav_links">
-                        <li><a href = "#"> Home</a></li>
-                        <li><a href = "#"> Profile</a></li>
-                        <li><a href = "#"> Offers</a></li>
-                        <li><a href = "/html_files/ViewJobs.html"> Jobs</a></li>
-                        <li><a href = "#"> Rate &amp Reviews </a></li>
-                        
-                        </a></li>
-                    </ul>
-                </nav>
-                <a class= "out" href="#"><button>Logout</button></a>
-        </header>
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "/html_files/HomePageTutor.html"> Home</a></li>
+                    <li><a href = "#"> Profile</a>
+                        <ul> <!--this for drop-down menu-->
+                            <li><a href = "/html_files/ViewProfileTutor.html"> View</a></li>
+                            <li><a href = "/html_files/EditProfileTutor.html"> Edit</a></li>
+                        </ul> 
+                    </li>
+                    <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>
+                    <li><a href = "#"> Jobs </a>
+                        <ul> 
+                            <li><a href = "/html_files/CurrentJobs.html"> Current</a></li>
+                            <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
+                        </ul> 
+                    </li>
+                    <li><a href = "#"> Rate &amp; Reviews </a></li>
+
+                </ul>
+            </nav>
+            <a class= "out" href="#"><button>Logout</button></a>
+    </header>
 
         
             <h2>Previous jobs</h2>
                 
-                <div id="Previousjobs">
-                    <p class="jobs">
+                <div class="Previousjobs">
+                    <p class="container" style="width: 320px; height: 540px;">
                      <img src="/images/TutorPic1.png" class="pic" height="190" alt="Tutor picture"><br>
                      
-                      <label class="NameLabel">Kids Name: </label><br>
+                      <label class="nameLabel">Kids Name: </label><br>
                       <label class="Name">-</label><br>
             
-                      <label class="PriceLabel"> Price: </label><br>
+                      <label class="priceLabel"> Price: </label><br>
                       <label class="Price"> SR</label><br>
         
                       <label class="DateLabel">Date(Start/End): </label><br>
@@ -47,6 +67,49 @@
                      <a class ="email" href="mailto:#">Send email</a>
                      </p>
                 </div>
-    
+                <br>
+                <p><a class= "back" href="/html_files/HomePageTutor.html">Back</a></p>
+                <br>
+
+                <footer > 
+                    <p class = "p">
+                        <table>
+                            <tr>
+                         <th><a href="#" class = "con">ContactUs</a>  </th>
+                         <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
+                         <th> <a href="/html_files/FAQ.html" class = "con">FAQs</a> </th> 
+                            </tr> 
+                            </table> <br>
+                    
+                             <center> 
+                    
+                              
+                                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+                               
+                    
+                    <a href="https://twitter.com" target="_blank" class = "ionicons">
+                                
+                        <ion-icon name="logo-twitter"></ion-icon> </a>
+                            
+                                <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
+                                    <ion-icon name="logo-whatsapp"></ion-icon>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class = "ionicons">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                    
+                                <a href="https://snapchat.com" target="_blank" class = "ionicons">
+                                    <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
+                                </a>
+                    
+                                &copy; A  Tutorly, 2022
+                                </center>
+                                
+                                 
+                       
+                            </p>
+                    
+                        </footer>
          </body>
     </html>
