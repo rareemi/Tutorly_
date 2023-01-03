@@ -67,15 +67,20 @@ li, a , button {
                 border-radius: 30px;
                 transition: all 0.3s ease 0s;}
 
-            button {margin: 15px;
+                
+            .out {
+                position: relative;
+                display:block;
+                margin-top: 35px;
+                margin-right: 200px;
                 padding: 9px 25px; 
-                    background-color:#7290a2 ;
+                background-color:#7290a2 ;
                 border-radius: 50px;
                 border: none;
                 cursor: pointer;
                 }
 
-                button:hover {  color: #98C1D9; 
+                a.out:hover {  color: #98C1D9; 
                     font-size: 18px;
                     background-color:#293241;
                     border-radius: 30px;
