@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); 
+
+
+
+.offer  {
+    background-color:#98C1D9;
+    width: 300px;
+    height: 500px;
+    border-radius: 30px;
+    margin: 10% 40%;
+    padding: 25px ;
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #98C1D9;
+
+}
+
+
+ 
+
+
+        .nameLabel, .SubjectLabel, .dayLabel ,.durationLabel ,.ageLabel  , .pricelabel
+  {
+   color:#293241;
+   background-color: #98C1D9;
+    }
+
+    .Name, .Subject, .Day, .duration, .Age ,.price
+{
+    background-color:#98C1D9;
+    color: #F5FBFF;
+    font-size: 16px;
+    
+}
+.buton{ 
+    font-size: 19px;
+    border-radius: 20px;
+    padding: 5px;
+    
+    transition: all 0.3s ease 0s;
+  
+    }
+
