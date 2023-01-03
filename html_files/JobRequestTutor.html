@@ -12,19 +12,30 @@
      <body>
         <header>
             <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-                <nav>
-                    <ul class = "nav_links">
-                        <li><a href = "#"> Home</a></li>
-                        <li><a href = "#"> Profile</a></li>
-                        <li><a href = "#"> Offers</a></li>
-                        <li><a href = "#"> Job Requests</a></li>
-                        <li><a href = "#"> Rate &amp Reviews </a></li>
-                        
-                        </a></li>
-                    </ul>
-                </nav>
-                <a class= "out" href="#"><button>Logout</button></a>
-        </header>
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "/html_files/HomePageTutor.html"> Home</a></li>
+                    <li><a href = "#"> Profile</a>
+                        <ul> <!--this for drop-down menu-->
+                            <li><a href = "/html_files/ViewProfileTutor.html"> View</a></li>
+                            <li><a href = "/html_files/EditProfileTutor.html"> Edit</a></li>
+                        </ul> 
+                    </li>
+                    <li><a href = "#"> Requests</a></li>
+                    <li><a href = "/html_files/ViewJobs.html"> Jobs </a>
+                        <ul> 
+                            <li><a href = "/html_files/CurrentJobs.html"> Current</a></li>
+                            <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
+                        </ul> 
+                    </li>
+                    <li><a href = "#"> Rate &amp Reviews </a></li>
+                    
+                </a></li>
+
+                </ul>
+            </nav>
+            <a class= "out" href="#"><button>Logout</button></a>
+    </header>
 
 <h2> My Requests</h2>
         <div class = "holder"> 
