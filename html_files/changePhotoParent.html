@@ -3,12 +3,17 @@
     <head>
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Change Password</title>
+<title> Change Photo</title>
 <link rel ="stylesheet" type= "text/css"
  href="/css_files/common.css">
- <link rel ="stylesheet" type= "text/css"
- href="/css_files/Changepass.CSS">
  </head>
+ <style>
+    .Submit,.bac{
+background-color: #98C1D9;}
+#upload,#uploadlabel{
+    background-color: #98C1D9;
+}
+ </style>
  <body>
     <header>
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
@@ -44,7 +49,19 @@
  
         Change Profile Photo
     </h2>
+<div class="container">
+Uploud Photo
+<img class = "pic" src="../images/TutorPic1.png" class="TutorPic" alt="Profile Picture" height="250"><br>
+<label for="upload" id="uploadlabel">chose Photo</label>
+<input type="file" id="upload">
 
+<a class= "Submit" href="/html_files/HomePageParent.html"><button>Submit</button></a>
+    <a class= "bac" href="/html_files/EditProfileParent.html"><button>Back</button></a>
+
+
+
+
+</div>
 
 
 
