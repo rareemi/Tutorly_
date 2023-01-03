@@ -6,6 +6,18 @@
     <title>Current Booking</title>
     <link rel ="stylesheet" type= "text/css" href="/css_files/common.css">
     <link rel ="stylesheet" type= "text/css" href="/css_files/TutorsOffers.css">
+    
+    <style>
+        .back {background-color:#7290a2 ;
+                cursor: pointer;
+                padding: 6px 25px;
+                }
+        a.back:hover {  
+            color: #98C1D9; 
+            background-color:#293241;
+            padding: 9px 25px;
+            transition: all 0.3s ease 0s; }
+    </style>
     </head>
      
      <body>
@@ -22,8 +34,8 @@
                         </li>
                         <li><a href = "#"> Requests</a>
                             <ul> 
-                                <li><a href = "#"> Post</a></li>
-                                <li><a href = "#"> Edit</a></li>
+                                <li><a href = "/html_files/JobRequest.html"> Post</a></li>
+                                <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
                             </ul>
                         </li> 
                         <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
@@ -41,7 +53,7 @@
 
         <h2> Current Booking</h2>
                 
-            <div clss="CurrentBooking">
+            <div class="CurrentBooking">
                 <p class="container" style="width: 320px; height: 540px;">
                  <img src="/images/TutorPic1.png" class="pic" height="190" alt="Tutor picture"><br>
                  
@@ -81,7 +93,8 @@
                  <a class ="email" href="mailto:#">Send email</a>
                  </p>
             </div>
-
+            <br>
+            <p><a class= "back" href="/html_files/HomePageParent.html">Back</a></p>
             <br>
            <footer > 
         
@@ -90,7 +103,7 @@
                 <tr>
              <th><a href="#" class = "con">ContactUs</a>  </th>
              <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-             <th> <a href="#" class = "con">FAQs</a> </th> 
+             <th> <a href="/html_files/FAQ.html" class = "con">FAQs</a> </th> 
                 </tr> 
                 </table> <br>
         
