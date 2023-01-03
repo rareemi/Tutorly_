@@ -1,15 +1,10 @@
 .offers{ /*div*/
-  background-color:#98C1D9;
-  width: 900px;
-  height: 290px;
-  border-radius: 30px;
-  position:relative;
-  padding: 5px ;
-  margin-top: 1%;
-  line-height: 30px;
-display: block;
-border: solid 5px #98C1D9;
-margin-left: 24%;
+  width:100%;
+    height:250px;
+    margin: 20px 30%;
+    padding:20px;
+    background-color:#98C1D9;
+    border-radius: 10px;
 
 }
 
@@ -38,9 +33,8 @@ color: #293241;}
 
 .holder2{
  /* display:flex;*/
-  margin: 4%;
-margin-left: 38%;
-
+             margin: 4%;
+margin-left: 22%; 
 }
 
 .req3{
@@ -51,8 +45,8 @@ margin-left: 38%;
     border-radius: 30px;
     padding: 60px ;
     line-height: 50px;
-    margin-left: -1%;
-    
+   
+   margin: 45px;
 }
 
 .titleLabell{

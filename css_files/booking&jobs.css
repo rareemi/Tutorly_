@@ -1,0 +1,46 @@
+
+.booking ,.jobs{ /*delete*/
+	background-color:#98C1D9;
+    width: 320px; /*inline style*/
+    height: 540px; /*inline style*/
+    border-radius: 30px;
+    margin: 10% 40%;
+    padding: 25px ;
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: center;
+    } 
+    
+	#CurrentBooking,#PreviousBooking,#CurrentJobs,#Previousjobs{/*add this*/
+	display:inline-block;
+	margin-top: 6px;
+	margin-left: 10%;}
+
+.pic {/*delete*/
+	margin:auto;
+	background-color:#98C1D9;
+	padding: 0px;}
+	
+.NameLabel,.PriceLabel,.DateLabel,.TimeLabel{
+	color:#293241;
+	background-color: #98C1D9;}
+	/*edit label name in html*/
+.Name,.Price,.Date,.Time{   
+    background-color:#98C1D9;
+    color: #F5FBFF;}
+
+
+
+.email, .review,.list{/*delete list*/
+	font-size: 19px;
+    border-radius: 20px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;}
+
+
+a.email:hover,a.review:hover {  
+    font-size: 22px;
+    border-width: 2px;
+    color: #F5FBFF;
+    background-color:#293241;
+    }
