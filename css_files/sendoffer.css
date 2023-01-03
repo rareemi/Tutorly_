@@ -9,7 +9,7 @@
   line-height: 30px;
 display: block;
 border: solid 5px #98C1D9;
-margin-left: 15%;
+margin-left: 24%;
 
 }
 
@@ -38,8 +38,9 @@ color: #293241;}
 
 .holder2{
  /* display:flex;*/
-             margin: 4%;
-margin-left: 22%; 
+  margin: 4%;
+margin-left: 38%;
+
 }
 
 .req3{
@@ -50,8 +51,8 @@ margin-left: 22%;
     border-radius: 30px;
     padding: 50px ;
     line-height: 50px;
-   
-   margin: 45px;
+    margin: 45px;
+    
 }
 
 .titleLabell{
