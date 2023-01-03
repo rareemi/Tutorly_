@@ -1,10 +1,10 @@
 .offers{ /*div*/
   width:100%;
-    height:250px;
+    height:230px;
     margin: 20px 30%;
     padding:20px;
     background-color:#98C1D9;
-    border-radius: 10px;
+    border-radius: 20px;
 
 }
 
@@ -46,7 +46,20 @@ margin-left: 22%;
     padding: 60px ;
     line-height: 50px;
    
-   margin: 45px;
+   margin: 200px;
+}
+.req{
+  background-color:#98C1D9;
+  width: 320px;
+  position: relative;
+  height: 430px;
+  border-radius: 30px;
+  padding: 60px ;
+  line-height: 50px;
+ 
+ margin-left: 490px;
+margin-top: 40px;
+
 }
 
 .titleLabell{
