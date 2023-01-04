@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css_files/common.css">
     <link rel = "stylesheet" type = "text/css" href = "../css_files/ShowTutorProfile.css">
+  
 
     <title>Show Tutor Profile</title>
 </head>
@@ -40,11 +41,13 @@
             </nav>
             <p><a class= "out" href="../html_files/index.html">Logout</a></p>
     </header>
-    <h2> Show Tutor Prifile</h2> <br>
-    <div class="holder"> 
+    <h2> Show Tutor Profile</h2> <br>
+    <div class="holder" style="background-color: #98C1D9;"> 
 <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250">
-     <p class = "detail">  <label class="nameLabel">Tutor Name: </label><label class="Name"></label>Sara Mohammed</label><br>
-        <label class="ratingLabel">Rating: </label><label class="Rate">4.91</label>
+     <p class = "detail" style="background-color: #98C1D9;">  <label class="nameLabel" >Tutor Name: </label><label class="Name" >Sara Mohammed</label><br>
+        <label class="ratingLabel">Rating: </label><label class="Rate">4.91</label><br>
+        <label class="yearLabel">Years of Experience: </label><label class="year"> 8 Years</label><br>
+        <label class="bioLabel">Bio: </label><label class="bio">I graduated from KSU, and worked with Tutorly since 2014</label>
 <br>
      </p>  </div>
     <!--End of image&name-->
@@ -58,55 +61,54 @@
      
 
 <div class = "holder2"> 
-    <p class ="rev1">
-     <label class = "titleLabel">Request</label><br> 
- <label class="nameLabel">Kid name: </label><label class="Name">Ali</label><br>
- <label class="ageLabel">Age: </label><label class="Age">8 Years</label><br>
- <label class="classLabel">Type Of Class: </label><label class = "Type">Math</label><br>
- <label class="durationLabel">Duration: </label> <label class="duration">3 Hours</label>
- <br>
- <a class ="Offer1" href="../html_files/TutorsOffers.html">Show Offers</a>
+    <p class = "rev"> 
+        <label class = "titleLabel">Review</label><br> 
+        <label class="Name">She is such an amazing and incredible teacher</label><br>
+        <label class="nameLabel">by Aleen</label>
+        <br>
+    </p><br>
     </p>
  
- <p class = "rev2"> 
-     <label class = "titleLabel">Request</label><br> 
-     <label class="nameLabel">Kid name: </label><label class="Name">Judy</label><br>
-     <label class="ageLabel">Age: </label><label class="Age">10 Years</label><br>
-     <label class="classLabel">Type Of Class: </label><label class = "Type">Biology</label><br>
-     <label class="durationLabel">Duration: </label> <label class="duration">1 Hour</label>
+ <p class = "rev"> 
+     <label class = "titleLabel">Review</label><br> 
+     <label class="Name">teacher Sara is a creative and fantastic</label><br>
+     <label class="nameLabel">by Omar</label>
      <br>
-     <a class ="Offer2" href="../html_files/NoCurrentOffers.html">Show Offers</a>
  </p>
- <p class = "rev3"> 
-    <label class = "titleLabel">Request</label><br> 
-    <label class="nameLabel">Kid name: </label><label class="Name">Judy</label><br>
-    <label class="ageLabel">Age: </label><label class="Age">10 Years</label><br>
-    <label class="classLabel">Type Of Class: </label><label class = "Type">Biology</label><br>
-    <label class="durationLabel">Duration: </label> <label class="duration">1 Hour</label>
+ <p class = "rev"> 
+    <label class = "titleLabel">Review</label><br> 
+    <label class="Name">my kid in love with math in her classes</label><br>
+    <label class="nameLabel">by Reema</label>
     <br>
-    <a class ="Offer2" href="../html_files/NoCurrentOffers.html">Show Offers</a>
+    
 </p>
      </div>
 
     <!--End of Reviews-->
 
 <br><br>
-        <h2>Contact &amp; Interview</h2>
+        <h2>Contact &amp; Interview</h2> <br>
 
 <div class = "holder3">
 
 
- <p class = "call"> 
-    <a href="tel:<?php echo($row[$phone ]);?>"><button type="button">call</button></a>
+ <a class = "call"href="mailto:#">Send email</a>
    
 
-</p>
 
-<p class = "msg"> 
-    <a href="https://web.whatsapp.com" target="_blank"><button type="button">messaging</button></a>
 
-</p>
+<a class = "msg" href="https://web.whatsapp.com" target="_blank">messaging</a><br><br>
 </div>
+<br>
+<h2>Do Want This Offer?</h2>
+<br>
+<div class = "holder3">
+
+   <a class = "accept" href="#">Accept</a><br><br>
+   <a class = "reject" href="#">Reject</a><br><br>
+<br>
+   </div>
+   <br>
 
 
 <footer> 
@@ -115,9 +117,9 @@
     <p class = "p">
         <table>
             <tr>
-         <th><a href="#" class = "con">ContactUs</a>  </th>
+         <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
          <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-         <th> <a href="#" class = "con">FAQs</a> </th> 
+         <th> <a href="FAQ.html" class = "con">FAQs</a> </th> 
             </tr> 
             </table> <br>
     

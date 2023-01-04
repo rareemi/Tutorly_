@@ -56,13 +56,13 @@ margin-left: 15%;
 margin-left: 15%;        }
 
 
-.rev1, .rev2, .rev3   {
+.rev   {
 
 
 background-color:#98C1D9;
 width: 280px;
 position: relative;
-height: 290px;
+height: 200px;
 border-radius: 30px;
 padding: 10px ;
 line-height: 50px;
@@ -72,38 +72,45 @@ margin: 2%;
 
 .holder3
 {
-
+background-color: #F5FBFF;
              display:flex;
-            margin: 1%; 
-            padding: 20px;
-            margin-left: 26%;
+            padding: 2px;
+            margin-left:  34%;
+
+           
 
 }
 
     .call, .msg{
-        background-color:#98C1D9;
-        width: 200px;
-        position: relative;
-        height: 200px;
-        border-radius: 30px;
-        padding: 50px ;
-        line-height: 50px;
-        text-align: center;
-       margin: 45px;        
+        font-size: 19px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 45px;
+    background-color: #98C1D9;
+    
+    transition: all 0.3s ease 0s;
+  
+    }
+    .call:hover, .msg:hover
+    {
 
+        font-size: 22px;
+        border-width: 2px;
+        color: #F5FBFF;
+        background-color:#293241;
     }
     .pic, .detail{
 border-radius: 20px;
 border: solid #98C1D9 8px;
 margin: 1%;
                 }
-        .nameLabel, .ratingLabel, .priceLabel
+        .nameLabel, .ratingLabel, .priceLabel, .yearLabel, .bioLabel, .titleLabel
   {
    color:#293241;
    background-color: #98C1D9;
     }
 
-    .Name, .Rate, .Price 
+    .Name, .Rate, .Price , .year, .bio
 {
     background-color:#98C1D9;
     color: #F5FBFF;
@@ -112,14 +119,13 @@ margin: 1%;
 }
 
 
-
 .accept, .reject {
-    font-size: 16px;
+  
+    transition: all 0.3s ease 0s;
+    font-size: 22px;
     border-radius: 20px;
     padding: 5px;
-    margin: 2%;
-    transition: all 0.3s ease 0s;
-    margin-top: 5%;
+    margin: 46px;
 }
 .accept
     {   
@@ -131,17 +137,18 @@ margin: 1%;
         {
             color: #F5FBFF;
             background-color: rgb(29, 159, 29);
-            font-size: 20px;
+            font-size: 27px;
+            
         }  
         
  .reject    {
                 color:red;
-                border: solid 2px red
+                border: solid red
 
             }
 
    .reject:hover{ color: #F5FBFF;
                 background-color: red;
-                font-size: 20px;
+                font-size: 27px;
 
                 }         
