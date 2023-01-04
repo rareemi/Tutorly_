@@ -38,7 +38,7 @@ color: #293241;}
 
 .holder2{
  /* display:flex;*/
-  margin: 4%;
+  margin: 10%;
 margin-left: 38%;
 
 }
@@ -64,5 +64,19 @@ margin-left: 38%;
 
 }
 
+.post{
+  font-size: 19px;
+  border-radius: 20px;
+  padding: 5px;
+  
+  transition: all 0.3s ease 0s;
+
+  }
+a.post:hover {  
+  font-size: 22px;
+  border-width: 2px;
+  color: #F5FBFF;
+  background-color:#293241;
+  }
 
 
