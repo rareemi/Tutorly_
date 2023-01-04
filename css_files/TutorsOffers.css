@@ -64,7 +64,7 @@ a.profile:hover ,a.email:hover,a.review:hover {
     background-color:#293241;
     }
     
-    .CurrentBooking,.PreviousBooking,.CurrentJobs,.Previousjobs{
+    .CurrentBooking,.PreviousBooking,.CurrentJobs,.Previousjobs , .req4 {
 	display:inline-block;
 	margin-top: 6px;
 	margin-left: 10%;}

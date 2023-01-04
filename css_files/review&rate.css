@@ -64,7 +64,7 @@ textarea{
 
 label ,form{background-color:#98C1D9;}
       
-input[type=submit] {
+input[type=submit],input[type=reset] {
     width: 100%;
     padding: 14px 20px;
     margin: 8px 0;
@@ -73,7 +73,7 @@ input[type=submit] {
     cursor: pointer;
     transition: all 0.3s ease 0s;}
     
-input[type=submit]:hover {
+input[type=submit]:hover,input[type=reset]:hover {
         font-size: 22px;
         border-width: 2px;
         color: #F5FBFF;
