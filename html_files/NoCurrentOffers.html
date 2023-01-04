@@ -12,24 +12,39 @@
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             <nav>
                 <ul class = "nav_links">
-                    <li><a href = "#"> Home</a></li>
-                    <li><a href = "#"> Profile</a></li>
-                <li><a href = "#"> Requests</a></li>
+                    <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
+                    <li><a href = "#"> Profile</a>
+                        <ul>
+                            <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
+                            <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
+                        </ul>
+                    </li>
+                    <li><a href = "#"> Requests</a>
+                        <ul> 
+                            <li><a href = "/html_files/JobRequest.html"> Post</a></li>
+                            <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
+                        </ul>
+                    </li> 
                     <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
-                    <li><a href = "#"> Booking</a></li>
-                    
-                    </a></li>
+                    <li><a href = "#"> Booking</a>
+                        <ul>
+                            <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
+                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
+                        </ul>
+                    </li>
+                   
                 </ul>
             </nav>
-            <a class= "out" href="#"><button>Logout</button></a>
+            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
     </header>
+ 
     <h2 class = "title">Unavailable Tutors</h2>
     <br><br>
     <h1 class = "msg1" style="text-align: center; color: #293241; padding: 8px;">We're Sorry</h1><hr><br>
     <h4 class = "msg2" style="text-align: center; color: #293241;">all of our tutors are busy right now, please try again later</h4>
-    <a class="back" href="../html_files/RequestOffers.html"><button class = "back">back to my requests</button></a>
+    <a class= "button1" style="display: inline-table; margin-top: 2%; margin-left: 42%;" href="/html_files/RequestOffers.html">Back To Requests</a>
 
-    <footer style="margin-top: 30%;"> 
+    <footer style="margin-top: 25%;"> 
 
         <p class = "p">
             <table>
