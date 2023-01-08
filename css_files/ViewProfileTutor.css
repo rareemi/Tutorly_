@@ -4,7 +4,7 @@
     text-align: center;
     height: 895px;
     width: 700px;
-    padding: 10px;
+   
     
 }
 
@@ -18,9 +18,7 @@ margin: 1%;
    color:#293241;
    background-color: #98C1D9;
     }
-    .back{
-        margin: 50%;
-    }
+   
     .holder{
         
         width: 750px;
