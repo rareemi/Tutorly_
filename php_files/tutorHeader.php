@@ -16,6 +16,7 @@
                         <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
                     </ul> 
                 </li>
+                <li><a href = "/html_files/offerNstatue.html"> My Offer </a></li>
                 <li><a href = "#"> Rate & Reviews </a></li>
                 
           
