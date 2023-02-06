@@ -1,5 +1,11 @@
-<?php include("parentHeader"); ?>
+<?php
+session_start();
+/* require ("../php_files/query.php");
+$requests = get_requests($_SESSION['email']); */
 
+?>
+
+<?php include ("../php_files/tutorHeader.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page Tutor</title>
     
-     <link rel ="stylesheet" type= "text/css"
-     href="/css_files/common.css">
+    <link rel ="stylesheet" type="text/css" href = "../css_files/common.css">
+
      
      </html>
      <style>
@@ -24,89 +30,25 @@ margin: 2px;
     </style>
      
      <body>
-        <header>
-            <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-            <nav>
-                <ul class = "nav_links">
-                    <li><a href = "/html_files/HomePageTutor.html"> Home</a></li>
-                    <li><a href = "#"> Profile</a>
-                        <ul> <!--this for drop-down menu-->
-                            <li><a href = "/html_files/ViewProfileTutor.html"> View</a></li>
-                            <li><a href = "/html_files/EditProfileTutor.html"> Edit</a></li>
-                        </ul> 
-                    </li>
-                    <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>
-                    <li><a href = "#"> Jobs </a>
-                        <ul> 
-                            <li><a href = "/html_files/CurrentJobs.html"> Current</a></li>
-                            <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
-                        </ul> 
-                    </li>
-                    <li><a href = "/html_files/offerNstatue.html"> My Offer </a></li>
-                    <li><a href = "MyRate&Reviews.html"> Rate & Reviews </a></li>
-                    
-                </a></li>
-
-                </ul>
-            </nav>
-            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
-    </header>
+       
+           
         
-     </body>
+     
      
      
      <h3>
       <br>  Welcome to Tutorly
      </h3>
-     <footer style="margin-top: 30%;" > 
-       
-      
+    
 
-        <p class = "p">
-            <table>
-                <tr>
-             <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
-             <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-             <th> <a href="/html_files/FAQ.html" class = "con">FAQs</a> </th> 
-                </tr> 
-                </table> <br>
-        
-                 <center> 
-        
-                  
-                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-                   
-        
-        <a href="https://twitter.com" target="_blank" class = "ionicons">
-                    
-            <ion-icon name="logo-twitter"></ion-icon> </a>
-                
-                    <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-        
-                    <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                    </a>
-        
-                    &copy; A  Tutorly, 2022
-                    </center>
-                    
-                     
-           
-                </p>
-        
-            </footer>
+     
+
+
+
+<footer>
+     <?php include ("../php_files/footer.php"); ?>
+        </footer>
+        </body>
 </html>
 
 
-
-
-
-
-
-</html>
