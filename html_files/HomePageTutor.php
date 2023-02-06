@@ -1,3 +1,5 @@
+<?php include("parentHeader"); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
