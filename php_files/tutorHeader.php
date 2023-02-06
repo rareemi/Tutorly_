@@ -17,11 +17,11 @@
                     </ul> 
                 </li>
                 <li><a href = "/html_files/offerNstatue.html"> My Offer </a></li>
-                <li><a href = "#"> Rate & Reviews </a></li>
+                <li><a href = "MyRate&Reviews.html"> Rate &amp; Reviews </a></li>
                 
           
 
             </ul>
         </nav>
-        <p><a class= "out" href="../html_files/index.html">Logout</a></p>
+        <p><a class= "out" href="../html_files/index.html" style="margin-right: 100px;" >Logout</a></p>
 </header>
