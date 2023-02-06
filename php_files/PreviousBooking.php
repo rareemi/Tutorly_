@@ -63,12 +63,12 @@
             $id_offer = $row['id'];
             $parentEmail = $_SESSION['email'];
             $sql_email = "select count(*) as cunt from review where parentEmail ='$parentEmail' and offerID ='$id_offer'";
+
             $resultt = $connection->query($sql_email);
             while ($roww = $resultt->fetch_assoc()) {
                 if ($roww['cunt'] == 0) { ?>
-
-              <a href='../HTML_Files/review&rate.php?tutorEmail=<?php echo($row['tutorEmail']) ?>&id_offer=<?php echo($id_offer); ?>'>
-                        <input type="submit" class="review" value="review"></a>
+                <a href='../php_files/Review&Rate.php?tutorEmail=<?php echo($row['tutorEmail']) ?>&id_offer=<?php echo($id_offer); ?>'>
+                <input type="submit" class="review" value="review"></a>
                 <?php }
             } ?>
             
