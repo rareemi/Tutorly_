@@ -25,14 +25,7 @@ function dd($arr)
     die("Died...");
 }
 
-// contact us
-function contact_us_handler($name, $email, $message)
-{
-    global $conn;
-    $sql = "INSERT INTO `contactus` (`name`, `email`, `massage`) VALUES ('" . $name . "','" . $email . "','" . $message . "')";
-    $result = mysqli_query($conn, $sql);
-    return $result;
-}
+
 
 
 
@@ -44,8 +37,15 @@ function parent_signup_handler($fname, $lname, $email, $password, $city, $distri
     $result = mysqli_query($conn, $sql);
     return $result;
 }
+function get_parent_email($email)
+{
+    global $conn;
+    $sql = "SELECT email FROM `parent` WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    return mysqli_num_rows($result);
+}
 
-// babysitter
+// tutor
 function get_tutor_email($email)
 {
     global $conn;

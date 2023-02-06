@@ -72,6 +72,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $valid = false;
     }
     
+    if (get_parent_email($email) > 0) {
+        $email_err = " this email is already registered, please enter a different email!";
+        $valid = false;
+    }
+    
 
     
     // dd();
