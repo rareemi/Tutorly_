@@ -37,7 +37,7 @@
          if(mysqli_num_rows($userFound) > 0) {
 
          while ($row = mysqli_fetch_assoc($userFound)) {
-           if ($row['Date'] >= date('Y-m-d')) {
+           if ($row['data'] >= date('Y-m-d')) {
           ?>
 
                 <p class="container" style="width: 320px; height: 540px;">
@@ -58,6 +58,10 @@
                  <a class ="email" href="mailto:<?php echo($row['tutorEmail']);?>; ?>">Send email</a>
                  
                  </p>
+                 <?php }
+            }
+        }
+   } ?>
             </div>
                 
             <p><a class= "button1" href="../html_files/HomePageParent.html">Back</a></p> <!-- This for back -->
