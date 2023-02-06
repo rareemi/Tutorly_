@@ -1,3 +1,4 @@
+<?php include("parentHeader"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <link rel ="stylesheet" type="text/css" href = "../css_files/TutorsOffers.css">
 </head>
 <body>
-    <header>
+     <!-- <header>
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             <nav>
                 <ul class = "nav_links">
@@ -36,7 +37,7 @@
                 </ul>
             </nav>
             <p><a class= "out" href="../html_files/index.html">Logout</a></p>
-    </header>
+    </header> -->
  
     <h2>Tutor Profile</h2><br><br>
     
