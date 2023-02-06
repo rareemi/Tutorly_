@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </style>
 </header>
 <h2>Sign up as a Tutor: </h2><br><br>
-<div class="containers" style="width: 500px ; height:1200px ;">
+<div class="containers" style="width: 650px ; height:1200px ;">
 
     <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
                     <p style="font-size:18px"><span style="color:red"> * </span>Mandatory field</p>
@@ -137,9 +137,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <label>Gender:<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $gender_err; ?></span></label><br>
 
-                    <input required type="radio" name="gender" value="male" <?php if (isset($_POST["gender"]) && $_POST["gender"] == "male") echo "checked"; ?>> Male
-
-                    <input required type="radio" name="gender" value="female" <?php if (isset($_POST["gender"]) && $_POST["gender"] == "female") echo "checked"; ?>> Female
+                    <input required type="radio" name="gender" value="male" <?php if (isset($_POST["gender"]) && $_POST["gender"] == "male") echo "checked"; ?>> <label style="margin-right: 15%;">Male</label>
+                    <input required type="radio" name="gender" value="female" <?php if (isset($_POST["gender"]) && $_POST["gender"] == "female") echo "checked"; ?>> <label style="margin-right: 15%;">Female</label>
                     
                     <br><br>
                     <label for="Tid">ID :<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $id_err; ?></span></label><br>
@@ -162,8 +161,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <label for="bio"> Bio:<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $msg_err; ?></span></label><br>
                     <input required type="text" id="bio" name="bio" value="<?php if (isset($_POST["bio"])) echo $_POST["bio"]; ?>"><br> <br>
-                    
-                    <img src="../images/TutorPic1.png" class="pic" height="90" alt="defult picture"><br>
+
+                    <img src="../images/TutorPic1.png" class="pic" style="height:90px; margin-left: 100px;"  alt="defult picture"><br>
                     <p>upload picture: (optional)</p>
                     <input type="file" accept="image/*" name="img"> 
 
