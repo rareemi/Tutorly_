@@ -18,26 +18,24 @@
             
             <?php
 
-    $servername= "localhost";
-    $username= "root" ;
-    $password= "";
-    $dbname= "381" ;
-    $connection= mysqli_connect($servername,$username,$password,$dbname);
-    $database= mysqli_select_db($connection, $dbname);
-    if (!$connection)
-        die("Connection failed: " . mysqli_connect_error());
-    $session_email= $_SESSION['email'];
-    $sql = "SELECT * FROM `offer`  INNER JOIN requests
-ON requests.ID = offer.RequestID INNER JOIN parent
-ON parent.email  = requests.parentEmail   where offer.tutorEmail ='$session_email' and offer.offerstatus='accepted'";
-
-    $userFound = mysqli_query($connection,$sql);
-    if($userFound){
-
-    if (mysqli_num_rows($userFound) > 0) {
-
-    while ($row = mysqli_fetch_assoc($userFound)) {
-        if ($row['data'] >= date('Y-m-d')) {
+             $servername= "localhost";
+             $username= "root" ;
+             $password= "";
+             $dbname= "381" ;
+             $connection= mysqli_connect($servername,$username,$password,$dbname);
+             $database= mysqli_select_db($connection, $dbname);
+             if (!$connection)
+             die("Connection failed: " . mysqli_connect_error());
+             $session_email= $_SESSION['email'];
+             $sql = "SELECT * FROM `offer`  INNER JOIN requests
+             ON requests.ID = offer.RequestID INNER JOIN parent
+             ON parent.email  = requests.parentEmail   where offer.tutorEmail ='$session_email' and offer.offerstatus='accepted'";
+             
+             $userFound = mysqli_query($connection,$sql);
+             if($userFound){
+                if (mysqli_num_rows($userFound) > 0) {
+                    while ($row = mysqli_fetch_assoc($userFound)) {
+                        if ($row['data'] >= date('Y-m-d')) {
             ?>
                 
         <div class="CurrentJobs">
@@ -66,7 +64,7 @@ ON parent.email  = requests.parentEmail   where offer.tutorEmail ='$session_emai
               <label class="Price"><?php echo $row['price'];?>SR</label><br>
 
               <label class="DateLabel">Date</label><br>
-              <label class="Date"><?php echo $row['startDate'];?></label><br>
+              <label class="Date"><?php echo $row['date'];?></label><br>
     
               <label class="DurationLabel"> Duration: </label><br>
               <label class="Duration"><?php echo $row['Duration']; ?></label> <br><br>
@@ -82,46 +80,7 @@ ON parent.email  = requests.parentEmail   where offer.tutorEmail ='$session_emai
         <br>
         <p><a class= "button1" href="../html_files/HomePageTutor.html">Back</a></p> <!-- This for back -->
             <br>
-        <footer > 
-            <p class = "p">
-                <table>
-                    <tr>
-                 <th><a href="#" class = "con">ContactUs</a>  </th>
-                 <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-                 <th> <a href="/html_files/FAQ.html" class = "con">FAQs</a> </th> 
-                    </tr> 
-                    </table> <br>
-            
-                     <center> 
-            
-                      
-                        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-                       
-            
-            <a href="https://twitter.com" target="_blank" class = "ionicons">
-                        
-                <ion-icon name="logo-twitter"></ion-icon> </a>
-                    
-                        <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                            <ion-icon name="logo-whatsapp"></ion-icon>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" class = "ionicons">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-            
-                        <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                            <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                        </a>
-            
-                        &copy; A  Tutorly, 2022
-                        </center>
-                        
-                         
-               
-                    </p>
-            
-                </footer>
+            <?php include("../php_files/footer.php");?>
              
             
          </body>
