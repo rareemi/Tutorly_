@@ -1,4 +1,13 @@
-<?php include("parentHeader"); ?>
+<?php
+session_start();
+/* require ("../php_files/query.php");
+$requests = get_requests($_SESSION['email']); */
+
+?>
+
+<?php include ("../php_files/parentHeader.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,101 +18,58 @@
     <link rel ="stylesheet" type="text/css" href = "../css_files/TutorsOffers.css">
 </head>
 <body>
-     <!-- <header>
-        <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-            <nav>
-                <ul class = "nav_links">
-                    <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
-                    <li><a href = "#"> Profile</a>
-                        <ul>
-                            <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
-                            <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
-                        </ul>
-                    </li>
-                    <li><a href = "#"> Requests</a>
-                        <ul> 
-                            <li><a href = "#"> Post</a></li>
-                            <li><a href = "#"> Edit</a></li>
-                        </ul>
-                    </li> 
-                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
-                    <li><a href = "/html_files/Booking.html"> Booking</a>
-                        <ul>
-                            <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
-                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
-                        </ul>
-                    </li>
-                   
-                </ul>
-            </nav>
-            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
-    </header> -->
+  
  
-    <h2>Tutor Profile</h2><br><br>
+    <h2>Tutors Offers</h2><br><br>
+    
+<div class= "TutorsOffers"> 
     
 
+<?php
 
- 
+$servername= "localhost";
+$username= "root" ;
+$password= "";
+$dbname= "381" ;
+$connection= mysqli_connect($servername,$username,$password,$dbname);
+$database= mysqli_select_db($connection, $dbname);
+if (!$connection)
+die("Connection failed: " . mysqli_connect_error());
+$session_email= $_SESSION['email'];
+$sql = "SELECT * FROM `offer`  INNER JOIN requests
+ON requests.ID = offer.RequestID  INNER JOIN tutor
+ON tutor.email  = offer.tutorEmail   where requests.parentEmail='$session_email' and offer.offerstatus='accepted'";
 
-<div> 
+$userFound = mysqli_query($connection,$sql);
+if($userFound){
+
+if(mysqli_num_rows($userFound) > 0) {
+
+while ($row = mysqli_fetch_assoc($userFound)) {
+  if ($row['data'] >= date('Y-m-d')) {
+ ?>
+
 <p class="offer">
-    <img src="../images/TutorPic1.png" class="pic" height="190" alt = "Tutor Picture"><br>
-<label class="nameLabel">Tutor Name: </label><br><label class="Name">Sara Mohammed</label><br>
-<label class="ratingLabel">Rating: </label><br><label class="Rate">4.91</label>
+<img src="../public/userImages/<?php echo $row['img']; ?>"  class="pic" height="190" alt="Tutor picture"><br>
+
+    <label class="nameLabel">Tutor Name: </label><br>
+    <label class="Name"><?php echo $row['tutorName']; ?></label><br>
+        
 <br>
-<label class="priceLabel">Offerd Price: </label><br><label class="Price">200SR</label>
-<br><br>
+<label class="priceLabel"> Price: </label><br>
+<label class="Price"> <?php echo $row['price']; ?> SR</label><br>
+    <br><br>
 <a class ="profile" href="../html_files/ShowTutorProfile.html">Show Profile</a><br><br>
 <br>
-<!-- 
-<a class ="accept" href="#">Accept</a>
-<a class="reject" href="#"> Reject </a>
-<br> -->
-</p>
 
+</p>
+<?php }
+            }
+        }
+   } ?>
 </div>
-<footer> 
-       
-      
-    <p class = "p">
-        <table>
-            <tr>
-         <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
-         <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-         <th> <a href="FAQ.html" class = "con">FAQs</a> </th> 
-            </tr> 
-            </table> <br>
-    
-             <center > 
-    
-              
-                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-               
-    
-    <a href="https://twitter.com" target="_blank" class = "ionicons">
-                
-        <ion-icon name="logo-twitter"></ion-icon> </a>
-            
-                <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                </a>
-                <a href="https://instagram.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-    
-                <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                </a>
-    
-                &copy; A  Tutorly, 2022
-                </center>
-                
-                 
-       
-            </p>
-    
-        </footer>
+
+<?php include ("../php_files/footer.php"); ?>
 
 </body>
 </html>
