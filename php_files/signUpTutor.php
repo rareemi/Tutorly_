@@ -173,10 +173,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 
-<footer style="margin-top: 30%;" > 
+<footer > 
        
-      
-
        <p class = "p">
            <table>
                <tr>
