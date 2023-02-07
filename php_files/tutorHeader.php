@@ -12,8 +12,8 @@
                 <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>
                 <li><a href = "#"> Jobs </a>
                     <ul> 
-                        <li><a href = "/html_files/CurrentJobs.html"> Current</a></li>
-                        <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
+                        <li><a href = "../php_files/CurrentJobs.php"> Current</a></li>
+                        <li><a href = "../php_files/Previousjobs.php"> Previous</a></li>
                     </ul> 
                 </li>
                 <li><a href = "/html_files/offerNstatue.html"> My Offer </a></li>

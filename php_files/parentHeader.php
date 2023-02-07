@@ -18,8 +18,8 @@
                     <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
                     <li><a href = "#"> Booking</a>
                         <ul>
-                            <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
-                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
+                            <li><a href = "../php_files/CurrentBooking.php"> Current</a></li>
+                            <li><a href = "../php_files/PreviousBooking.php"> Previous</a></li>
                         </ul>
                     </li>
                    
