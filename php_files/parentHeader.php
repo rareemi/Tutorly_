@@ -15,7 +15,7 @@
                             <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
                         </ul>
                     </li> 
-                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
+                    <li><a href = "../php_files/RequestOffers.php"> Offers</a></li>
                     <li><a href = "#"> Booking</a>
                         <ul>
                             <li><a href = "../php_files/CurrentBooking.php"> Current</a></li>

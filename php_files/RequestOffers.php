@@ -3,6 +3,8 @@
 <?php include ("../php_files/parentHeader.php"); ?>
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +24,11 @@
 <div class= "RequestOffers"> 
     
 
-<?php
-session_start();
-include ("../php_files/connectDB.php");
+ <?php 
+ session_start();
+include ("../php_files/connectDB.php"); 
+ include ("../php_files/footer.php"); //تحت//
+
 
 $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
 $q3 = $result = mysqli_query($connection, $query);
@@ -33,7 +37,7 @@ $q3 = $result = mysqli_query($connection, $query);
 $pemail =  $_SESSION['email'];
  
 
-$val1 = "SELECT `TypeOfClass`,`Duration`,`ID` ,`status` FROM  `requests` 
+$val1 = "SELECT `TypeOfClass`,`startDate`,`startTime` ,`endTime`,`ID`,`status` FROM  `requests` 
 WHERE `ParentEmail` = '$pemail' 
  AND `status`  = 'unserved' " ;
 $result1 = mysqli_query($connection, $val1);
@@ -51,8 +55,16 @@ while($x< $valu  ){
 
  $x++;  
  $row = mysqli_fetch_row($result1);
+ $class = key($row);
+   next($row);
 
-  $class = key($row);
+   $day = key($row);
+   next($row);
+
+   $stime = key($row);
+   next($row);
+
+   $etime = key($row);
    next($row);
 
    $id = key($row);
@@ -61,7 +73,6 @@ while($x< $valu  ){
    $status = key($row);
    next($row);
 
-
 $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
 $result2 = mysqli_query($connection, $kidss);
 ?>
@@ -69,33 +80,50 @@ $result2 = mysqli_query($connection, $kidss);
     <div class = "holder" style="background-color: #F5FBFF;"> 
 <p class ="req1" >
          <label class = "titleLabel">Request</label><br> 
-     <label class="nameLabel">Kid name: </label>
-    <label class="Name"><?php
-        $kidn = mysqli_num_rows($result2);
-        echo($numOfKids );
-        ?></label><br>
+         <label class='serviceLabel'>Type Of Class: </label>
+<label class='service'><?php echo($row[$class])?></label><br>
+<label class='nameLabel'>No. Kid/s : </label>
+<label class='name'><?php
+$numOfKids = mysqli_num_rows($result2);
+echo($numOfKids );
+?></label><br>
 
-     <label class="ageLabel">Age: </label>
-     <label class="Age">8 Years</label><br>
 
-     <label class="classLabel">Type Of Class: </label>
-     <label class = "class"><?php echo($row[$class])?></label><br>
 
-     <label class="durationLabel">Duration: </label> <label class="duration">3 Hours</label>
-     <br>
-     <a class ="Offer1" href="../html_files/TutorsOffers.html">Show Offers</a>
-        </p>
+<label class='dayLabel'>Day: </label>
+<label class='day'><?php echo($row[$day])?></label><br>
 
-    </div>
+<label class='timeLabel'>Time: </label>
+<label class='time'><?php echo($row[$stime])?> - <?php echo($row[$etime])?></label>
+<br><br>
+     <a class ="Offer1" href="../html_files/TutorsOffers.html?<?php echo($row[$id])?>">Show Offers</a>
+        </p> </div>
+
+    
     <?php 
 }//end while
 } else {
-}
-    ?>
-}
+ ?>
 
+</div>
 
-<?php include ("../php_files/footer.php"); ?>
+<div class="noReq" style="   
+    position: relative;
+    border-radius: 30px;
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 10px;" >
+    <h2 style="   height: 30px;
+    color: black;
+    text-align: center;
+    margin-top: 35px; ">YOU DO NOT HAVE ANY REQUESTS!</h2>
+</div>
+
+<?php } ?>
 
 </body>
+
 </html>
+
