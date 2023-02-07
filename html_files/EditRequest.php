@@ -20,7 +20,7 @@
 <body>
 
 
-    <?php include ("../php_files/parentHeader.php")>
+    <?php include ("../php_files/parentHeader.php")?>
     <h2> Edit Requests</h2>  
 
     
@@ -48,7 +48,7 @@
      
          </div>
 
-         <?php include ("../php_files/footer.php")>
+         <?php include ("../php_files/footer.php")?>
 
 </body>
 

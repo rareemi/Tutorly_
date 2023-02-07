@@ -9,7 +9,7 @@
     </head>
      
      <body>
-        <?php include ("../php_files/tutorHeader.php")>
+     <?php include ("../php_files/tutorHeader.php")?>
 
 <h2> My Requests</h2>
         <div > 
@@ -28,6 +28,6 @@
 
 
 
-             <?php include ("../php_files/footer.php")>
+             <?php include ("../php_files/footer.php")?>
      </body>
      </html>

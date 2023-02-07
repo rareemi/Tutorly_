@@ -15,7 +15,7 @@
 
 
 <body>
-    <?php include ("../php_files/tutorHeader.php")>
+<?php include ("../php_files/tutorHeader.php")?>
     
 <h2> Send Offer</h2>
     <div class="offers">
@@ -30,8 +30,8 @@
     
     
 
-    <?php include ("../php_files/footer.php")>
-
+    
+    <?php include ("../php_files/footer.php")?>
     
     </body>
 
