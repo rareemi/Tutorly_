@@ -1,6 +1,5 @@
 
 
-<?php include ("../php_files/parentHeader.php"); ?>
 
 
 
@@ -14,8 +13,11 @@
     <link rel ="stylesheet" type="text/css" href = "../css_files/common.css">
     <link rel="stylesheet" type="text/css" href="../css_files/RequestOffers.css"> 
     <link rel="stylesheet" type="text/css" href="../css_files/TutorsOffers.css"></head>
+    <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
+
 <body>
-  
+<?php include ("../php_files/parentHeader.php"); ?>
+
  
 <h2>Choose a Request to display The offers</h2>
 
@@ -38,7 +40,7 @@ $pemail =  $_SESSION['email'];
  
 
 $val1 = "SELECT `TypeOfClass`,`startDate`,`startTime` ,`endTime`,`ID`,`status` FROM  `requests` 
-WHERE `ParentEmail` = '$pemail' 
+WHERE `parentEmail` = '$pemail' 
  AND `status`  = 'unserved' " ;
 $result1 = mysqli_query($connection, $val1);
 $valu = mysqli_num_rows($result1);
@@ -55,6 +57,7 @@ while($x< $valu  ){
 
  $x++;  
  $row = mysqli_fetch_row($result1);
+
  $class = key($row);
    next($row);
 
@@ -80,8 +83,10 @@ $result2 = mysqli_query($connection, $kidss);
     <div class = "holder" style="background-color: #F5FBFF;"> 
 <p class ="req1" >
          <label class = "titleLabel">Request</label><br> 
-         <label class='serviceLabel'>Type Of Class: </label>
-<label class='service'><?php echo($row[$class])?></label><br>
+
+         <label class='classLabel'>Type Of Class: </label>
+        <label class='class'><?php echo($row[$class])?></label><br>
+
 <label class='nameLabel'>No. Kid/s : </label>
 <label class='name'><?php
 $numOfKids = mysqli_num_rows($result2);
