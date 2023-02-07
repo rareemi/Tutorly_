@@ -29,7 +29,6 @@
  <?php 
  session_start();
 include ("../php_files/connectDB.php"); 
- include ("../php_files/footer.php"); //تحت//
 
 
 $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
@@ -85,21 +84,21 @@ $result2 = mysqli_query($connection, $kidss);
          <label class = "titleLabel">Request</label><br> 
 
          <label class='classLabel'>Type Of Class: </label>
-        <label class='class'><?php echo($row[$class])?></label><br>
+        <label class='Type'><?php echo($row[$class])?></label><br>
 
 <label class='nameLabel'>No. Kid/s : </label>
-<label class='name'><?php
+<label class='Name'><?php
 $numOfKids = mysqli_num_rows($result2);
 echo($numOfKids );
 ?></label><br>
 
 
 
-<label class='dayLabel'>Day: </label>
-<label class='day'><?php echo($row[$day])?></label><br>
+<label class="classLabel">Day: </label>
+<label class='Time'><?php echo($row[$day])?></label><br>
 
-<label class='timeLabel'>Time: </label>
-<label class='time'><?php echo($row[$stime])?> - <?php echo($row[$etime])?></label>
+<label class='classLabel'>Time: </label>
+<label class='Time'><?php echo($row[$stime])?> - <?php echo($row[$etime])?></label>
 <br><br>
      <a class ="Offer1" href="http://localhost/Tutorly_/php_files/OfferDetails.php?id=<?php echo($row[$id])?>">Show Offers</a>
         </p> 
@@ -130,6 +129,8 @@ echo($numOfKids );
 <?php } ?>
 
 </div>
+<?php include ("../php_files/footer.php"); //تحت// ?>
+
 </body>
 
 </html>

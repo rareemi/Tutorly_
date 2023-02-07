@@ -58,14 +58,14 @@ margin-left: 22%;        }
                 font-size: 21px;
             }
 
-     .nameLabel, .ageLabel,
-     .classLabel, .durationLabel 
+     .nameLabel, .ageLabel, .dayLabel
+     .classLabel, .DayLabel, .timeLabel
   {
    color:#293241;
    background-color: #98C1D9;
     }
 
-    .Name, .Age, .Type, .duration , .textarea , .textO
+    .Name, .Age, .Type, .duration , .textarea , .textO, .Day, .Time 
 {
     background-color:#98C1D9;
     color: #F5FBFF;
