@@ -50,7 +50,7 @@ die("Connection failed: " . mysqli_connect_error());
                         
             }
             
-            
+            header('Location:../php_files/LoginTutor.php?error=failToLogIn');  
         }
         $sql = "SELECT * FROM `parent` WHERE email='$userEmail'AND password='$userPassword'";
         // AND password='$userPassword'
@@ -81,7 +81,7 @@ die("Connection failed: " . mysqli_connect_error());
             
         }
         
-        header('Location:../php_files/Login.php?error=failToLogIn');
+        header('Location:../php_files/LoginParent.php?error=failToLogIn');
         
         
     }
