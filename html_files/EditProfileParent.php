@@ -213,9 +213,13 @@ if(isset($_POST['submit'])){
        
      .detail{
         text-align: center;
-        height: 810px;
-       
+        height: 1355px;       
         margin: -2% ;
+     }
+     #button2{
+        padding: 15px;
+
+
      }
     </style>
      </head>
