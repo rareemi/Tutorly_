@@ -7,7 +7,7 @@ $requests = get_requests($_SESSION['email']); */
 
 <?php include ("../php_files/tutorHeader.php"); 
 if(!isset($_GET['id'])) {
-    header('Location:http:Tutorly_/php_Files/OfferDetails.php');
+    header('Location:/Tutorly_/php_files/offerDetails.php');
     exit;
 } 
 
