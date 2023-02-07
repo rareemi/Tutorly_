@@ -246,3 +246,36 @@ color: #000;
      font-weight: bold;
      font-size: 20px;
      margin: -5px;}
+
+     .forthepic img{
+        width: 250px;
+        padding-bottom: 15px;
+        }
+        .forthepic p {
+            margin: 0;
+            margin-left: 32px;
+            font-weight: 400;
+        }
+        .forthepic input {
+            margin-top: 10px;
+            margin-left: 25px;
+            padding-left: 7px;
+            padding-top: 7px;
+            width: 184px;
+            height: 27px;
+            background-color: #8e8e8e6f;
+            border-radius: .50em;
+
+        }
+        
+        .more-space-on-bottom {
+            display: block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        span.par{
+            font-weight: 400;
+            color:black;
+        }
+        

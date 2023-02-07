@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page Parent</title>
     <link rel ="stylesheet" type= "text/css"
-     href="/css_files/common.css">
+     href="../css_files/common.css">
      
     
      <style>
