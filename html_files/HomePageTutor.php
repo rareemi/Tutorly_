@@ -19,7 +19,7 @@ $requests = get_requests($_SESSION['email']); */
      
      </html>
      <style>
-        h3{
+        h1{
 color: #293241;;
 text-align: center;
 padding: 16px;
@@ -31,23 +31,12 @@ margin: 2px;
      
      <body>
        
-           
-        
-     
-     
-     
-     <h3>
+     <h1>
       <br>  Welcome to Tutorly
-     </h3>
+     </h1>
     
 
-     
-
-
-
-<footer>
      <?php include ("../php_files/footer.php"); ?>
-        </footer>
         </body>
 </html>
 

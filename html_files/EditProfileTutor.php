@@ -163,7 +163,6 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
      </head>
      <style>
      .holder{
-
      width: 800px;
      height: 1400px;
      margin:0.5%
@@ -172,24 +171,44 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
      
      
      .detail{
-        height: 1355px;
+        height: 1366px;
         width: 800px;
         text-align: center;
-       
         margin: -3.5%;
-     }</style>
+     }
+     #button2{
+        padding: 15px;
+
+
+     }
+     
+</style>
      <body>
         
         <h2>
             Edit Profile
         </h2>
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
+                <?php
+                
+                        $currentUser = $_SESSION['email'];
+                        //print($_SESSION['email']);
+                        $sql = "SELECT * FROM `babysitter` WHERE email ='$currentUser'";
 
+                        $gotResuslts = mysqli_query($connection,$sql);
+
+                        if($gotResuslts){
+                            if(mysqli_num_rows($gotResuslts)>0){
+                                while($row = mysqli_fetch_array($gotResuslts)){
+                                    //print_r("ygbyb8yn".$row['email']);
+                                ?>
             <div class="holder"> 
                 <div class = "detail"> 
+                
                 <div class="forthepic">
                     <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
                     <p>Upload a different photo:</p>
-
+    </div>
 <input type="file" accept="image/*" name="img">                       
    
                      <br>  
@@ -281,22 +300,23 @@ fuction geterrdet(){
                 </textarea>
                 <p class="more-space-on-bottom"></p>
 
-           
+
         
-               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="Update" />
+               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="submit" />
 <a class= "button1" href="../html_files/HomePageTutor.php">Back</a>
 
-                       </div>
-                    
-
-        <h5>
-            <a class= "button1" href="../html_files/DeletProfileTutor.php" style="margin-left: 15%;">Delete Profile</a>
+</p>                    
+</div>
+                  
+               
+     
+            <a class= "button1" id="button2" href="../html_files/DeletProfileTutor.php" style="margin-left: 15%;">Delete Profile</a>
                 <br><br>
-
-                
-        </h5>
-        </div>
-        </p>
+                </div> 
+        
+                <?php
+}}}  ?>
+    
         <?php include ("../php_files/footer.php"); ?>
 
      </body>

@@ -23,10 +23,6 @@ margin: 2px;
     </style>
     </head>
      <body>
-        
-     
-   
-    
     <h1>
       <br> Welcome to Tutorly
     </h1>

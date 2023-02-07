@@ -2,11 +2,11 @@
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
         <nav>
             <ul class = "nav_links">
-                <li><a href = "/html_files/HomePageTutor.html"> Home</a></li>
+                <li><a href = "../html_files/HomePageTutor.php"> Home</a></li>
                 <li><a href = "#"> Profile</a>
                     <ul> <!--this for drop-down menu-->
-                        <li><a href = "/html_files/ViewProfileTutor.html"> View</a></li>
-                        <li><a href = "/html_files/EditProfileTutor.html"> Edit</a></li>
+                        <li><a href = "../html_files/ViewProfileTutor.php"> View</a></li>
+                        <li><a href = "../html_files/EditProfileTutor.php"> Edit</a></li>
                     </ul> 
                 </li>
                 <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>
@@ -23,5 +23,5 @@
 
             </ul>
         </nav>
-        <p><a class= "out" href="../html_files/index.html" style="margin-right: 100px;" >Logout</a></p>
+        <p><a class= "out" href="../html_files/index.php" style="margin-right: 100px;" >Logout</a></p>
 </header>
