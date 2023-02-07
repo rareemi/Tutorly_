@@ -2,7 +2,8 @@
 
 
 
-<?php include ("../php_files/parentHeader.php")?>
+<?php include ("../php_files/parentHeader.php"); ?>
+
 <!DOCTYPE html>
 <html> <!-- comment -->
 <head>
@@ -50,8 +51,6 @@
          </div>
 
 
-         <?php include ("../php_files/footer.php")?>
-</div>
 </body>
 
 </html>
