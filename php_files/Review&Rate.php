@@ -27,7 +27,7 @@
 
         <h2> Review &amp; Rate </h2>
 
-        <div class="review">
+        <div class="review" style="height:400px; ">
             
         <?php
          $servername= "localhost";
@@ -54,7 +54,7 @@
                 
                 if (isset($_POST['add'])) {
                     $feedBack = addslashes($_POST['feedBack']);
-                    $Rate = addslashes($_POST['Rate']);
+                    $Rate = addslashes($_POST['star']);
                     $Date_ = date('Y-m-d');
                     $time_ = date('H:i');
                     $tutorEmail = $_GET['tutorEmail'];
@@ -76,7 +76,7 @@
              }
         }?>
 
-	     <form  height= "140px;" method = "post"  action = "<?php $_PHP_SELF ?>" name="myform" id="myform" onsubmit="return validateform()">
+	     <form method = "post"  action = "<?php $_PHP_SELF ?>" name="myform" id="myform" onsubmit="return validateform()">
          <?php
 
                 $id=$_GET['tutorEmail'];
@@ -96,35 +96,36 @@
         } ?>
 
         <br>
-
+        
           <label>Rate:</label>
           <div class="stars">
             <input required class="star star-5" id="star-5-2" type="radio" name="star" value="5"<?php if (isset($_POST["star"]) && $_POST["star"] == "5") echo "checked"; ?>>
-            <label class="star star-5" for="star-5-2"><span class="tooltip" style="top: 32%;right: 45%; ">Excellent</span></label>
+            <label class="star star-5" for="star-5-2"><span class="tooltip" style="top: 12%;right: 45%; ">Excellent</span></label>
             
             <input required class="star star-4" id="star-4-2" type="radio" name="star" value="4"<?php if (isset($_POST["star"]) && $_POST["star"] == "4") echo "checked"; ?>>
-            <label class="star star-4" for="star-4-2"><span class="tooltip" style="top: 32%;right: 45%;">Very Good</span></label>
+            <label class="star star-4" for="star-4-2"><span class="tooltip" style="top: 12%;right: 45%; ">Very Good</span></label>
             
             <input required class="star star-3" id="star-3-2" type="radio" name="star" value="3"<?php if (isset($_POST["star"]) && $_POST["star"] == "3") echo "checked"; ?>>
-            <label class="star star-3" for="star-3-2"><span class="tooltip" style="top: 32%;right: 45%;">Average</span></label>
+            <label class="star star-3" for="star-3-2"><span class="tooltip" style="top: 12%;right: 45%; ">Average</span></label>
             
             <input required class="star star-2" id="star-2-2" type="radio" name="star" value="2"<?php if (isset($_POST["star"]) && $_POST["star"] == "2") echo "checked"; ?>>
-            <label class="star star-2" for="star-2-2"><span class="tooltip" style="top: 32%;right: 45%;">Poor</span></label>
+            <label class="star star-2" for="star-2-2"><span class="tooltip" style="top: 12%;right: 45%; ">Poor</span></label>
             
             <input required class="star star-1" id="star-1-2" type="radio" name="star" value="1"<?php if (isset($_POST["star"]) && $_POST["star"] == "1") echo "checked"; ?>>
-            <label class="star star-1" for="star-1-2"><span class="tooltip" style="top: 32%;right: 45%;">Terrible</span></label>
+            <label class="star star-1" for="star-1-2"><span class="tooltip" style="top: 12%;right: 45%; ">Terrible</span></label>
             
             </div>
     
           <br><br>
   
           <label >give feedback:</label><br><br>
-          <textarea  placeholder="Write .." > </textarea>
+          <textarea  placeholder="Write .." name="feedBack"> </textarea>
           <br><br>
 	      <input type="submit" value="Submit" name="add">
+    
          </form>
         </div>
-        <p><a class= "button1" style="margin-left:46%;" href="/html_files/PreviousBooking.html">Back</a></p>
+        <p><a class= "button1" style="margin-left:46%;" href="../php_files//PreviousBooking.php">Back</a></p>
         <br><br>
 
         <?php include("../php_files/footer.php");?>

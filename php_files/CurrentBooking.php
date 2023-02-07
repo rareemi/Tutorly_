@@ -37,7 +37,7 @@
          if(mysqli_num_rows($userFound) > 0) {
 
          while ($row = mysqli_fetch_assoc($userFound)) {
-           if ($row['data'] >= date('Y-m-d')) {
+           if ($row['startDate'] >= date('Y-m-d')) {
           ?>
 
                 <p class="container" style="width: 320px; height: 540px;">

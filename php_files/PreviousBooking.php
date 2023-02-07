@@ -40,7 +40,7 @@
          if(mysqli_num_rows($userFound) > 0) {
 
          while ($row = mysqli_fetch_assoc($userFound)) {
-         if (date('Y-m-d') >$row['date']) {
+         if (date('Y-m-d') >$row['startDate']) {
         ?>
             <p class="container" style="width: 320px; height: 540px;">
              <img src="../public/userImages/<?php echo $row['img']; ?>" class="pic" height="190" alt="Tutor picture"><br>
@@ -70,8 +70,8 @@
             $resultt = $connection->query($sql_email);
             while ($roww = $resultt->fetch_assoc()) {
                 if ($roww['cunt'] == 0) { ?>
-                <a href='../php_files/Review&Rate.php?tutorEmail=<?php echo($row['tutorEmail']) ?>&id_offer=<?php echo($id_offer); ?>'>
-                <input type="submit" class="review" value="review"></a>
+                
+                <a  class="review" href='../php_files/Review&Rate.php?tutorEmail=<?php echo($row['tutorEmail']) ?>&id_offer=<?php echo($id_offer); ?>' >review</a>
                 <?php }
             } ?>
             
