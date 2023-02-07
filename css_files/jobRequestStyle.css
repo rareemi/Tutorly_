@@ -1,0 +1,230 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    /*background-color: #98C1D9;*/
+    background-color:  #F5FBFF;
+}
+
+.postingPage, 
+.editingPage {
+   /* margin-top:180px;*/
+    margin-bottom: 100px;
+    background-color:  #F5FBFF;
+}
+
+.cancelPage {
+    margin-bottom: 125px;
+}
+
+h2 { 
+    height: 40px; 
+    background-color:#98C1D9;
+    color: #293241;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: -5px;
+}
+
+#offerH2 {
+    margin-top: 70px;  
+}
+
+.container {
+    background-color: #98C1D9;
+    position: relative;
+    border-style: solid;
+    border-radius: 30px;
+    width: 540px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    overflow: hidden; 
+  }
+
+  /* Extra Style for Offer Details Page */
+  .container #sitterPic {
+    background-color: white;
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    margin: 10px;
+    border-style: ridge;
+}
+.container .SitterInfo {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-bottom: 60px;
+}
+.container .RequestInfo {
+    position: relative;
+    margin-top: 50px;
+}
+
+.container .RequestInfo .Accept {
+   
+    width: 110px;
+    background-color: white; 
+    font-weight: bold; 
+    margin-left: 190px;
+    color: rgb(39, 141,7);
+}
+.container .RequestInfo .Reject {
+    width: 110px;
+    margin-left: 330px;
+    color: rgb(254, 9,9); 
+}
+
+.container .RequestInfo button {
+    position: absolute;
+    height: 30px;
+    margin-left: 30500px;
+    border-style: solid;
+    background-color: white; 
+    font-weight: bold; 
+    border: 1px solid black;
+}
+
+.container p .sitterProfile {
+    font-size: medium;
+    text-decoration: underline;
+    color: #2f06e9;
+}
+
+.container p .sitterProfile:hover {
+    color: #f01414; 
+}
+
+    /*  End of Extra Style for Offer Details Page */
+
+.inptService {
+height: 30px;
+width: 500px;
+display: block;
+margin-top: 10px;
+margin-bottom: 10px;
+border-color: #d0e4ccc9;
+color: #495057;
+background-color: #ffffff;
+background-clip: padding-box;
+border-radius: 0.25rem;
+padding: .375rem .75rem;
+border: 1px solid #ced4da;
+}
+
+.inputName , .inputAge {
+    height: 30px;
+    width: 235px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #d0e4ccc9;
+    color: #495057;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;   
+    margin-left: 2px;
+}
+
+.inputExtraName , .inputExtraAge {
+    height: 30px;
+    width: 235px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #d0e4ccc9;
+    color: #495057;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da; 
+    margin: 2px;
+}
+
+.commentsArea {
+    max-width: fit-content;
+    max-height: fit-content;
+    height: 300px;
+    width: 500px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+  .nameLabel,
+ .ageLabel,
+ .serviceLabel,
+ .durationLabel,
+ .commentsLabel,
+  .dayLabel,
+  .timeLabel,
+  .PriceLabel {
+    font-weight: bold;
+    color: rgb(1, 18, 16);
+    display: inline-block;
+}
+
+.Expirelabel {
+    font-weight: bold;
+    color:  brown;
+}
+
+.Bottons {
+    height: 30px;
+    width: 120px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    text-decoration: none;
+}
+
+.postBotton {
+margin-left: 0px;
+height: 30px;
+width: 530px;
+}
+
+.editBotton, .resetBotton {
+    position: relative;
+    left: -30px;
+    height: 30px;
+    width: 265px;
+    direction: none;
+}
+
+.resetBotton {
+    left: 8px;
+}
+
+.cancelBotton{
+    height: 30px;
+    width: 265px;
+    position: relative;
+    left: -30px;
+}
+
+.container #formInfo {
+    margin-left: 20px;   
+    text-align: left;
+    font-size: 18px;
+}
+
+.canceledInfo {
+    text-align: left;
+    position: relative;
+    left: 180px;
+}
+
+a:any-link {
+    color: black;
+    text-decoration: none;
+    cursor: auto;
+    }
+
+ #remove_fields {
+  float: right;
+  margin-right: 70px 
+}
