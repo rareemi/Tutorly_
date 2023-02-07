@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2023 at 10:49 PM
+-- Generation Time: Feb 07, 2023 at 11:06 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -67,7 +67,7 @@ CREATE TABLE `offer` (
 
 INSERT INTO `offer` (`id`, `price`, `tutorName`, `RequestID`, `offerstatus`, `tutorEmail`, `startDate`, `startTime`, `endTime`) VALUES
 (1, 100, 'hifza', 1, 'accepted', 'Hifza2@gmail.com', '2023-02-07', '00:00:05', '00:00:00'),
-(2, 200, 'RANA', 4, 'accepted', 'bro_200@gmail.com', '2023-02-06', '12:30:00', '13:30:00');
+(2, 200, 'RANA', 4, 'pending', 'bro_200@gmail.com', '2023-02-06', '12:30:00', '13:30:00');
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,7 @@ INSERT INTO `requests` (`TypeOfClass`, `ID`, `status`, `parentEmail`, `startDate
 ('Biology', 1, 'accepted', 'gh__201@gmail.com', '2023-02-06', '00:00:00', '00:00:00', '', '2023-02-07 13:02:00'),
 ('Math', 2, 'served', 'N__2067@gmail.com', '2023-02-10', '12:30:00', '14:30:00', '', '2023-02-07 19:11:28'),
 ('English language', 3, 'served', 'ree-901@gmail.com', '2023-02-22', '10:00:00', '12:00:00', '', '2023-02-07 21:25:04'),
-('Math', 4, 'accepted', 'ree-901@gmail.com', '2023-02-06', '09:00:00', '10:00:00', '', '2023-02-07 19:13:36');
+('Math', 4, 'unserved', 'ree-901@gmail.com', '2023-02-06', '09:00:00', '10:00:00', '', '2023-02-08 00:58:23');
 
 -- --------------------------------------------------------
 
