@@ -25,6 +25,6 @@
                    
                 </ul>
             </nav>
-            <p><a class= "out" href="../html_files/index.php">Logout</a></p>
+            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
     </header>
  

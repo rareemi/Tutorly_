@@ -17,12 +17,12 @@
     </head>
 
     <body>
-      <header>
-        <img src = "../images/logo.png" class ="logo" width = "400px"  height= "400px" alt="logo" style="margin: 2px 34%;" >
-        
-    </header>
     <h2>Login</h2>
-    <div class="containers" style="width: 300px ; height:400px ;">
+    <div class="containers"style="width:70% ; height:80% ; ">
+    <div style="width:40%;float:left; margin:0 36px ;background-color:#C4DCEA;border-radius:20px;" >
+    <img src = "../images/logo4.png" class ="logo"  alt="logo"style="width:100%;float:left;background-color:#C4DCEA;border-radius:20px;"  >
+    </div>
+    <div style="width:30%; margin-left:50%; ">
     <form action="loginprosses.php" method="post">
                         <?php
 if(isset($_GET['error'])){
@@ -51,6 +51,7 @@ if($_GET['error'] == 'failToLogIn'){
           <br>   <br>  <br>  <br> <p> <a href="ForgetPassTuter.html"><t> Forget Password? </t></a></p> <br>
           <p>you don't have an acc? <a href="SignUpTutor.html"> <t>Sign up </t></a></p>
         </form></div>
+        </div>
 
            <hr> 
         
