@@ -5,7 +5,41 @@ $requests = get_requests($_SESSION['email']); */
 
 ?>
 
-<?php include ("../php_files/tutorHeader.php"); ?>
+<?php include ("../php_files/tutorHeader.php"); 
+if(!isset($_GET['id'])) {
+    header('Location:http:Tutorly_/php_Files/OfferDetails.php');
+    exit;
+} 
+
+include('../PHP_Files/connect_db.php');
+ $email = $_GET['em']; 
+$sql = "SELECT `img`,`firstName`,`lastName`,`age`,`city`,`bio`,`phone` FROM `babysitter` WHERE `email` = '$email' ";
+$result = mysqli_query($connection,  $sql);
+$row = mysqli_fetch_row($result);
+
+$image = key($row);
+next($row);
+
+$fname = key($row);
+next($row);
+
+$lname = key($row);
+next($row);
+
+$age = key($row);
+next($row);
+
+$city = key($row);
+next($row);
+
+$bio = key($row);
+next($row);
+
+$phone = key($row);
+next($row);
+  ?>  
+ 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +58,7 @@ $requests = get_requests($_SESSION['email']); */
 
         </h2>
        
-            <div class="holder"> 
+            <!--<div class="holder"> 
                 <p class = "detail"> 
                 <img class = "pic"src="../images/TutorPic1.png" alt="Tutor Picture" height="250"><br>
                        <label class="nameLabel">First Name: </label><label class="Name"></label>lama </label>
@@ -57,7 +91,7 @@ $requests = get_requests($_SESSION['email']); */
 <br>
 <a class= "button1" href="/html_files/HomePageTutor.html">back</a>
                 </p>
-                     </p>  </div>
+                     </p>  </div> -->
        
                      <?php include ("../php_files/footer.php"); ?>
 
