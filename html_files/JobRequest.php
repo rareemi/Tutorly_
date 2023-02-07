@@ -2,6 +2,7 @@
 
 
 
+<?php include ("../php_files/parentHeader.php")?>
 <!DOCTYPE html>
 <html> <!-- comment -->
 <head>
@@ -24,7 +25,6 @@
 
 <body>
 
-    <?php include ("../php_files/parentHeader.php")?>
     <h2> Posting Requests</h2>
     <div class = "holder2"> 
         <p class ="req3">
@@ -51,12 +51,7 @@
 
 
          <?php include ("../php_files/footer.php")?>
-
+</div>
 </body>
-
-
-
-
-
 
 </html>
