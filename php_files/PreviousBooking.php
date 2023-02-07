@@ -52,10 +52,13 @@
               <label class="Price"> <?php echo $row['price']; ?>SR</label><br>
 
               <label class="DateLabel">Date: </label><br>
-              <label class="Date"><?php echo $row['date']; ?></label><br>
-    
-              <label class="DurationLabel"> Duration: </label><br>
-              <label class="Duration"><?php echo $row['Duration']; ?></label> <br><br>
+              <label class="Date"><?php echo $row['startDate']; ?> </label> <br> 
+              
+              <label class="TimeLabel"> From: </label>
+              <label class="Time"> <?php echo $row['startTime']; ?></label>
+              
+              <label class="TimeLabel"> To: </label>
+              <label class="Time"> <?php echo $row['endTime']; ?></label><br><br>
              
              <a class ="email" href="mailto:<?php echo($row['tutorEmail']);?>; ?>">Send email</a>
 
