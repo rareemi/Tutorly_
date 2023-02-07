@@ -40,7 +40,7 @@
            if ($row['startDate'] >= date('Y-m-d')) {
           ?>
 
-                <p class="container" style="width: 320px; height: 540px;">
+                <p class="container" style="width: 340px; height: 630px;">
                  <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
                  
                   <label class="nameLabel">Tutor Name: </label><br>
