@@ -1,36 +1,182 @@
 <?php
 session_start();
-/* require ("../php_files/query.php");
-$requests = get_requests($_SESSION['email']); */
+error_reporting(E_ALL);
+$servername= "localhost";
+$username= "root" ;
+$password= "";
+$dbname= "381" ;
+$connection= mysqli_connect($servername,$username,$password,$dbname);
+$database= mysqli_select_db($connection, $dbname);
+               
+if (!$connection) 
+die("Connection failed: " . mysqli_connect_error());
+$fname_err = $lname_err = $gender_err = $id_err = $age_err = $email_err = $city_err = $phone_err = $password_err =  $msg_err = $notification = "";
+if(isset($_POST['submit'])){
+    
 
+$loggedInUser = $_SESSION['email'];
+$firstname  =    $_POST['firstname'];
+
+$lastname =    $_POST['lastname'];
+$gender =    $_POST['gender'];
+$id =    $_POST['id'];
+$age =    $_POST['age'];
+$eMail =    $_POST['eMail'];
+$city =    $_POST['city'];
+$phone =    $_POST['phone'];
+$bio =    $_POST['biotextbox'];
+
+$userPassword =mysqli_real_escape_string($connection,$_POST['password']);
+
+
+$fname = $_POST["firstname"];
+    $lname = $_POST["lastname"];
+    if (isset($_POST["gender"]))
+        $gender = $_POST["gender"];
+    
+    $id = $_POST["id"];
+    $age = $_POST["age"];
+    $email = $_POST["eMail"];
+    $city = $_POST["city"];
+    $phone = $_POST["phone"];
+    $password = $_POST["password"];
+    $msg = $_POST["biotextbox"];
+    
+    $valid = true;
+    if ($fname == "" || !ctype_alpha(str_replace(" ", "", $fname))) {
+        $fname_err = " please enter a valid name!";
+        $valid = false;
+    }
+    if ($lname == "" || !ctype_alpha(str_replace(" ", "", $lname))) {
+        $lname_err = " please enter a valid name!";
+        $valid = false;
+    }
+    if ($email == "" || !filter_var($email,FILTER_VALIDATE_EMAIL)) {
+        $email_err = " please enter a valid email!";
+        $valid = false;
+    }
+
+    if ($password!=""&&strlen($password) < 6) {
+        $password_err = " password needs to be at least 6 characters!";
+        $valid = false;
+    }
+    if ($city == "" || !ctype_alpha(str_replace(" ", "", $city))) {
+        $city_err = " please enter a valid city!";
+        $valid = false;
+    }
+
+    if(!preg_match("/[a-zA-Z]/i", $msg)){
+        $msg_err = " please enter a valid bio (must contain letters)!";
+        $valid = false;
+    }
+    if (!preg_match("/^05\d{8}$/", $phone)) {
+        $phone_err = " please enter a valid phone number (must start with 05)!";
+        $valid = false;
+    }
+    if($email!=$_SESSION['email']){
+    $sql = "SELECT email FROM `babysitter` WHERE email = '$email'";
+    $result = mysqli_query($connection, $sql);
+    $nummy=mysqli_num_rows($result);
+    
+    if ($nummy > 0) {
+        $email_err = " this email is already registered, please enter a different email!";
+        $valid = false;
+    }}
+    
+    if (!preg_match("/^\\d+$/", $id)) {
+        $id_err = " please enter a valid id!";
+        $valid = false;
+    }
+    
+    
+     
+if ($valid) {
+    $_SESSION['email']=$eMail;
+    $_SESSION['firstName']=$fname;
+if($_FILES['img']['name']!=""){
+    $userImage    =   $_FILES['img'];   
+    $imageName = $userImage ['name'];
+    $fileType  = $userImage['type'];
+    $fileSize  = $userImage['size'];
+    $fileTmpName = $userImage['tmp_name'];
+    $fileError = $userImage['error'];
+    
+    $fileImageData = explode('/',$fileType);
+    $fileExtension = $fileImageData[count($fileImageData)-1];
+    
+    if($fileExtension == 'jpg' || $fileExtension == 'png' || $fileExtension == 'jpeg'){
+       
+        
+        if($fileSize < 6161400){ 
+    
+            $fileNewName = "../public/userImages/".$imageName; //
+            
+            $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
+            
+            if($uploaded){
+                
+
+if(isset($_POST['password']) && $_POST['password']!= ""){
+$userPassword =mysqli_real_escape_string($connection,$_POST['password']);
+$sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
+}else{
+    $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+    ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName' WHERE email = '$loggedInUser'";
+}
+    
+                $results = mysqli_query($connection,$sql);
+                echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileTutor.php";</script>';
+            exit;
+            }
+    
+    
+        }}}
+
+        if(isset($_POST['password']) && $_POST['password']!= ""){
+            $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+            ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
+
+            }else{
+                $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+                ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio' WHERE email = '$loggedInUser'";
+                
+            }
+            $results = mysqli_query($connection,$sql);
+            echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileTutor.php";</script>';
+            exit;
+
+}}
 ?>
-
 <?php include ("../php_files/tutorHeader.php"); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile Tutor</title>
     <link rel ="stylesheet" type="text/css" href = "../css_files/common.css">
 
+
     
-     </html>
+    
      </head>
      <style>
      .holder{
 
      width: 800px;
-     height: 1150px;
+     height: 1400px;
+     margin:0.5%
+     padding: 15px;
      } 
-     .change{text-decoration: underline;
-     }
+     
+     
      .detail{
-        height: 1110px;
-       
+        height: 1355px;
+        width: 800px;
         text-align: center;
-        width: 750px;
-        margin: 1%;
+       
+        margin: -3.5%;
      }</style>
      <body>
         
@@ -38,60 +184,119 @@ $requests = get_requests($_SESSION['email']); */
             Edit Profile
         </h2>
 
-      
             <div class="holder"> 
-                <p class = "detail"> 
-                <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" alt="Tutor Picture" height="250"><br>
-                     <a class= "changephoto" href="/html_files/changePhotoTutor.html" id="7" style="margin-left:0;" >Change Photo</a>
+                <div class = "detail"> 
+                <div class="forthepic">
+                    <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
+                    <p>Upload a different photo:</p>
+
+<input type="file" accept="image/*" name="img">                       
+   
+                     <br>  
+                     <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
+                <input type="text"  id="FName" name="FName" placeholder="Enter your first name"
+                value="<?php echo $row['firstName']; ?>"><br>
+            
+                <label for="lastname">Last Name:</label><span style="color:red"><?php echo $lname_err; ?> </span>
+                <br><input type="text" id="LName" name="LName" placeholder="Enter your last name"
+                value="<?php echo $row['lastName']; ?>">
+                <p class="more-space-on-bottom"></p>
+
+            <label for="id">ID: </label><span style="color:red;"><?php echo $id_err; ?> </span><br>
+            <input type="text" id="id" name="idd"  placeholder="example:1126354857"
+            value="<?php echo $row['ID']; ?>"><br>
+
+            <label for="Age">Age: </label><span style="color:red;">  </span><br>
+            <input type="text" id="Age" name="age"  placeholder="30"
+            value="<?php echo $row['age']; ?>"><br>
+
+            <label>Gender:</label>
+            <p class="more-space-on-bottom"></p>
+                <input type="radio" name="gender" value="male"<?php if (isset($row['gender']) && strtolower($row['gender'])=="male") echo "checked";?>> Male
+                <input type="radio" name="gender" value="female"<?php if (isset($row['gender']) && strtolower($row['gender'])=="female") echo "checked";?>> Female
+
+                <br> <label for="eMail">Email:</label><span style="color:red"> <?php echo $email_err; ?></span><br>
+                <?php
+if(isset($_GET['error'])){
+
+if($_GET['error'] == 'emailDup'){
+    ?>
+    <span style="color:red;">
+    
+    the email you entered was already registered, please enter a different email!
+</span>
+    
+<?php
+}}
+
+?>
+                <input type="email" class="inputing-text" id="eMail" name="eMail" placeholder=" example:a@gmail.com" 
+                value="<?php echo $row['email']; ?>"><br>
                    
 
-                 <br>  
-            <label for="FName">First Name:</label><br>
-            <input type="text" id="FName" name="FName" value="Lama"><br>
+            <br> <label for="phone">Phone:</label><span style="color:red;"> <?php echo $phone_err; ?> </span><br>
+            <input type="text" id="phone" name="email" placeholder="+966 5*****" onblur="myFunction()"
+                value="<?php echo $row['phone']; ?>">
+                <script>
+   var errordet=false;
+function myFunction() {
+    var phoneno =/^05\d{8}$/;
+  if(!document.getElementById("phone").value.match(phoneno))
+
+        {
+            alert("gjnkfd");global errordet=true;
+            var x = document.getElementById("redfff");
+  x.innerHTML="invalid phone number";
+        }else{
+            global errordet=false;
+            var x = document.getElementById("redfff");
+  x.innerHTML="";
+
+        }
+  
+}
+fuction geterrdet(){
+    c=global errordet;
+    return c;
+}
+</script>
+                <br>
         
-            <label for="LName">Last Name:</label><br>
-            <input type="text" id="LName" name="LName" value="Ahmed"><br>
 
-            <label for="id">ID: </label><br>
-            <input type="text" id="id" name="idd" value="******"><br>
+            <label for="password">Password:</label><span style="color:red"> <?php echo $password_err; ?></span><br>
+                <input type="password" class="inputing-text" id="password" name="password" placeholder="  at least 6 characters ">
+                <p class="more-space-on-bottom"></p>
+                <input class="botton-bigger" type="submit" name="submit" value="Update" />
 
-            <label for="Age">Age: </label><br>
-            <input type="text" id="Age" name="age" value="30"><br>
+                <br>
+                
+                <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
+                    <input type="text" class="inputing-text" id="loc" name= "City" placeholder=" example:Riyadh"
+                    value="<?php echo $row['City']; ?>">
 
-            <label for="Gender">Gender: </label><br>
-            <input type="text" id="Gender" name="gender" value="Female"><br>
-
-            <br> <label for="email">E-mail:</label><br>
-            <input type="text" id="email" name="email" value="****@gmail.com"><br>
-        
-            <br> <label for="phone">Phone:</label><br>
-            <input type="text" id="phone" name="email" value="+966 5*****"><br>
-        
-
-            <label for="pass">Password:</label><br>
-            <input type="text" id="pass" name="pass" value="******">
-            <br>
-            <a class ="change" href ="/html_files/changePassTutor.html">Change password</a>
-            <br> <label for="city">City:</label><br>
-            <input type="text" id="city" name="city" value="Riyadh">
-
-            <br> <label for="bio">Bio:</label><br>
-            <input type="text" id="bio" name="Bio" value="******"><br>
+            <br> <label for="bio">Bio:</label><span style="color:red;"> <?php echo $msg_err; ?></span> </span><br>
+           <p class="more-space-on-bottom"></p>
+           <textarea name="biotextbox" id="bio" name="bio" rows="10" placeholder=" Enter your bio, such as: years of experience, education, languages spoken, skills, etc">
+           <?php echo $row['bio']; ?>
+                </textarea>
+                <p class="more-space-on-bottom"></p>
 
            
         
-            <input type="submit" value="Submit">
-<a class= "button1" href="/html_files/HomePageTutor.html">Back</a>
+               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="Update" />
+<a class= "button1" href="../html_files/HomePageTutor.php">Back</a>
 
-                     </p>  </div>
+                       </div>
                     
 
         <h5>
-            <a class= "button1" href="/html_files/DeletProfileTutor.html" style="margin-left: 43%;">Delete Profile</a>
+            <a class= "button1" href="../html_files/DeletProfileTutor.php" style="margin-left: 15%;">Delete Profile</a>
                 <br><br>
-           
-        </h5>
 
+                
+        </h5>
+        </div>
+        </p>
         <?php include ("../php_files/footer.php"); ?>
 
      </body>

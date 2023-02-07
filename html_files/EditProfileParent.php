@@ -150,17 +150,14 @@ if(isset($_POST['submit'])){
         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
          `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
           `SecondaryNumber` = '$SecondaryNumber', `img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
-        //pass also/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         }else{
             $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
          `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
           `SecondaryNumber` = '$SecondaryNumber', `img` = '$imageName' WHERE email = '$loggedInUser'";
         }
-           // print($imageName);
                         $results = mysqli_query($connection,$sql);
                         echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                        //header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit;
                     }
             
@@ -168,15 +165,11 @@ if(isset($_POST['submit'])){
                 }}}
         
                 if(isset($_POST['password']) && $_POST['password']!= ""){
-                    //$userPassword = password_hash(mysqli_real_escape_string($connection,$_POST['password']), PASSWORD_DEFAULT);
                     $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
          `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
           `SecondaryNumber` = '$SecondaryNumber',password ='$userPassword' WHERE email = '$loggedInUser'";
-                    //$sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-                    //,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
                     $results = mysqli_query($connection,$sql);
                     echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                    //header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit;
                     }else{
                         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
@@ -184,7 +177,6 @@ if(isset($_POST['submit'])){
           `SecondaryNumber` = '$SecondaryNumber' WHERE email = '$loggedInUser'";
                        $results = mysqli_query($connection,$sql);
                        echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                    //header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit; 
                     }
                     
@@ -195,7 +187,6 @@ if(isset($_POST['submit'])){
                                
                     $results = mysqli_query($connection,$sql);
                     echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                   // header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit;}}
      ?>
 
@@ -259,11 +250,11 @@ if(isset($_POST['submit'])){
     </div>
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
-                <input type="text" class="inputing-text" id="firstname" name="firstname"placeholder="Enter your first name"
+                <input type="text"  id="FName" name="FName" placeholder="Enter your first name"
                 value="<?php echo $row['firstName']; ?>"><br>
             
                 <label for="lastname">Last Name:</label><span style="color:red"><?php echo $lname_err; ?> </span>
-                <br><input type="text" class="inputing-text" id="lastname" name="lastname"placeholder="Enter your last name"
+                <br><input type="text" id="LName" name="LName" placeholder="Enter your last name"
                 value="<?php echo $row['lastName']; ?>">
 
                 <br> <label for="eMail">Email:</label><span style="color:red"> <?php echo $email_err; ?></span><br>
