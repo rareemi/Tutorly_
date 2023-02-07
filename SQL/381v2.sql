@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2023 at 11:51 AM
+-- Generation Time: Feb 07, 2023 at 10:49 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -67,7 +67,7 @@ CREATE TABLE `offer` (
 
 INSERT INTO `offer` (`id`, `price`, `tutorName`, `RequestID`, `offerstatus`, `tutorEmail`, `startDate`, `startTime`, `endTime`) VALUES
 (1, 100, 'hifza', 1, 'accepted', 'Hifza2@gmail.com', '2023-02-07', '00:00:05', '00:00:00'),
-(2, 200, 'RANA', 4, 'pending', 'bro_200@gmail.com', '2023-02-09', '12:30:00', '13:30:00');
+(2, 200, 'RANA', 4, 'accepted', 'bro_200@gmail.com', '2023-02-06', '12:30:00', '13:30:00');
 
 -- --------------------------------------------------------
 
@@ -90,9 +90,9 @@ CREATE TABLE `parent` (
 --
 
 INSERT INTO `parent` (`email`, `password`, `firstName`, `lastName`, `city`, `Location`, `img`) VALUES
-('gh__201@gmail.com', '123456', 'ghada', 'alotaibi', 'riyadh', 'https://goo.gl/maps/VHanMnQ54Zj8Mvbo9', ''),
+('gh__201@gmail.com', '123456', 'ghada', 'alotaibi', 'riyadh', 'https://goo.gl/maps/VHanMnQ54Zj8Mvbo9', 'TutorPic1.png'),
 ('N__2067@gmail.com', 'NN09876', 'nada', 'ahmad', 'Jeddah', 'https://goo.gl/maps/hkSLxuPmskSzFNGH8', ''),
-('ree-901@gmail.com', 'R234567', 'sara', 'alenezi', 'riyadh', 'https://goo.gl/maps/nDmLQZBuLVParwkd8', '');
+('ree-901@gmail.com', 'R234567', 'razan', 'alenezi', 'riyadh', 'https://goo.gl/maps/nDmLQZBuLVParwkd8', '');
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,7 @@ INSERT INTO `parent` (`email`, `password`, `firstName`, `lastName`, `city`, `Loc
 CREATE TABLE `requests` (
   `TypeOfClass` varchar(100) NOT NULL,
   `ID` int(11) NOT NULL,
-  `stauts` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL,
   `parentEmail` varchar(255) DEFAULT NULL,
   `startDate` date NOT NULL,
   `startTime` time NOT NULL,
@@ -116,11 +116,11 @@ CREATE TABLE `requests` (
 -- Dumping data for table `requests`
 --
 
-INSERT INTO `requests` (`TypeOfClass`, `ID`, `stauts`, `parentEmail`, `startDate`, `startTime`, `endTime`, `comments`, `created_at`) VALUES
+INSERT INTO `requests` (`TypeOfClass`, `ID`, `status`, `parentEmail`, `startDate`, `startTime`, `endTime`, `comments`, `created_at`) VALUES
 ('Biology', 1, 'accepted', 'gh__201@gmail.com', '2023-02-06', '00:00:00', '00:00:00', '', '2023-02-07 13:02:00'),
-('Math', 2, 'served', 'N__2067@gmail.com', '2023-02-10', '12:30:00', '14:30:00', '', '2023-02-07 13:26:13'),
-('English language', 3, 'served', 'ree-901@gmail.com', '2023-02-22', '10:00:00', '12:00:00', 'There is 2 kids', '2023-02-07 13:29:27'),
-('Math', 4, 'expired', 'ree-901@gmail.com', '2023-02-07', '09:00:00', '10:00:00', '', '2023-02-07 13:45:44');
+('Math', 2, 'served', 'N__2067@gmail.com', '2023-02-10', '12:30:00', '14:30:00', '', '2023-02-07 19:11:28'),
+('English language', 3, 'served', 'ree-901@gmail.com', '2023-02-22', '10:00:00', '12:00:00', '', '2023-02-07 21:25:04'),
+('Math', 4, 'accepted', 'ree-901@gmail.com', '2023-02-06', '09:00:00', '10:00:00', '', '2023-02-07 19:13:36');
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ CREATE TABLE `tutor` (
 
 INSERT INTO `tutor` (`email`, `password`, `firstName`, `lastName`, `gender`, `ID`, `age`, `city`, `phone`, `bio`, `img`) VALUES
 ('bro_200@gmail.com', 'BB23456', 'RANA', ' B.', 'female', 467293840, 36, 'Jeddah', '0503999204', 'I have more than 4 years of experience teaching to students from grade 1 to 12. I love science and math and  I make them fun to learn. I am very patient and I would go step by step with you, make sure you understand everything and you are not bored.', ''),
-('Hifza2@gmail.com', 'H1234567', 'Hifza', 'A', 'female', 123456789, 35, 'riyadh', '0555555555', 'Hey there, I\'m Dr. Hifza and I am an experienced Biology and Chemistry tutor. I\'m also proficient in teaching medical subjects (Physiology, Biochemistry Anatomy & Pathology) I can teach any age group from 6 year olds to Adults.\nBiology is a subject I really enjoy teaching and I consider myself', ''),
+('Hifza2@gmail.com', 'H1234567', 'Hifza', 'A', 'female', 123456789, 35, 'riyadh', '0555555555', 'Hey there, I\'m Dr. Hifza and I am an experienced Biology and Chemistry tutor. I\'m also proficient in teaching medical subjects (Physiology, Biochemistry Anatomy & Pathology) I can teach any age group from 6 year olds to Adults.\nBiology is a subject I really enjoy teaching and I consider myself', 'TutorPic1.png'),
 ('rr_288@gmail.com', 'R12345', 'Reem', 'mohammed', 'female', 234567894, 34, 'riyadh', '0502000000', 'Hi, my name is reem and I’m a certified tutor with a degree in math education. I’ve been tutoring math for the past five years and specialize in all topics of mathematics including calculus, geometry, algebra, and trigonometry. I’m passionate about teaching and helping my students achieve their full potential by providing them with personalized instruction and guidance. I enjoy using technology to make learning more interactive and enjoyable.', '');
 
 --
