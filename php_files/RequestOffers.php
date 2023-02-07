@@ -102,7 +102,8 @@ echo($numOfKids );
 <label class='time'><?php echo($row[$stime])?> - <?php echo($row[$etime])?></label>
 <br><br>
      <a class ="Offer1" href="../html_files/TutorsOffers.html?<?php echo($row[$id])?>">Show Offers</a>
-        </p> </div>
+        </p> 
+    </div>
 
     
     <?php 
@@ -128,6 +129,7 @@ echo($numOfKids );
 
 <?php } ?>
 
+</div>
 </body>
 
 </html>
