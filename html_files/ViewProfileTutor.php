@@ -4,6 +4,23 @@ session_start();
 $requests = get_requests($_SESSION['email']); */
 
 ?>
+<!DOCTYPE html>
+
+    <head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile Tutor</title>
+    <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">>
+     
+     <link rel ="stylesheet" type= "text/css" href="../css_files/ViewProfileTutor.css">
+   
+     
+     <body>
+       
+        <h2>
+            View Profile
+
+        </h2>
 
 <?php include ("../php_files/tutorHeader.php"); 
 if(!isset($_GET['id'])) {
@@ -11,9 +28,9 @@ if(!isset($_GET['id'])) {
     exit;
 } 
 
-include('../PHP_Files/connect_db.php');
+include('../php_files/connectDB.php');
  $email = $_GET['em']; 
-$sql = "SELECT `img`,`firstName`,`lastName`,`age`,`city`,`bio`,`phone` FROM `babysitter` WHERE `email` = '$email' ";
+$sql = "SELECT `img`,`firstName`,`lastName`,`age`,`city`,`bio`,`phone` FROM `tutor` WHERE `email` = '$email' ";
 $result = mysqli_query($connection,  $sql);
 $row = mysqli_fetch_row($result);
 
@@ -40,23 +57,7 @@ next($row);
   ?>  
  
 
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta charset = "utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Profile Tutor</title>
-    <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">>
-     
-     <link rel ="stylesheet" type= "text/css" href="../css_files/ViewProfileTutor.css">
-     </html>
-     
-     <body>
-       
-        <h2>
-            View Profile
 
-        </h2>
        
             <!--<div class="holder"> 
                 <p class = "detail"> 
