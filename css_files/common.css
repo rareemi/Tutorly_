@@ -102,13 +102,24 @@ li, a  {
                         
                     
  }  /*end page bar*/ 
+ html, body{
+    height:100%;
+    width: 100%; 
+    margin: 0; 
+    display: table;
+}
 
 
  /*start footer*/
 
  footer{
-    display: inline-block;
-    margin: 6px 38%;}
+    position: relative;
+    display:table-row;
+    left: 36%;
+    padding-top: 10px;
+    bottom:0;
+    text-align: center;
+}
 
     .con{
     
