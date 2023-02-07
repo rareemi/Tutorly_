@@ -41,23 +41,6 @@ $valu = mysqli_num_rows($result1);
 ?>
 
 
-
-<!--
-$session_email= $_SESSION['email'];
-$sql = "SELECT * FROM `offer`  INNER JOIN requests
-ON requests.ID = offer.RequestID  INNER JOIN tutor
-ON tutor.email  = offer.tutorEmail   where requests.parentEmail='$session_email' and offer.offerstatus='accepted'";
-
-$userFound = mysqli_query($connection,$sql);
-if($userFound){
-
-if(mysqli_num_rows($userFound) > 0) {
-
-while ($row = mysqli_fetch_assoc($userFound)) {
-  if ($row['data'] >= date('Y-m-d')) {
- ?>
-  -->
-
 <?php
 
 $x = 0;
@@ -82,19 +65,33 @@ while($x< $valu  ){
 $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
 $result2 = mysqli_query($connection, $kidss);
 ?>
+
     <div class = "holder" style="background-color: #F5FBFF;"> 
 <p class ="req1" >
          <label class = "titleLabel">Request</label><br> 
      <label class="nameLabel">Kid name: </label>
-    <label class="Name"><?php echo </label><br>
+    <label class="Name"><?php
+        $kidn = mysqli_num_rows($result2);
+        echo($numOfKids );
+        ?></label><br>
 
-     <label class="ageLabel">Age: </label><label class="Age">8 Years</label><br>
-     <label class="classLabel">Type Of Class: </label><label class = "Type">Math</label><br>
+     <label class="ageLabel">Age: </label>
+     <label class="Age">8 Years</label><br>
+
+     <label class="classLabel">Type Of Class: </label>
+     <label class = "class"><?php echo($row[$class])?></label><br>
+
      <label class="durationLabel">Duration: </label> <label class="duration">3 Hours</label>
      <br>
      <a class ="Offer1" href="../html_files/TutorsOffers.html">Show Offers</a>
         </p>
+
     </div>
+    <?php 
+}//end while
+}else{
+    ?>
+}
 
 
 <?php include ("../php_files/footer.php"); ?>
