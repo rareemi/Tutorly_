@@ -85,7 +85,7 @@
 }?>
                 </div>
                 <br>
-                <p><a class= "button1" href="/html_files/HomePageTutor.html">Back</a></p>
+                <p><a class= "button1" href="/html_files/HomePageTutor.php">Back</a></p>
                 <br>
 
                 <?php include("../php_files/footer.php");?>
