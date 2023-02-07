@@ -43,7 +43,7 @@
          if (date('Y-m-d') >$row['startDate']) {
         ?>
             <p class="container" style="width: 320px; height: 540px;">
-             <img src="../public/userImages/<?php echo $row['img']; ?>" class="pic" height="190" alt="Tutor picture"><br>
+             <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              
               <label class="nameLabel">Tutor Name: </label><br>
               <label class="Name"><?php echo $row['tutorName']; ?></label><br>
@@ -54,10 +54,10 @@
               <label class="DateLabel">Date: </label><br>
               <label class="Date"><?php echo $row['startDate']; ?> </label> <br> 
               
-              <label class="TimeLabel"> From: </label>
-              <label class="Time"> <?php echo $row['startTime']; ?></label>
+              <label class="TimeLabel"> From: </label><br>
+              <label class="Time"> <?php echo $row['startTime']; ?></label><br>
               
-              <label class="TimeLabel"> To: </label>
+              <label class="TimeLabel"> To: </label><br>
               <label class="Time"> <?php echo $row['endTime']; ?></label><br><br>
              
              <a class ="email" href="mailto:<?php echo($row['tutorEmail']);?>; ?>">Send email</a>
