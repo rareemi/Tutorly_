@@ -1,89 +1,61 @@
-<?php
-session_start();
+<!DOCTYPE html>
 
+<html>
+<head>
 
-if(isset($_POST['submit'])){
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Tutor</title>
+<link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
+<link rel ="stylesheet" type= "text/css" href="../css_files/review&rate.css">
+<style> label,p,b{
+  background-color:#98C1D9;
+}
+  t {background-color:#98C1D9;
+  text-decoration: underline;}
+  </style>
+    </head>
+
+    <body>
+      <header>
+        <img src = "../images/logo.png" class ="logo" width = "400px"  height= "400px" alt="logo" style="margin: 2px 34%;" >
+        
+    </header>
+    <h2>Login</h2>
+    <div class="containers" style="width: 300px ; height:400px ;">
+    <form action="loginprosses.php" method="post">
+                        <?php
+if(isset($_GET['error'])){
+
+if($_GET['error'] == 'failToLogIn'){
+    ?>
+    <div class="alert alert-danger" role="alert">
+    Wrong email/password, please enter a correct one!
+</div>
+    <!--<small class="in-log-in">Please Enter correct email and password</small>-->
     
-$servername= "localhost";
-$username= "root" ;
-$password= "";
-$dbname= "381project" ;
-$connection= mysqli_connect($servername,$username,$password,$dbname);
-$database= mysqli_select_db($connection, $dbname);
-// Check the connection
-if (!$connection) 
-die("Connection failed: " . mysqli_connect_error());
+<?php
+}}
 
-//echo 'PHP version: ' . phpversion();
-//print_r($_POST);
-    if(!empty($_POST['uEmail']) && !empty($_POST['uPassword'])){
+?>
+         
+          <label for="email">E-mail: </label><br>
+          <input type="text" id="email" name="email" required><br>
+          <label for="pass">Password:</label><br>
+          <input type="password" id="pass" name="pass" required>
 
-        $userEmail = mysqli_real_escape_string($connection,strip_tags($_POST['uEmail']));
-        $userPassword = mysqli_real_escape_string($connection,$_POST['uPassword']);
-        //$password_encrypted = password_hash(mysqli_real_escape_string($connection,$_POST['uPassword']), PASSWORD_DEFAULT);
-        //$password_encrypted = password_hash($userPassword, PASSWORD_DEFAULT);
-        $sql = "SELECT * FROM `babysitter` WHERE email='$userEmail'AND password='$userPassword'";
-        // AND password='$userPassword'
-        $userFound = mysqli_query($connection,$sql);
-        //echo $password_encrypted;
-        if($userFound){
+          <br> <br>
+          <input type="submit" name="submit" value="Login" style="width: 40%;">
+  
+      
+          <br>   <br>  <br>  <br> <p> <a href="ForgetPassTuter.html"><t> Forget Password? </t></a></p> <br>
+          <p>you don't have an acc? <a href="SignUpTutor.html"> <t>Sign up </t></a></p>
+        </form></div>
 
-            if(mysqli_num_rows($userFound) > 0){
-                
-                while($row = mysqli_fetch_assoc($userFound)){
-                    //$userPassword==$row['password'] password_verify($password_encrypted,$row['password'])
-                    //password_verify($userPassword,$row['password'])//////////////////////////////////////////////////////////////////
-                    //var_dump(password_verify($userPassword,$row['password']));
-                    //if(password_verify($userPassword,$row['password'])){
-                    if($userPassword==$row['password']){
-                        $_SESSION['email'] = $row['email'];
-                            $_SESSION['firstName']=$row['firstName'];
-                            $_SESSION['lastName']=$row['lastName'];
-                            $_SESSION['img']=$row['img'];
+           <hr> 
+        
+           <?php include("footer.php");?>
+  
+        </body>
 
-                        header('Location:../HTML_Files/babysitterhome.php');
-                        exit;
-                    }
-                    //}
-                }
-                      //  $_SESSION['user_name'] = $userEmail;
-                        
-            }
-            
-            
-        }
-        $sql = "SELECT * FROM `parent` WHERE email='$userEmail'AND password='$userPassword'";
-        // AND password='$userPassword'
-        $userFound = mysqli_query($connection,$sql);
-        
-        if($userFound){
-            
-            if(mysqli_num_rows($userFound) > 0){
-                
-                    while($row = mysqli_fetch_assoc($userFound)){
-                        /////////////////////////////////////////////////////////////////////////////////////////////////
-                        if($userPassword==$row['password']){
-                            $_SESSION['email'] = $row['email'];
-                            $_SESSION['firstName']=$row['firstName'];
-                            $_SESSION['lastName']=$row['lastName'];
-                            $_SESSION['img']=$row['img'];
-                            $_SESSION['City']=$row['City'];
-                            $_SESSION['District']=$row['District'];
-                            header('Location:../HTML_Files/parenthome.php');
-                        exit;
-                        }
-                    }
-                
-                       // $_SESSION['user_name'] = $userEmail;
-                        
-            }
-            
-            
-        }
-        
-        header('Location:../HTML_Files/LoginPage.php?error=failToLogIn');
-        
-        
-    }
-    //unset($_SESSION['user_name']);
-}?>
+</html>
