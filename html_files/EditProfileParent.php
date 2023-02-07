@@ -210,13 +210,16 @@ if(isset($_POST['submit'])){
         width: 720px;
         height: 850px;
        }
-       .change{text-decoration: underline;
-     }
+       
      .detail{
         text-align: center;
-        height: 810px;
-       
+        height: 1355px;       
         margin: -2% ;
+     }
+     #button2{
+        padding: 15px;
+
+
      }
     </style>
      </head>
