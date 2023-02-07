@@ -99,25 +99,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?> 
 
+
+
 <!DOCTYPE html>
 <html>
 
     <head>
+    <link rel="stylesheet" type ="text/css" href="../css_files/jobRequestStyle.css" >
         <title>Post Job Request</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../CSS_Files/jobRequestStyle.css">
-        <link rel="stylesheet" href="../CSS_Files/menustyle.css">
-        <link rel="stylesheet" href="../CSS_Files/footer.css">
         <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
     </head>
-    
+
+
     <body>
         
-         <!--Upper Menue-->
-    <?php include("parentheader.php"); ?>
+       
+    
     
 
         <div class="postingPage">
@@ -130,11 +131,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div id="kids_info">
                     <label class="nameLabel"> Kid/s Name: <span class="errspan" style="color:red;font-size: 15px;"><?php echo $kidName_err; ?></span>
-                        <input class="inputName" name="kidsname[]" type="text" placeholder="Enter Kid Name" required> 
+                        <input class="inputName" name="kidsname[]" type="text" placeholder="Enter your Kid Name" required> 
                     </label>
                     
                     <label class="ageLabel"> Kid/s Age: 
-                        <input class="inputAge" name="kidsage[]" type="number" min="0" max="17" placeholder="Enter Kid Age" required>
+                        <input class="inputAge" name="kidsage[]" type="number" min="0" max="17" placeholder="Enter your Kid Age" required>
                     </label>
                 </div>
                     
@@ -163,6 +164,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
             </div> <!-- end container -->
         </div> <!-- end postingPage -->
+    </body>
+</html>
 
            
         <footer> <!-- footer -->
