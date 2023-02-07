@@ -5,8 +5,8 @@
                 <li><a href = "../html_files/HomePageTutor.php"> Home</a></li>
                 <li><a href = "#"> Profile</a>
                     <ul> <!--this for drop-down menu-->
-                        <li><a href = "../html_files/ViewProfileTutor.php"> View</a></li>
-                        <li><a href = "../html_files/EditProfileTutor.php"> Edit</a></li>
+                        <li><a href = "../php_files/ViewProfileTutor.php"> View</a></li>
+                        <li><a href = "../php_files/EditProfileTutor.php"> Edit</a></li>
                     </ul> 
                 </li>
                 <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>

@@ -119,7 +119,7 @@ font-weight: 650;
                 <?php echo $row['bio']; ?>
                 </span>
             </p>
-<a class= "button1" href="../html_files/HomePageTutor.php">back</a>
+<a class= "button1" href="../php_files/HomePageTutor.php">back</a>
                 </p>
                      </p>  </div> 
                      <?php

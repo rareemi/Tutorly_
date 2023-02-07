@@ -5,8 +5,8 @@
                     <li><a href = "../html_files/HomePageParent.php"> Home</a></li>
                     <li><a href = "#"> Profile</a>
                         <ul>
-                            <li><a href = "../html_files/ViewProfileParent.php"> View</a></li>
-                            <li><a href = "../html_files/EditProfileParent.php"> Edit</a></li>
+                            <li><a href = "../php_files/ViewProfileParent.php"> View</a></li>
+                            <li><a href = "../php_files/EditProfileParent.php"> Edit</a></li>
                         </ul>
                     </li>
                     <li><a href = "#"> Requests</a>

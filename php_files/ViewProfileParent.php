@@ -103,7 +103,7 @@ font-weight: 650;
                 <p class="needs-container">Location: <span class="par"><?php echo $row['location']; ?></span>
 <br>
 <br>
-<a class= "button1" href="../html_files/HomePageParent.php">back</a>
+<a class= "button1" href="../php_files/HomePageParent.php">back</a>
 
 </div>
                      </p>  </div>

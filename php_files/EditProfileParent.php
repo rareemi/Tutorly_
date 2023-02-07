@@ -17,11 +17,7 @@ if(isset($_POST['submit'])){
     $firstname  =    $_POST['firstname'];
     $lastname =    $_POST['lastname'];
     $City =    $_POST['City'];
-    $District =    $_POST['District'];
-    $Street =    $_POST['Street'];
     $eMail =    $_POST['eMail'];
-    $BuildingNumber =    $_POST['BuildingNumber'];
-    $PostalCode =    $_POST['PostalCode'];
     $SecondaryNumber =    $_POST['SecondaryNumber'];
     $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
 
@@ -213,7 +209,7 @@ if(isset($_POST['submit'])){
        
      .detail{
         text-align: center;
-        height: 1355px;       
+        height: 800px;       
         margin: -2% ;
      }
      #button2{
@@ -228,20 +224,7 @@ if(isset($_POST['submit'])){
         <h2>
                 Edit Profile
             </h2>
-            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>"method="POST" enctype="multipart/form-data">
-            <?php
-                
-                $currentUser = $_SESSION['email'];
-                //print($_SESSION['email']);
-                $sql = "SELECT * FROM `parent` WHERE email ='$currentUser'";
-
-                $gotResuslts = mysqli_query($connection,$sql);
-
-                if($gotResuslts){
-                    if(mysqli_num_rows($gotResuslts)>0){
-                        while($row = mysqli_fetch_array($gotResuslts)){
-                            //print_r("ygbyb8yn".$row['email']);
-                        ?>
+            <!---->
                 <div class="holder"> 
                     <div class = "detail"> 
                     
@@ -281,7 +264,7 @@ if(isset($_POST['submit'])){
                
             
                 <input type="submit" value="Submit">
-    <a class= "button1" href="../html_files/HomePageParent.php">Back</a>
+    <a class= "button1" href="../php_files/HomePageParent.php">Back</a>
     </div>
                         </div>
 
@@ -290,9 +273,9 @@ if(isset($_POST['submit'])){
    
             <h5>
                 
-                <a class= "button1" href="../html_files/DeletProfileParent.php" style="margin-left: 40%;">Delete Profile</a>
+                <a class= "button1" href="../php_files/DeletProfileParent.php" style="margin-left: 40%;">Delete Profile</a>
                 
- <?php }}}
+ <?php //}}}
                        ?>
             </h5>
             <br><br>
