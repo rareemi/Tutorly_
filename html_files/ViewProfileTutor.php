@@ -1,11 +1,19 @@
 <?php
 session_start();
-/* require ("../php_files/query.php");
-$requests = get_requests($_SESSION['email']); */
+$servername= "localhost";
+$username= "root" ;
+$password= "";
+$dbname= "381" ;
+$connection= mysqli_connect($servername,$username,$password,$dbname);
+$database= mysqli_select_db($connection, $dbname);
+               
+if (!$connection) 
+die("Connection failed: " . mysqli_connect_error());
 
 ?>
+<?php include ("../php_files/tutorHeader.php"); ?>
 <!DOCTYPE html>
-
+<html lang ="en">
     <head>
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,87 +21,109 @@ $requests = get_requests($_SESSION['email']); */
     <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">>
      
      <link rel ="stylesheet" type= "text/css" href="../css_files/ViewProfileTutor.css">
-   
-     
+     </html>
+</head>
+<style>
+
+.more-space-on-bottom {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.needs-container {
+    font-size: larger;
+    height: 30px;
+width: 580px;
+display: block;
+margin-top: 10px;
+margin-bottom: 10px;
+background-clip: padding-box;
+border-radius: 0.25rem;
+padding: .375rem .75rem;
+font-weight: 650;
+}
+.bio-par {
+    font-size:  larger;
+    height:  100px;
+width:  580px;
+display: block;
+margin-top:  10px;
+margin-bottom:  10px;
+background-clip:  padding-box;
+border-radius:  0.25rem;
+padding:  .375rem .75rem;
+overflow:  auto;
+font-weight: 650;
+}
+
+</style>
      <body>
        
         <h2>
-            View Profile
+            View Profile 
 
         </h2>
+        <?php
+                
+                $currentUser = $_SESSION['email'];
+                //print($_SESSION['email']);
+                $sql = "SELECT * FROM `babysitter` WHERE email ='$currentUser'";
 
-<?php include ("../php_files/tutorHeader.php"); 
-if(!isset($_GET['id'])) {
-    header('Location:/Tutorly_/php_files/offerDetails.php');
-    exit;
-} 
+                $gotResuslts = mysqli_query($connection,$sql);
 
-include('../php_files/connectDB.php');
- $email = $_GET['em']; 
-$sql = "SELECT `img`,`firstName`,`lastName`,`age`,`city`,`bio`,`phone` FROM `tutor` WHERE `email` = '$email' ";
-$result = mysqli_query($connection,  $sql);
-$row = mysqli_fetch_row($result);
+                if($gotResuslts){
+                    if(mysqli_num_rows($gotResuslts)>0){
+                        while($row = mysqli_fetch_array($gotResuslts)){
+                            //print_r("ygbyb8yn".$row['email']);
+                        ?>
+            <div class="holder"> 
+                <div class = "detail"> 
 
-$image = key($row);
-next($row);
+                <div class="forthepic">
+               <img class = "pic"src="../images/TutorPic1.png"<?php echo $row['img']; ?>alt="Tutor Picture" height="250"></div><br>
 
-$fname = key($row);
-next($row);
+                       <p class="needs-container"> First Name: <span class="par"><?php echo $row['firstName']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
+            <p class="needs-container">
+                Last Name:
+                <span class="par"> <?php echo $row['lastName']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
+            <p class="needs-container"> ID:
+                <span class="par"><?php echo $row['ID']; ?></span>
+            </p>
+            <p class="needs-container"> Age:
+                <span class="par"><?php echo $row['age']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
 
-$lname = key($row);
-next($row);
+            <p class="needs-container"> Gender: <span class="par"><?php echo $row['gender']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
+            <span class="par"><?php echo $row['email']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
+            <p class="needs-container"> Phone:
+                <span class="par"><?php echo $row['phone']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
 
-$age = key($row);
-next($row);
+            <p class="needs-container"> City:
+                <span class="par"><?php echo $row['city']; ?></span>
+            </p>
+            <p class="more-space-on-bottom"></p>
 
-$city = key($row);
-next($row);
-
-$bio = key($row);
-next($row);
-
-$phone = key($row);
-next($row);
-  ?>  
- 
-
-
-       
-            <!--<div class="holder"> 
-                <p class = "detail"> 
-                <img class = "pic"src="../images/TutorPic1.png" alt="Tutor Picture" height="250"><br>
-                       <label class="nameLabel">First Name: </label><label class="Name"></label>lama </label>
-                        <br>
-                        <br>
-                        
-                          <label class="nameLabel">Last Name: </label><label class="Name"></label>ahmed </label><br> <br> 
-                          <label class="id">ID: </label><label class="ID">*******</label>
-                          <br>
-                          <br>
-                          <label class="AGE">Age: </label><label class="age">30</label>
-<br>
-<br>
-<label class="gender">Gender: </label><label class="Gender">Female</label>
-<br>
-<br>
-                        <label class="e-mail">E-mail: </label><label class="email">***@gmail.com</label>
-                <br>
-                <br>
-                <label class="phone">Phone: </label><label class="PHONE">+966 5*****</label>
-                <br>
-                <br>
-
-                <label class="citylabel">City: </label><label class="city">Riyadh</label>
-<br>
-<br>
-
-<label class="bio">Bio: </label><label class="BIO">***********</label>
-<br>
-<br>
-<a class= "button1" href="/html_files/HomePageTutor.html">back</a>
+            <p class="bio-par"> Bio:
+                <span class="par">
+                <?php echo $row['bio']; ?>
+                </span>
+            </p>
+<a class= "button1" href="../html_files/HomePageTutor.php">back</a>
                 </p>
-                     </p>  </div> -->
-       
+                     </p>  </div> 
+                     <?php
+}}}  ?>
                      <?php include ("../php_files/footer.php"); ?>
 
      </body>
