@@ -178,7 +178,7 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
      }
      #button2{
         padding: 15px;
-
+        margin: 10%;
 
      }
      
@@ -189,9 +189,7 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
             Edit Profile
         </h2>
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
-                <?php
-                
-                        $currentUser = $_SESSION['email'];
+        <?php $currentUser = $_SESSION['email'];
                         //print($_SESSION['email']);
                         $sql = "SELECT * FROM `babysitter` WHERE email ='$currentUser'";
 
@@ -219,7 +217,7 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
                 <label for="lastname">Last Name:</label><span style="color:red"><?php echo $lname_err; ?> </span>
                 <br><input type="text" id="LName" name="LName" placeholder="Enter your last name"
                 value="<?php echo $row['lastName']; ?>">
-                <p class="more-space-on-bottom"></p>
+                <br>
 
             <label for="id">ID: </label><span style="color:red;"><?php echo $id_err; ?> </span><br>
             <input type="text" id="id" name="idd"  placeholder="example:1126354857"
@@ -230,7 +228,7 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
             value="<?php echo $row['age']; ?>"><br>
 
             <label>Gender:</label>
-            <p class="more-space-on-bottom"></p>
+           <br>
                 <input type="radio" name="gender" value="male"<?php if (isset($row['gender']) && strtolower($row['gender'])=="male") echo "checked";?>> Male
                 <input type="radio" name="gender" value="female"<?php if (isset($row['gender']) && strtolower($row['gender'])=="female") echo "checked";?>> Female
 
@@ -294,12 +292,10 @@ fuction geterrdet(){
                     value="<?php echo $row['City']; ?>">
 
             <br> <label for="bio">Bio:</label><span style="color:red;"> <?php echo $msg_err; ?></span> </span><br>
-           <p class="more-space-on-bottom"></p>
            <textarea name="biotextbox" id="bio" name="bio" rows="10" placeholder=" Enter your bio, such as: years of experience, education, languages spoken, skills, etc">
            <?php echo $row['bio']; ?>
                 </textarea>
-                <p class="more-space-on-bottom"></p>
-
+<br>
 
         
                <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="submit" />
