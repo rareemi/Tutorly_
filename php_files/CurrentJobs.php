@@ -35,28 +35,29 @@
              if($userFound){
                 if (mysqli_num_rows($userFound) > 0) {
                     while ($row = mysqli_fetch_assoc($userFound)) {
-                        if ($row['data'] >= date('Y-m-d')) {
+                        if ($row['startDate'] >= date('Y-m-d')) {
             ?>
                 
         <div class="CurrentJobs">
             <p class="container" style="width: 320px; height: 540px;">
-             <img src="../public/userImages/<?php echo $row['img']; ?>" class="pic" height="190" alt="Tutor picture"><br>
+             <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              <?php $id= $row['ID'];
                     $sql_kids = "SELECT * FROM `kids`   where ID ='$id' ";
-
                     $userFound_kids = mysqli_query($connection,$sql_kids);
                     if($userFound_kids) {
+                       if (mysqli_num_rows($userFound_kids) > 0) {
 
-                        if (mysqli_num_rows($userFound_kids) > 0) {
-                           // while ($row_kids = mysqli_fetch_assoc($userFound_kids)) {
-                                ?>
-        
-                                <label class="nameLabel">Kids Name:  </label><br>
-                                <label class="Name"><?php echo mysqli_num_rows($userFound_kids); ?></label><br>
-        
-                            <?php //}
-                        }
-                    } ?>
+                       while($row_kids= mysqli_fetch_assoc($userFound_kids)){
+                        if($id==$row_kids['ID']){
+                            $name= $row_kids['kidName'];
+                        }?>
+
+                       <label class="nameLabel">Kids Name:</label><br>
+                       <label class="Name"><?php echo $name; ?></label><br>
+                   <?php 
+               }
+           }} ?>
+           
               <label class="PriceLabel"> Type Of Class: </label><br>
               <label class="Price"><?php echo $row['TypeOfClass']; ?> </label><br>
 

@@ -41,7 +41,7 @@
           ?>
 
                 <p class="container" style="width: 320px; height: 540px;">
-                 <img src="../public/userImages/<?php echo $row['img']; ?>"  class="pic" height="190" alt="Tutor picture"><br>
+                 <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
                  
                   <label class="nameLabel">Tutor Name: </label><br>
                   <label class="Name"><?php echo $row['tutorName']; ?></label><br>
