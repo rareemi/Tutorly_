@@ -89,7 +89,8 @@ $result2 = mysqli_query($connection, $kidss);
     </div>
     <?php 
 }//end while
-}else{
+} else {
+}
     ?>
 }
 

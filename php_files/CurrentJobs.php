@@ -66,8 +66,14 @@
               <label class="DateLabel">Date</label><br>
               <label class="Date"><?php echo $row['date'];?></label><br>
     
-              <label class="DurationLabel"> Duration: </label><br>
-              <label class="Duration"><?php echo $row['Duration']; ?></label> <br><br>
+              <label class="DateLabel"> Date: </label>
+              <label class="Date"><?php echo $row['startDate']; ?> </label>
+
+              <label class="TimeLabel"> From: </label>
+              <label class="Time"> <?php echo $row['startTime']; ?></label>
+
+              <label class="TimeLabel"> To: </label>
+              <label class="Time"> <?php echo $row['endTime']; ?></label><br>
 
              
              <a class ="email" href="mailto:<?php echo($row['parentEmail']);?>; ?>">Contact with parent</a>

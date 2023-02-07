@@ -40,7 +40,7 @@
          if(mysqli_num_rows($userFound) > 0) {
 
          while ($row = mysqli_fetch_assoc($userFound)) {
-         if (date('Y-m-d') >$row['date']) {
+         if (date('Y-m-d') >$row['startDate']) {
         ?>
             <p class="container" style="width: 320px; height: 540px;">
              <img src="../public/userImages/<?php echo $row['img']; ?>" class="pic" height="190" alt="Tutor picture"><br>
@@ -52,10 +52,13 @@
               <label class="Price"> <?php echo $row['price']; ?>SR</label><br>
 
               <label class="DateLabel">Date: </label><br>
-              <label class="Date"><?php echo $row['date']; ?></label><br>
-    
-              <label class="DurationLabel"> Duration: </label><br>
-              <label class="Duration"><?php echo $row['Duration']; ?></label> <br><br>
+              <label class="Date"><?php echo $row['startDate']; ?> </label> <br> 
+              
+              <label class="TimeLabel"> From: </label>
+              <label class="Time"> <?php echo $row['startTime']; ?></label>
+              
+              <label class="TimeLabel"> To: </label>
+              <label class="Time"> <?php echo $row['endTime']; ?></label><br><br>
              
              <a class ="email" href="mailto:<?php echo($row['tutorEmail']);?>; ?>">Send email</a>
 
@@ -67,8 +70,8 @@
             $resultt = $connection->query($sql_email);
             while ($roww = $resultt->fetch_assoc()) {
                 if ($roww['cunt'] == 0) { ?>
-                <a href='../php_files/Review&Rate.php?tutorEmail=<?php echo($row['tutorEmail']) ?>&id_offer=<?php echo($id_offer); ?>'>
-                <input type="submit" class="review" value="review"></a>
+                
+                <a  class="review" href='../php_files/Review&Rate.php?tutorEmail=<?php echo($row['tutorEmail']) ?>&id_offer=<?php echo($id_offer); ?>' >review</a>
                 <?php }
             } ?>
             

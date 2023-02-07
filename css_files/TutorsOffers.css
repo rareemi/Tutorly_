@@ -34,13 +34,13 @@ h2, div{
     }
 
 
-        .nameLabel, .ratingLabel, .priceLabel,.DateLabel,.DurationLabel
+        .nameLabel, .ratingLabel, .priceLabel,.DateLabel,.TimeLabel
   {
    color:#293241;
    background-color: #98C1D9;
     }
 
-    .Name, .Rate, .Price,.Date,.Duration
+    .Name, .Rate, .Price,.Date,.Time
 {
     background-color:#98C1D9;
     color: #F5FBFF;
