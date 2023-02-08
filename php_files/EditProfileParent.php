@@ -228,9 +228,8 @@ if(isset($_POST['submit'])){
                 <label for="password">Password:</label><span style="color:red"> <?php echo $password_err; ?></span><br>
                 <input type="password" class="inputing-text" id="password" name="password" placeholder="  at least 6 characters ">
                 <p class="more-space-on-bottom"></p>
-                <input class="botton-bigger" type="submit" name="submit" value="Update" />
 
-                <br>
+               
                 
                 <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
                     <input type="text" class="inputing-text" id="loc" name= "city" placeholder=" example:Riyadh"
@@ -242,7 +241,7 @@ if(isset($_POST['submit'])){
 
                
             
-                <input type="submit" value="Submit">
+                <input class="botton-bigger" type="submit" name="submit" value="Update" />
     <a class= "button1" href="../php_files/HomePageParent.php">Back</a>
     </div>
                         </div>
