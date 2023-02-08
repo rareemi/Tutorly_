@@ -41,7 +41,7 @@ die("Connection failed: " . mysqli_connect_error());
                             $_SESSION['lastName']=$row['lastName'];
                             $_SESSION['img']=$row['img'];
 
-                        header('Location:../html_files/HomePageTutor.php');
+                        header('Location:../php_files/HomePageTutor.php');
                         exit;
                     }
                     //}
@@ -69,7 +69,7 @@ die("Connection failed: " . mysqli_connect_error());
                             $_SESSION['img']=$row['img'];
                             $_SESSION['City']=$row['City'];
                             $_SESSION['Location']=$row['Location'];
-                            header('Location:../html_files/HomePageParent.php');
+                            header('Location:../php_files/HomePageParent.php');
                         exit;
                         }
                     }
