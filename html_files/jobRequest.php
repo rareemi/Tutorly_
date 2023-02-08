@@ -1,8 +1,95 @@
 <?php
 session_start();
+$class_err = $form_day_err = $to_time_err = $kidName_err = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "381";
+if (!$conn = mysqli_connect($servername, $username, $password, $dbname)) 
+die("Connection failed: " . mysqli_connect_error());
+if( isset($_POST['class']) && isset($_POST['form_day']) && isset($_POST['from_time']) && isset($_POST['to_time'])){
+    $class = $_POST['class'];
+    $form_day = $_POST['form_day'];
+    $from_time = $_POST['from_time'];
+    $to_time = $_POST['to_time'];
+
+
+    $valid = true;
+    if($class == " "){
+        $class_err = " please enter the type of class!" ;
+        $valid = false;
+    }
+
+    if(strtotime($to_time) <= strtotime($from_time)){
+        $to_time_err = " please enter a valid time , second time must be greater than the first!" ;
+        $valid = false;
+    }
+
+    $count = count($_POST["kidsname"]);
+    for($x =0 ; $x < $count ; $x++) {
+       $kidName = $_POST["kidsname"]["$x"];
+       if($kidName == "" || !ctype_alpha(str_replace(" ", "", $kidName))){
+       $kidName_err =" please enter a valid name!";
+       $valid = false;}
+    } 
+
+    if ($valid) {
+        if(!empty($_POST['comments']))
+        $comments = $_POST['comments'];
+        else
+        $comments = "no comment added";
+
+//not sure yet ! 
+$name = $_SESSION['firstName'];
+       // $city = $_SESSION['City'];
+       // $district = $_SESSION['District'];
+        $pemail =  $_SESSION['email'];
+
+        $createdAt = $date = date('m/d/Y h:i:s', time());
+//until here !
+
+echo "$createdAt";
+        $sql = "INSERT INTO `request` (`TypeOfClass`, `ID`, `status`,  `parentEmail`, `startDate`, `startTime`, `endTime`, `comments`, `created_at`) VALUES ('$class', NULL, 'unserved', '$pemail' ,  '$form_day', '$from_time', '$to_time', '$comments', now() )";
+
+        $query = mysqli_query($conn,$sql);
+
+        if( $query ){
+            echo 'done1';
+            
+            //Insert ID
+           $id = mysqli_insert_id($conn);
+           print("Insert ID: ".$id ."\n");
+            $count = count($_POST["kidsname"]);
+            print("count: ". $count ."\n");
+            for($x =0 ; $x < $count ; $x++) {
+               $kidName = $_POST["kidsname"]["$x"];
+               $kidAge = $_POST["kidsage"]["$x"];
+                $sql = "INSERT INTO `kids` (`ID`, `kidName`, `kidAge`) VALUES ('$id', '$kidName', '$kidAge')";
+                $query = mysqli_query($conn,$sql);
+              }
+              echo '<script>alert("Posted successful!");window.location.href="jobRequest.php";</script>';
+    
+        
+        }
+        else{
+            echo 'fail';
+            }  
+
+}
 
 
 
+
+
+
+
+
+
+}
+}
+?>
 
 
 
@@ -59,11 +146,11 @@ session_start();
         
             <div class="containerr">
 
-           <!-- <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">-->
+           <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
             <p id="formInfo">
 
                 <div id="kids_info">
-                    <label class="nameLabel"> Kid Name: <span class="errspan" style="color:red;font-size: 15px;"></span>
+                    <label class="nameLabel"> Kid Name: <span class="errspan" style="color:red;font-size: 15px;"> <?php echo $kidName_err; ?></span>
                         <input class="inputName" name="kidsname[]" type="text" placeholder="Enter Kid Name" required> 
                     </label>
                     
@@ -78,11 +165,11 @@ session_start();
                           <p style="margin-left: 140px;">Select + to add child, - to remove child</p>
                         </div>
                 
-                <label class="serviceLabel"> Type Of Class: <span class="errspan" style="color:red;font-size: 15px;"></span>
+                <label class="serviceLabel"> Type Of Class: <span class="errspan" style="color:red;font-size: 15px;"><?php echo $class_err; ?></span>
                     <input class="inptService" name="service" type="text" placeholder="Enter type of class your Kid need " required> 
                 </label>
                 
-                <label class="durationLabel"> Duration: <br> <span class="errspan" style="color:red;font-size: 15px;"></span><br>
+                <label class="durationLabel"> Duration: <br> <span class="errspan" style="color:red;font-size: 15px;"><?php echo $to_time_err; ?></span><br>
                 Date:<input class="inputDay" name="form_day" type="date" min="<?php echo date('Y-m-d', strtotime('+1 days')); ?>" required > </label>
                 <label class="durationLabel"> From: <input class="inputFromTime" name="from_time" type="time" required > </label>
                 <label class="durationLabel"> To: <input class="inpuToTime" name="to_time" type="time"  required> </label>
