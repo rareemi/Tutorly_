@@ -14,7 +14,7 @@ $database= mysqli_select_db($connection, $dbname);
 
 <?php include ("../php_files/tutorHeader.php"); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset = "utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@ $database= mysqli_select_db($connection, $dbname);
                 </h2>
                 
                 <div class="holder">
-        <form action="../html_files/index.html" method="POST" enctype="multipart/form-data">
+        <form action="http://localhost/Tutorly_/php_files/deletetutor.php" method="POST" enctype="multipart/form-data">
             
             <label for="password">Please enter your password to delete your account:</label>
             <?php
