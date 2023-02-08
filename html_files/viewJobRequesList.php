@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Job Request List</title>
-    <link rel="stylesheet" type="text/css" href="../CSS_Files/viewOfferListStyle.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../CSS_Files/viewJobRequestListStyle.css"> -->
-    <link rel="stylesheet" href="../CSS_Files/menustyle.css">
-    <link rel="stylesheet" href="../CSS_Files/footer.css">
+   <!-- <link rel="stylesheet" type="text/css" href="../CSS_Files/viewOfferListStyle.css">-->
+     <link rel="stylesheet" type="text/css" href="../CSS_Files/viewJobRequestListStyle.css"> 
+    <link rel="stylesheet" href="../CSS_Files/commmon.css">
     <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
 
     <style>
@@ -65,11 +64,11 @@ footer {
 <?php
 session_start();
 // connect to db
-include('../PHP_Files/connect_db.php');
+include('../PHP_Files/connectDB.php');
 //`TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`, `expireDate`, `city`, `District` 
 //SELECT * FROM `requests` WHERE `status` = 'unserved' ;
-$val1 = "SELECT `TypeOfServese`, `startTime`, `endTime`, `startDate`, `ID` FROM  `requests` WHERE `status` = 'unserved'";
-$result = mysqli_query($connection, $val1);
+$val1 = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `ID` FROM  `request` WHERE `status` = 'unserved'";
+$result = mysqli_query($conn, $val1);
 //`kidsName`, `age`, `TypeOfServese`, `startTime`, `endTime`, `startDate`, `endDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`)
 // if(! $result )
 // echo("wrong");
@@ -89,7 +88,7 @@ while($x< $valu  ){
 
 $row = mysqli_fetch_row($result);
 
- $service = key($row);
+ $class = key($row);
   next($row);
 
   $start_time = key($row);
@@ -105,12 +104,12 @@ $row = mysqli_fetch_row($result);
   next($row);
 
 $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
-$result2 = mysqli_query($connection, $kidss);
+$result2 = mysqli_query($conn, $kidss);
 ?>
 <div> 
 <p class='req'>
-<label class='serviceLabel'>Type Of Service: </label>
-<label class='service'><?php echo($row[$service])?></label><br>
+<label class='serviceLabel'>Type Of Class: </label>
+<label class='service'><?php echo($row[$class])?></label><br>
 <!--<label class='nameLabel'>Kid/s Name: </label>
 <label class='name'><?php echo($row[$kids])?></label><br>
 <label class='ageLabel'>Kid/s Age: </label>
