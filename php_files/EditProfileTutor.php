@@ -108,7 +108,7 @@ if($_FILES['img']['name']!=""){
         
         if($fileSize < 6161400){ 
     
-            $fileNewName = "../images/TutorPic1.png".$imageName; //
+            $fileNewName = "../images/".$imageName; //
             
             $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
             
