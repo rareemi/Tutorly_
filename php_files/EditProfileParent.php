@@ -207,7 +207,7 @@ if(isset($_POST['submit'])){
                     <div class = "detail"> 
                     
                     <div class="forthepic">
-                    <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
+                    <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Parent Picture" height="250"><br>
                     <p>Upload a different photo:</p>
 
 <input type="file" accept="image/*" name="img">                       
