@@ -54,6 +54,8 @@ border-radius:  0.25rem;
 padding:  .375rem .75rem;
 overflow:  auto;
 font-weight: 650;
+text-align: center;
+
 }
 
 </style>
@@ -67,7 +69,7 @@ font-weight: 650;
                 
                 $currentUser = $_SESSION['email'];
                 //print($_SESSION['email']);
-                $sql = "SELECT * FROM `babysitter` WHERE email ='$currentUser'";
+                $sql = "SELECT * FROM `tutor` WHERE email ='$currentUser'";
 
                 $gotResuslts = mysqli_query($connection,$sql);
 
@@ -101,6 +103,7 @@ font-weight: 650;
             <p class="needs-container"> Gender: <span class="par"><?php echo $row['gender']; ?></span>
             </p>
             <p class="more-space-on-bottom"></p>
+            <p class="needs-container"> Email:
             <span class="par"><?php echo $row['email']; ?></span>
             </p>
             <p class="more-space-on-bottom"></p>

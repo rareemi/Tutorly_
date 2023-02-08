@@ -34,7 +34,7 @@ $fname = $_POST["firstname"];
     if (isset($_POST["gender"]))
         $gender = $_POST["gender"];
     
-    $id = $_POST["id"];
+    $ID = $_POST["ID"];
     $age = $_POST["age"];
     $email = $_POST["eMail"];
     $city = $_POST["city"];
@@ -74,7 +74,7 @@ $fname = $_POST["firstname"];
         $valid = false;
     }
     if($email!=$_SESSION['email']){
-    $sql = "SELECT email FROM `babysitter` WHERE email = '$email'";
+    $sql = "SELECT email FROM `tutor` WHERE email = '$email'";
     $result = mysqli_query($connection, $sql);
     $nummy=mysqli_num_rows($result);
     
@@ -83,7 +83,7 @@ $fname = $_POST["firstname"];
         $valid = false;
     }}
     
-    if (!preg_match("/^\\d+$/", $id)) {
+    if (!preg_match("/^\\d+$/", $ID)) {
         $id_err = " please enter a valid id!";
         $valid = false;
     }
@@ -109,7 +109,7 @@ if($_FILES['img']['name']!=""){
         
         if($fileSize < 6161400){ 
     
-            $fileNewName = "../public/userImages/".$imageName; //
+            $fileNewName = "../images/TutorPic1.png".$imageName; //
             
             $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
             
@@ -119,10 +119,10 @@ if($_FILES['img']['name']!=""){
 if(isset($_POST['password']) && $_POST['password']!= ""){
 $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
 $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
+,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
 }else{
     $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-    ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName' WHERE email = '$loggedInUser'";
+    ,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName' WHERE email = '$loggedInUser'";
 }
     
                 $results = mysqli_query($connection,$sql);
@@ -135,11 +135,11 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
 
         if(isset($_POST['password']) && $_POST['password']!= ""){
             $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-            ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
+            ,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
 
             }else{
-                $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-                ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio' WHERE email = '$loggedInUser'";
+                $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+                ,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio' WHERE email = '$loggedInUser'";
                 
             }
             $results = mysqli_query($connection,$sql);
@@ -191,7 +191,7 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
         <?php $currentUser = $_SESSION['email'];
                         //print($_SESSION['email']);
-                        $sql = "SELECT * FROM `babysitter` WHERE email ='$currentUser'";
+                        $sql = "SELECT * FROM `tutor` WHERE email ='$currentUser'";
 
                         $gotResuslts = mysqli_query($connection,$sql);
 
@@ -289,7 +289,7 @@ fuction geterrdet(){
                 
                 <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
                     <input type="text" class="inputing-text" id="loc" name= "City" placeholder=" example:Riyadh"
-                    value="<?php echo $row['City']; ?>">
+                    value="<?php echo $row['city']; ?>">
 
             <br> <label for="bio">Bio:</label><span style="color:red;"> <?php echo $msg_err; ?></span> </span><br>
            <textarea name="biotextbox" id="bio" name="bio" rows="10" placeholder=" Enter your bio, such as: years of experience, education, languages spoken, skills, etc">
