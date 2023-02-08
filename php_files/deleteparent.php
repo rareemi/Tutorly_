@@ -16,8 +16,7 @@ $loggedInUser = $_SESSION['email'];
 
     if(!empty($_POST['uPassword'])){
         $userPassword = mysqli_real_escape_string($connection,$_POST['uPassword']);
-        //echo $userPassword;
-        //echo $loggedInUser
+        
         $sql ="SELECT * FROM `parent`INNER JOIN requests ON parent.email  = requests.ParentEmail WHERE email='$loggedInUser'and requests.status='served'";
         $userFound = mysqli_query($connection,$sql);
         if($userFound){
@@ -28,12 +27,10 @@ $loggedInUser = $_SESSION['email'];
             if ($userPassword==$row['password']&&date('Y-m-d') < $row['startDate']) {
                 header('Location:/Tutorly_/php_files/DeletProfileParent.php?error=serReq');
             
-                //echo "you have an accepted offer that has not come yet";
                 exit;
 
             }elseif($userPassword==$row['password']&&date('Y-m-d') == $row['startDate'] && date('H:i')<$row['startTime']){
                 header('Location:/Tutorly_/php_files/DeletProfileParent.php?error=serReq');
-                //echo "you have an accepted offer that has not come yet";
                 exit;
             }
         }}}
@@ -56,7 +53,7 @@ $loggedInUser = $_SESSION['email'];
                         $idio=$row['ID'];
                         //echo $idio;
                         
-                        $sql3="DELETE FROM `offers` WHERE RequestID='$idio'";
+                        $sql3="DELETE FROM `offer` WHERE RequestID='$idio'";
                         $userFound3 = mysqli_query($connection,$sql3);
                         $sql3="DELETE FROM `kids` WHERE ID='$idio'";
                         $userFound3 = mysqli_query($connection,$sql3);
