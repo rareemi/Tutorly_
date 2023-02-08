@@ -97,10 +97,10 @@ font-weight: 650;
             <span class="par"><?php echo $row['email']; ?></span></p>
             <p class="more-space-on-bottom" ></p>
 
-                <p class="needs-container">City: <span class="par"><?php echo $row['City']; ?></span>
+                <p class="needs-container">City: <span class="par"><?php echo $row['city']; ?></span>
                 <p class="more-space-on-bottom" ></p>
 
-                <p class="needs-container">Location: <span class="par"><?php echo $row['location']; ?></span>
+                <p class="needs-container">Location: <span class="par"><?php echo $row['Location']; ?></span>
 <br>
 <br>
 <a class= "button1" href="../php_files/HomePageParent.php">back</a>

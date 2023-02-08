@@ -185,7 +185,20 @@ if(isset($_POST['submit'])){
         <h2>
                 Edit Profile
             </h2>
-            <!---->
+            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>"method="POST" enctype="multipart/form-data">
+            <?php
+                
+                $currentUser = $_SESSION['email'];
+                //print($_SESSION['email']);
+                $sql = "SELECT * FROM `parent` WHERE email ='$currentUser'";
+
+                $gotResuslts = mysqli_query($connection,$sql);
+
+                if($gotResuslts){
+                    if(mysqli_num_rows($gotResuslts)>0){
+                        while($row = mysqli_fetch_array($gotResuslts)){
+                            //print_r("ygbyb8yn".$row['email']);
+                        ?>
                 <div class="holder"> 
                     <div class = "detail"> 
                     
@@ -217,10 +230,11 @@ if(isset($_POST['submit'])){
                 
                 <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
                     <input type="text" class="inputing-text" id="loc" name= "City" placeholder=" example:Riyadh"
-                    value="<?php echo $row['City']; ?>">
+                    value="<?php echo $row['city']; ?>">
 
-                <br> <label for="adress">Location:</label><br><span style="color:red"> <?php echo $adress_err; ?></span>
-                <input type="text" id="adress" name="adress" placeholder="https://*******"><br>
+                <br> <label for="adress">Location:</label><br><span style="color:red"> <?php echo $location_err; ?></span>
+                <input type="text" id="adress" name="adress" placeholder="https://*******"
+                value="<?php echo $row['Location']; ?>"><br>
 
                
             
@@ -236,7 +250,7 @@ if(isset($_POST['submit'])){
                 
                 <a class= "button1" href="../php_files/DeletProfileParent.php" style="margin-left: 40%;">Delete Profile</a>
                 
- <?php //}}}
+ <?php }}}
                        ?>
             </h5>
             <br><br>
