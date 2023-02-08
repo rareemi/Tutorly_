@@ -12,10 +12,15 @@ $rates = get_rates($_SESSION["email"]);
     <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .Sub ,.pic,.p,.s{
+        .Sub ,.pic{
                     font-size: 16px;
                     color: #293241;
                 background-color:#98C1D9 ;}
+                .checked {
+                    content:'\f005';
+                    color: yellow;
+                    margin-left:8px;
+                }
     </style>
 </head>
 <body>
@@ -31,13 +36,13 @@ $rates = get_rates($_SESSION["email"]);
             echo '<div class="Sub" style="margin-left:35px;width:90%;">
             
                             <img class="pic"style="background-color:#98C1D9;float:left;width:13%;margin-right:5%;" src="../images/' . $row["img"] . '"><br>
-                            <Strong style="background-color:#98C1D9 ;">' . $row["firstName"] . " " . $row["lastName"] . '</Strong><br>
-                            <p style="background-color:#98C1D9 ;">' . $row["time"] . " " . $row["Date"] . '</p>
+                            <Strong style="background-color:#98C1D9;font-weight: bold;font-size: 20px;">' . $row["firstName"] . " " . $row["lastName"] . '</Strong>
+                            <p style="background-color:#98C1D9;font-size: 15px;position: absolute;right:22%;text-align: right;">' . $row["time"] . " " . $row["Date"] . '</p><br>
                             ';
             for ($i = 1; $i <= $row["Rate"]; $i++) {
-                echo '<span class="fa fa-star checked"style="background-color:#98C1D9 ;"></span>';
+                echo '<span class="fa fa-star checked"style="background-color:#98C1D9;font-size: 20px;"></span>';
             }
-            echo '<p style="background-color:#98C1D9 ;"> ' . $row["feedBack"] . ' </p>
+            echo '<p style="background-color:#98C1D9;font-size: 18px;"> ' . $row["feedBack"] . ' </p>
             </div>';
         }
         ?>
