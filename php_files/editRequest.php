@@ -26,12 +26,12 @@ footer {
         
          <!--Upper Menue-->
          <?php include("parentHeader.php");
-            include('../PHP_Files/connect_db.php');
+            include('../PHP_Files/connectDB.php');
         
          
             
             $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
-            $q3 = $result = mysqli_query($connection, $query);
+            $q3 = $result = mysqli_query($conn, $query);
             if($q3)
             echo "done3" ;
             ?>
@@ -45,9 +45,9 @@ unset($_SESSION['editDone']);
 }
         $pemail =  $_SESSION['email'];
         
-           $sql = "SELECT `TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `ID` , `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `ParentEmail`= '$pemail '";
+           $sql = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `comments`, `ID` , `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `parentEmail`= '$pemail '";
 
-           $result = mysqli_query($connection,  $sql);
+           $result = mysqli_query($conn,  $sql);
         
            $valu = mysqli_num_rows($result);
     
@@ -65,7 +65,7 @@ unset($_SESSION['editDone']);
     
      $row = mysqli_fetch_row($result);
      
-     $TypeOfServese = key($row);
+     $TypeOfClass = key($row);
      next($row);
      
      $startTime = key($row);
@@ -87,7 +87,7 @@ unset($_SESSION['editDone']);
      next($row);
 
      $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
-     $result2 = mysqli_query($connection, $kidss);
+     $result2 = mysqli_query($conn, $kidss);
     ?> 
 
         <div class="container">
@@ -112,7 +112,7 @@ while($kidrow = mysqli_fetch_row($result2)){
 <?php echo(($row[$age]))?>
 <br>
         <label class="serviceLabel">Type Of Class: </label>
-        <label class="service"><?php echo(($row[$TypeOfServese]))?></label><br><br>
+        <label class="service"><?php echo(($row[$TypeOfClass]))?></label><br><br>
 
         <label class="dayLabel">Date: </label>
         <label class="day"><?php echo(($row[$startDate]))?></label><br><br>
