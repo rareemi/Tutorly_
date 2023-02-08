@@ -22,15 +22,15 @@
     <div style="width:40%;float:left; margin:0 36px ;background-color:#C4DCEA;border-radius:20px;" >
     <img src = "../images/logo4.png" class ="logo"  alt="logo"style="width:100%;float:left;background-color:#C4DCEA;border-radius:20px;"  >
     </div>
-    <div style="width:30%; margin-left:50%; ">
+    <div style="width:45%; margin-left:50%; ">
     <form  action="loginprosses.php" method="post">
                         <?php
 if(isset($_GET['error'])){
 
 if($_GET['error'] == 'failToLogIn'){
     ?>
-    <div class="alert alert-danger" role="alert">
-    Wrong email/password, please enter a correct one!
+    <div style="background-color:#98C1D9;border-radius:5px;" class="alert alert-danger" role="alert">
+    <p style="background-color:#C4DCEA;border-radius:5px;">Wrong email/password, please enter a correct one!</p><br>
 </div>
     <!--<small class="in-log-in">Please Enter correct email and password</small>-->
     
