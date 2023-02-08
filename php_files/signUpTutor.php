@@ -88,18 +88,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (tutor_signup_handler($email, $password, $fname, $lname, $gender, $id, $age, $city, $phone, $msg, $imageName)) {
             $notification = 'Registration successful!';
-            $_POST["fname"] = $_POST["confirmpassword"] = $_POST["lname"] = $_POST["email"] = $_POST["password"] = $_POST["city"] = $_POST["district"] = $_POST["street"] = $_POST["bldg_number"] = $_POST["postal_code"] = $_POST["_2nd_number"] = "";
+            $_POST["FName"] == $_POST["LName"] = $_POST["gender"] = $_POST["age"] = $_POST["id"] = $_POST["email"] = $_POST["password"] = $_POST["city"] = $_POST["phone"] = $_POST["bio"] = "";
 
 //            $target_dir = "../public/userImages/";
 //            $target_file = $target_dir . basename($_FILES["img"]["name"]);
 //            move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
             $fileTmpName = $userImage['tmp_name'];
-            $fileNewName = "../public/userImages/".$imageName;
+            $fileNewName = "../images/".$imageName;
             $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
 
 
-            $_POST["fname"] =$_POST["confirmpassword"]= $_POST["lname"] = $_POST["gender"] = $_POST["age"] = $_POST["id"] = $_POST["email"] = $_POST["password"] = $_POST["city"] = $_POST["phone"] = $_POST["bio"] = "";
+            $_POST["FName"] == $_POST["LName"] = $_POST["gender"] = $_POST["age"] = $_POST["id"] = $_POST["email"] = $_POST["pass"] = $_POST["city"] = $_POST["phone"] = $_POST["bio"] = "";
             echo '<script>alert("Registration successful!");window.location.href="LoginPage.php";</script>';
 
         }
@@ -167,53 +167,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="file" accept="image/*" name="img"> 
 
                     <br><br>
-                    <input type="Reset" value="Clear" style="width: 40%; margin:8px; background-color: #7290a2 ; font-size: 19px;">
+                    <input type="Reset" value="Clear" style="width: 40%; margin:8px 6%; background-color: #7290a2 ; font-size: 19px;">
                     <input type="submit" value="Sign Up" style="width: 40%;">
     </form>
 </div>
-
-
-<footer > 
-       
-       <p class = "p">
-           <table>
-               <tr>
-            <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
-            <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-            <th> <a href="/html_files/FAQ.html" class = "con">FAQs</a> </th> 
-               </tr> 
-               </table> <br>
-       
-                <center> 
-       
-                 
-                   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-                  
-       
-       <a href="https://twitter.com" target="_blank" class = "ionicons">
-                   
-           <ion-icon name="logo-twitter"></ion-icon> </a>
-               
-                   <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                       <ion-icon name="logo-whatsapp"></ion-icon>
-                   </a>
-                   <a href="https://instagram.com" target="_blank" class = "ionicons">
-                       <ion-icon name="logo-instagram"></ion-icon>
-                   </a>
-       
-                   <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                       <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                   </a>
-       
-                   &copy; A  Tutorly, 2022
-                   </center>
-                   
-                    
-          
-               </p>
-       
-           </footer>
+<?php include("../php_files/footer.php");?>
      </body>
      
      </html>

@@ -49,7 +49,7 @@ if($_GET['error'] == 'failToLogIn'){
   
       
           <br>   <br>  <br>  <br> <p> <a href="ForgetPassTuter.html"><t> Forget Password? </t></a></p> <br>
-          <p>you don't have an acc? <a href="SignUpTutor.html"> <t>Sign up </t></a></p>
+          <p>you don't have an acc? <a href="signUpTutor.php"> <t>Sign up </t></a></p>
         </form></div>
         </div>
 
