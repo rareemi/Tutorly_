@@ -68,7 +68,7 @@
    } ?>
             </div>
                 
-            <p><a class= "button1" href="../html_files/HomePageParent.php">Back</a></p> <!-- This for back -->
+            <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageParent.php">Back</a></p> <!-- This for back -->
             <br>
             <?php include("../php_files/footer.php");?>
      </body>

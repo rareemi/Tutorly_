@@ -82,7 +82,7 @@
 } ?>
         </div>
         <br><br>
-        <p><a class= "button1" href="/html_files/HomePageParent.php">Back</a></p>
+        <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageParent.php">Back</a></p>
         <br>
 
         <?php include("../php_files/footer.php");?>
