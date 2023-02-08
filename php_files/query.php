@@ -30,10 +30,10 @@ function dd($arr)
 
 
 // parent
-function parent_signup_handler($fname, $lname, $email, $password, $city, $district, $street, $bldg_number, $postal, $_2nd_number, $img)
+function parent_signup_handler($email, $password,$fname, $lname, $city, $location, $img)
 {
     global $conn;
-    $sql = "INSERT INTO `parent` VALUES ('" . $email . "','" . $password . "','" . $fname . "','" . $lname . "','" . $city . "','" . $district . "','" . $street . "','" . $bldg_number . "','" . $postal . "','" . $_2nd_number . "','" . $img . "')";
+    $sql = "INSERT INTO `parent` VALUES ('" . $email . "','" . $password . "','" . $fname . "','" . $lname . "','" . $city . "','" . $location . "','"  . $img . "')";
     $result = mysqli_query($conn, $sql);
     return $result;
 }
@@ -79,7 +79,7 @@ function get_rates($email)
 function get_requests($email)
 {
     global $conn;
-    $sql = "SELECT requests.TypeOfServese, requests.startTime, requests.endTime, requests.startDate, requests.startDate, offers.price, offers.offerstatus FROM `requests`, `offers` WHERE  requests.ID = offers.RequestID AND offers.babySitterEmail = '" . $email . "'";
+    $sql = "SELECT requests.TypeOfClass, requests.startTime, requests.endTime, requests.startDate, requests.startDate, offer.price, offer.offerstatus FROM `requests`, `offer` WHERE  requests.ID = offer.RequestID AND offer.tutorEmail = '" . $email . "'";
     $result = mysqli_query($conn, $sql);
     return $result;
 }

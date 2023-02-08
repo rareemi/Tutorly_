@@ -39,7 +39,7 @@
             ?>
                 
         <div class="CurrentJobs">
-            <p class="container" style="width: 320px; height: 540px;">
+            <p class="container" style="width: 340px; height: 630px;">
              <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              <?php $id= $row['ID'];
                     $sql_kids = "SELECT * FROM `kids`   where ID ='$id' ";
@@ -85,7 +85,7 @@
 } ?>
         </div>
         <br>
-        <p><a class= "button1" href="../html_files/HomePageTutor.html">Back</a></p> <!-- This for back -->
+        <p><a class= "button1"style="margin-left:46%;" href="../php_files/HomePageTutor.php">Back</a></p> <!-- This for back -->
             <br>
             <?php include("../php_files/footer.php");?>
              

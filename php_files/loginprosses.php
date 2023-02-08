@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
 $servername= "localhost";
 $username= "root" ;
 $password= "";
-$dbname= "381project" ;
+$dbname= "381" ;
 $connection= mysqli_connect($servername,$username,$password,$dbname);
 $database= mysqli_select_db($connection, $dbname);
 // Check the connection
@@ -16,13 +16,13 @@ die("Connection failed: " . mysqli_connect_error());
 
 //echo 'PHP version: ' . phpversion();
 //print_r($_POST);
-    if(!empty($_POST['uEmail']) && !empty($_POST['uPassword'])){
+    if(!empty($_POST['email']) && !empty($_POST['pass'])){
 
-        $userEmail = mysqli_real_escape_string($connection,strip_tags($_POST['uEmail']));
-        $userPassword = mysqli_real_escape_string($connection,$_POST['uPassword']);
+        $userEmail = mysqli_real_escape_string($connection,strip_tags($_POST['email']));
+        $userPassword = mysqli_real_escape_string($connection,$_POST['pass']);
         //$password_encrypted = password_hash(mysqli_real_escape_string($connection,$_POST['uPassword']), PASSWORD_DEFAULT);
         //$password_encrypted = password_hash($userPassword, PASSWORD_DEFAULT);
-        $sql = "SELECT * FROM `babysitter` WHERE email='$userEmail'AND password='$userPassword'";
+        $sql = "SELECT * FROM `tutor` WHERE email='$userEmail'AND password='$userPassword'";
         // AND password='$userPassword'
         $userFound = mysqli_query($connection,$sql);
         //echo $password_encrypted;
@@ -41,7 +41,7 @@ die("Connection failed: " . mysqli_connect_error());
                             $_SESSION['lastName']=$row['lastName'];
                             $_SESSION['img']=$row['img'];
 
-                        header('Location:../HTML_Files/babysitterhome.php');
+                        header('Location:../php_files/HomePageTutor.php');
                         exit;
                     }
                     //}
@@ -50,7 +50,7 @@ die("Connection failed: " . mysqli_connect_error());
                         
             }
             
-            
+            header('Location:../php_files/LoginTutor.php?error=failToLogIn');  
         }
         $sql = "SELECT * FROM `parent` WHERE email='$userEmail'AND password='$userPassword'";
         // AND password='$userPassword'
@@ -68,8 +68,8 @@ die("Connection failed: " . mysqli_connect_error());
                             $_SESSION['lastName']=$row['lastName'];
                             $_SESSION['img']=$row['img'];
                             $_SESSION['City']=$row['City'];
-                            $_SESSION['District']=$row['District'];
-                            header('Location:../HTML_Files/parenthome.php');
+                            $_SESSION['Location']=$row['Location'];
+                            header('Location:../php_files/HomePageParent.php');
                         exit;
                         }
                     }
@@ -81,7 +81,7 @@ die("Connection failed: " . mysqli_connect_error());
             
         }
         
-        header('Location:../HTML_Files/LoginPage.php?error=failToLogIn');
+        header('Location:../php_files/LoginParent.php?error=failToLogIn');
         
         
     }

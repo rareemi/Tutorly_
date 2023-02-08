@@ -42,7 +42,7 @@
          while ($row = mysqli_fetch_assoc($userFound)) {
          if (date('Y-m-d') >$row['startDate']) {
         ?>
-            <p class="container" style="width: 320px; height: 540px;">
+            <p class="container" style="width: 340px; height: 630px;">
              <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              
               <label class="nameLabel">Tutor Name: </label><br>
@@ -82,7 +82,7 @@
 } ?>
         </div>
         <br><br>
-        <p><a class= "button1" href="/html_files/HomePageParent.html">Back</a></p>
+        <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageParent.php">Back</a></p>
         <br>
 
         <?php include("../php_files/footer.php");?>

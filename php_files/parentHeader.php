@@ -2,11 +2,11 @@
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             <nav>
                 <ul class = "nav_links">
-                    <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
+                    <li><a href = "../php_files/HomePageParent.php"> Home</a></li>
                     <li><a href = "#"> Profile</a>
                         <ul>
-                            <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
-                            <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
+                            <li><a href = "../php_files/ViewProfileParent.php"> View</a></li>
+                            <li><a href = "../php_files/EditProfileParent.php"> Edit</a></li>
                         </ul>
                     </li>
                     <li><a href = "#"> Requests</a>
@@ -15,7 +15,7 @@
                             <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
                         </ul>
                     </li> 
-                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
+                    <li><a href = "../php_files/RequestOffers.php"> Offers</a></li>
                     <li><a href = "#"> Booking</a>
                         <ul>
                             <li><a href = "../php_files/CurrentBooking.php"> Current</a></li>
@@ -25,6 +25,6 @@
                    
                 </ul>
             </nav>
-            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
+            <p><a class= "out" href="../php_files/logout.php">Logout</a></p>
     </header>
  

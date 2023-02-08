@@ -9,7 +9,7 @@ $database= mysqli_select_db($connection, $dbname);
                
 if (!$connection) 
 die("Connection failed: " . mysqli_connect_error());
-$fname_err = $lname_err = $email_err = $password_err = $city_err = $district_err = $street_err = $bldg_number_err = $postal_code_err = $_2nd_number_err = $notification = "";
+$fname_err = $lname_err = $email_err = $password_err = $city_err = $location_err = "";
 
 if(isset($_POST['submit'])){
     
@@ -17,12 +17,8 @@ if(isset($_POST['submit'])){
     $firstname  =    $_POST['firstname'];
     $lastname =    $_POST['lastname'];
     $City =    $_POST['City'];
-    $District =    $_POST['District'];
-    $Street =    $_POST['Street'];
     $eMail =    $_POST['eMail'];
-    $BuildingNumber =    $_POST['BuildingNumber'];
-    $PostalCode =    $_POST['PostalCode'];
-    $SecondaryNumber =    $_POST['SecondaryNumber'];
+   
     $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
 
     $fname = $_POST['firstname'];
@@ -31,11 +27,8 @@ if(isset($_POST['submit'])){
     $password = $_POST["password"];
     //$confirmpassword= validate($_POST["confirmpassword"]);
     $city = $_POST['City'];
-    $district = $_POST['District'];
-    $street = $_POST['Street'];
-    $bldg_number = $_POST['BuildingNumber'];
-    $postal_code = $_POST['PostalCode'];
-    $_2nd_number = $_POST['SecondaryNumber'];
+    $location = $_POST['location'];
+    
 
     $valid = true;
     if ($fname == "" || !ctype_alpha(str_replace(" ", "", $fname))) {
@@ -50,7 +43,7 @@ if(isset($_POST['submit'])){
         $email_err = " please enter a valid email!";
         $valid = false;
     }
-    
+   
    
     if ($password!=""&&strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters! ";
@@ -60,40 +53,9 @@ if(isset($_POST['submit'])){
         $city_err = " please enter a valid city!";
         $valid = false;
     }
-    if ($district == "" || !ctype_alpha(str_replace(" ", "", $district))) {
-        $district_err = " please enter a valid district!";
+    if ($location == ""|| !filter_var($location, FILTER_VALIDATE_URL)) {
+        $location_err = " please enter a valid email!";
         $valid = false;
-    }
-    if ($bldg_number == "" || !is_numeric($bldg_number)) {
-        $bldg_number_err = " please enter a valid building number!";
-        $valid = false;
-    }else{
-        if(strlen($bldg_number)!=4){
-            $bldg_number_err = " building number must be 4 number! ";
-            $valid = false;
-        }
-    }
-    if ($street == "" || !ctype_alpha(str_replace(" ", "", $street))) {
-        $street_err = " please enter a valid street!";
-        $valid = false;
-    }
-    if ($postal_code == "" || !is_numeric($postal_code)) {
-        $postal_code_err = " please enter a valid postal code!";
-        $valid = false;
-    }else{
-        if(strlen($postal_code)!=5){
-            $postal_code_err = " Postal code must be 5 number! ";
-            $valid = false;
-        }
-    }
-    if ($_2nd_number == "" || !is_numeric($_2nd_number)) {
-        $_2nd_number_err = " please enter a valid secondary number!";
-        $valid = false;
-    }else{
-        if(strlen($_2nd_number)!=4){
-            $_2nd_number_err = " Secondary number must be 4 number! ";
-            $valid = false;
-        }
     }
 
     
@@ -148,19 +110,14 @@ if(isset($_POST['submit'])){
         //$userPassword = password_hash(mysqli_real_escape_string($connection,$_POST['password']), PASSWORD_DEFAULT);
         $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber', `img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
-        //pass also/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
         
         }else{
             $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber', `img` = '$imageName' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
         }
-           // print($imageName);
                         $results = mysqli_query($connection,$sql);
                         echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                        //header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit;
                     }
             
@@ -168,34 +125,25 @@ if(isset($_POST['submit'])){
                 }}}
         
                 if(isset($_POST['password']) && $_POST['password']!= ""){
-                    //$userPassword = password_hash(mysqli_real_escape_string($connection,$_POST['password']), PASSWORD_DEFAULT);
                     $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber',password ='$userPassword' WHERE email = '$loggedInUser'";
-                    //$sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-                    //,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
                     $results = mysqli_query($connection,$sql);
                     echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                    //header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit;
                     }else{
                         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
                        $results = mysqli_query($connection,$sql);
                        echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                    //header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit; 
                     }
                     
                     $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-                    `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-                     `SecondaryNumber` = '$SecondaryNumber' WHERE email = '$loggedInUser'";
+                    `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
                                    
                                
                     $results = mysqli_query($connection,$sql);
                     echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
-                   // header('Location:/BabySitterProject/HTML_Files/parenteditprofile.php');
                     exit;}}
      ?>
 
@@ -214,18 +162,27 @@ if(isset($_POST['submit'])){
      
    
     <style>
+        html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
         .holder{
         
         width: 720px;
         height: 850px;
        }
-       .change{text-decoration: underline;
-     }
+       
      .detail{
         text-align: center;
-        height: 810px;
-       
+        height: 800px;       
         margin: -2% ;
+     }
+     #button2{
+        padding: 15px;
+
+
      }
     </style>
      </head>
@@ -259,11 +216,11 @@ if(isset($_POST['submit'])){
     </div>
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
-                <input type="text" class="inputing-text" id="firstname" name="firstname"placeholder="Enter your first name"
+                <input type="text"  id="FName" name="FName" placeholder="Enter your first name"
                 value="<?php echo $row['firstName']; ?>"><br>
             
                 <label for="lastname">Last Name:</label><span style="color:red"><?php echo $lname_err; ?> </span>
-                <br><input type="text" class="inputing-text" id="lastname" name="lastname"placeholder="Enter your last name"
+                <br><input type="text" id="LName" name="LName" placeholder="Enter your last name"
                 value="<?php echo $row['lastName']; ?>">
 
                 <br> <label for="eMail">Email:</label><span style="color:red"> <?php echo $email_err; ?></span><br>
@@ -279,15 +236,16 @@ if(isset($_POST['submit'])){
                 
                 <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
                     <input type="text" class="inputing-text" id="loc" name= "City" placeholder=" example:Riyadh"
-                    value="<?php echo $row['City']; ?>">
+                    value="<?php echo $row['city']; ?>">
 
-                <br> <label for="adress">Location:</label><br><span style="color:red"> <?php echo $adress_err; ?></span>
-                <input type="text" id="adress" name="adress" placeholder="https://*******"><br>
+                <br> <label for="adress">Location:</label><br><span style="color:red"> <?php echo $location_err; ?></span>
+                <input type="text" id="adress" name="adress" placeholder="https://*******"
+                value="<?php echo $row['Location']; ?>"><br>
 
                
             
                 <input type="submit" value="Submit">
-    <a class= "button1" href="../html_files/HomePageParent.php">Back</a>
+    <a class= "button1" href="../php_files/HomePageParent.php">Back</a>
     </div>
                         </div>
 
@@ -296,7 +254,7 @@ if(isset($_POST['submit'])){
    
             <h5>
                 
-                <a class= "button1" href="../html_files/DeletProfileParent.php" style="margin-left: 40%;">Delete Profile</a>
+                <a class= "button1" href="../php_files/DeletProfileParent.php" style="margin-left: 40%;">Delete Profile</a>
                 
  <?php }}}
                        ?>
