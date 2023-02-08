@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername= "localhost";
     $username= "root" ;
     $password= "";
-    $dbname= "381project" ;
+    $dbname= "381v2" ;
     
     if (!$connection= mysqli_connect($servername,$username,$password)) 
     die("Connection failed: " . mysqli_connect_error());
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if( isset($_POST['service']) && isset($_POST['form_day']) && isset($_POST['from_time']) && isset($_POST['to_time'])){
         //$kidsname = $_POST['kidsname'];
         //$kidsages = $_POST['kidsages']; 
-        $service = $_POST['service'];
+        $class = $_POST['service'];
         $form_day = $_POST['form_day'];
        // $to_day = $_POST['to_day'];
         $from_time = $_POST['from_time'];
@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         //validate
        $valid = true;
-        if($service == " "){
-            $service_err = " please enter a service!" ;
+        if($class == " "){
+            $class_err = " please enter a service!" ;
             $valid = false;
         }
        
@@ -69,14 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "$createdAt";
         $sql = "INSERT INTO `requests` (`TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`, `created_at`, `city`, `District`) VALUES ('$service', '$from_time', '$to_time', '$form_day', '$comments','$name', NULL, 'unserved', '$pemail', now(), '$city' , '$district' )";
-        //$sql = "INSERT INTO `requests` (`TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`, `expireDate`, `city`, `District`) VALUES ('$service', '$from_time', '$to_time', '$form_day', '$comments','Mona', NULL, 'unserved', 'parent1@gmail.com', '2022-11-04', 'Riyadh' , 'aldreya')";
         $query = mysqli_query($connection,$sql);
-       // print_r($_POST);
-       // isset($_POST['kidsname']) && isset($_POST['kidsages']) &&
        if( $query ){
         echo 'done1';
         
-        //Insert ID
+       
        $id = mysqli_insert_id($connection);
        print("Insert ID: ".$id ."\n");
         $count = count($_POST["kidsname"]);
@@ -89,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           }
           echo '<script>alert("Posted successful!");window.location.href="postingJobRequest.php";</script>';
 
-    //header("Location: http://localhost/BabySitterProject/HTML_Files/postingJobRequest.php");
+    
     }
     else{
         echo 'fail';
@@ -105,7 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
     <head>
-    <link rel="stylesheet" type ="text/css" href="../css_files/jobRequestStyle.css" >
+    <link rel="stylesheet" type ="text/css" href="C:\Users\sarah\OneDrive\المستندات\Tutorly_\css_files\jobRequestStyle.css" >
+    <link rel = "stylesheet" type = "text/css" href="C:\Users\sarah\OneDrive\المستندات\Tutorly_\css_files\common.css">
         <title>Post Job Request</title>
         <meta charset="UTF-8">
         <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
@@ -113,7 +111,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
     </head>
-
+    <header>
+        <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
+                    <li><a href = "#"> Profile</a>
+                        <ul>
+                            <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
+                            <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
+                        </ul>
+                    </li>
+                    <li><a href = "#"> Requests</a>
+                        <ul> 
+                            <li><a href = "/html_files/JobRequest.html"> Post</a></li>
+                            <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
+                    <li><a href = "#"> Booking</a>
+                        <ul>
+                            <li><a href = "../php_files/CurrentBooking.php"> Current</a></li>
+                            <li><a href = "../php_files/PreviousBooking.php"> Previous</a></li>
+                        </ul>
+                    </li>
+                   
+                </ul>
+            </nav>
+            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
+    </header>
 
     <body>
         
@@ -145,8 +171,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           <p style="margin-left: 140px;">Select + to add child, - to remove child</p>
                         </div>
                 
-                <label class="serviceLabel"> Type Of Service: <span class="errspan" style="color:red;font-size: 15px;"><?php echo $service_err; ?></span>
-                    <input class="inptService" name="service" type="text" placeholder="Enter type of service you want" required> 
+                <label class="serviceLabel"> Type Of Class : <span class="errspan" style="color:red;font-size: 15px;"><?php echo $service_err; ?></span>
+                    <input class="inptService" name="service" type="text" placeholder="Enter type of class you Kid want" required> 
                 </label>
                 
                 <label class="durationLabel"> Duration: <br> <span class="errspan" style="color:red;font-size: 15px;"><?php echo $to_time_err; ?></span><br>
@@ -155,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label class="durationLabel"> To: <input class="inpuToTime" name="to_time" type="time"  required> </label>
                 <br><br>
                 <label class="commentsLabel"> Add Comments: (optional)
-                    <textarea class="commentsArea" name="comments" cols="72" rows="6" placeholder="  Add any comment if you want"></textarea>
+                    <textarea class="commentsArea" name="comments" cols="72" rows="6" placeholder="  Add your comment if you have"></textarea>
                 </label>
                 <br>
                  
@@ -165,44 +191,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div> <!-- end container -->
         </div> <!-- end postingPage -->
     </body>
+    <footer> 
+       
+      
+    <p class = "p">
+        <table>
+            <tr>
+         <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
+         <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
+         <th> <a href="FAQ.html" class = "con">FAQs</a> </th> 
+            </tr> 
+            </table> <br>
+    
+             <center > 
+    
+              
+                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+               
+    
+    <a href="https://twitter.com" target="_blank" class = "ionicons">
+                
+        <ion-icon name="logo-twitter"></ion-icon> </a>
+            
+                <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+                <a href="https://instagram.com" target="_blank" class = "ionicons">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+    
+                <a href="https://snapchat.com" target="_blank" class = "ionicons">
+                    <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
+                </a>
+    
+                &copy; A  Tutorly, 2022
+                </center>
+                
+                 
+       
+            </p>
+    
+        </footer>
+        <script src="addKids.js"></script>
 </html>
 
            
-        <footer> <!-- footer -->
-            <table class="tableF">
-                <tr>
-                    <th><a href="aboutUs.html"> About Us </a></th>
-                    <th><a href="FAQ.html"> FAQs </a></th>
-                    <th><a href="ContactUs.php"> Contact Us </a></th>
-                </tr>
-            </table>
-            <div id="shareProfile">
-                    <h4>Share the website</h4>
-                
-                    <a href="https://facebook.com" target="_blank">
-                        <i class="fa-brands fa-facebook fa-2x"></i>
-                    </a>
-            
-                    <a href="https://twitter.com" target="_blank">
-                        <i class="fa-brands fa-twitter fa-2x"></i>
-                    </a>
-            
-                    <a href="https://linkedin.com" target="_blank">
-                        <i class="fa-brands fa-linkedin fa-2x"></i>
-                    </a>
-            
-                    <a href="https://instagram.com" target="_blank">
-                        <i class="fa-brands fa-instagram fa-2x"></i>
-                    </a>
-            
-                    <a href="https://web.whatsapp.com" target="_blank">
-                        <i class="fa-brands fa-whatsapp fa-2x"></i>
-                    </a>
-                </div><br> 
-            <div class="footer">
-            &copy; A Watchful Eye, 2022
-            </div>
-            </footer> <!-- end footer -->
-    </body>
-    <script src="addKids.js"></script>
-</html>
+
+   
