@@ -12,17 +12,17 @@
 <body>
 <?php include ("../php_files/parentHeader.php"); ?>
  
-    <h2>Request Offers</h2><br><br>
+
     
     <?php
 include ("../php_files/connectDB.php"); 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-   $sql1 = "SELECT `babySitterName`,`price` ,`babySitterEmail` 
-    FROM `requests` INNER JOIN `offers` WHERE `offers`.`RequestID` = $id 
-    AND `requests`.`ID` = $id AND `offers`.`offerstatus` != 'rejected' ";
+   $sql1 = "SELECT `tutorName`,`price` ,`tutorEmail` 
+    FROM `requests` INNER JOIN `offer` WHERE `offer`.`RequestID` = $id 
+    AND `requests`.`ID` = $id AND `offer`.`offerstatus` != 'rejected' ";
 
-$sql2 = "SELECT `TypeOfServese`,`startDate`,`startTime`,`endTime`,`comments`
+$sql2 = "SELECT `TypeOfClass`,`startDate`,`startTime`,`endTime`,`comments`
 FROM `requests` 
 WHERE `requests`.`ID` = $id ";
 
@@ -33,7 +33,7 @@ $valu = mysqli_num_rows($Offresult);
 
   ?>
 
-<!-- <h2 id="offerH2">Request Offers</h2> -->
+<h2>Request Offers</h2><br><br>
 
  <?php 
 
@@ -65,7 +65,14 @@ $res = mysqli_query($connection, $kidss);
     margin-top: 10px;
     padding: 20px;">
     <label class="serviceLabel">Your Request: </label><br><br>
+    <label class="commentsLabel">Kid/s: </label>
+<?php while($kidrow = mysqli_fetch_row($res)){
+    $kname = key($kidrow);
+    next($kidrow);
 
+    $kAge = key($kidrow);
+    next($kidrow);
+    echo $kidrow[$kname].": ".$kidrow[$kAge]." Years. "; }?>
     <label class="classLabel" >Type Of Class: </label>
 <label class="class"><?php echo(($requ[$serv]))?></label>
 
@@ -77,16 +84,9 @@ $res = mysqli_query($connection, $kidss);
 
 <label class="commentsLabel">, Comments: </label>
 <label class="comments"><?php echo(($requ[$com]))?> </label>
-<label class="commentsLabel">, Kid/s: </label>
-<?php while($kidrow = mysqli_fetch_row($res)){
-    $kname = key($kidrow);
-    next($kidrow);
 
-    $kAge = key($kidrow);
-    next($kidrow);
-    echo $kidrow[$kname].": ".$kidrow[$kAge]." Years. "; }?>
        
-
+</div>
 
 <?php
  if($valu > 0 ){
@@ -123,10 +123,9 @@ $x++;
 
 
 <label class="priceLabel">Offerd Price: </label><br>
-<label lass="Price"><?php echo(($row[$price]))?> SAR</label>
+<label class="Price"><?php echo(($row[$price]))?> SAR</label>
 <br><br>
 
-<a class ="profile" href="../html_files/ShowTutorProfile.html">Show Profile</a><br><br>
 <a class="profile"href="http://localhost/Tutorly_/php_files/ShowTutorProfile.php?id=<?php echo($id) ?>&em=<?php echo( $row[$tutorEm]) ?>">Show Tutor Profile</a>  
 
 <br>
@@ -145,5 +144,20 @@ $x++;
 else{
 ?>
 
+<div>
+    <br><br>
+    <h1 class = "msg1" style="text-align: center; color: #293241; padding: 8px;">We're Sorry</h1><hr><br>
+    <h4 class = "msg2" style="text-align: center; color: #293241;">all of our tutors are busy right now, please try again later</h4>
+
+    <a class= "button1" style="display: inline-table; margin-top: 2%; margin-left: 42%;" 
+    href="http://localhost/Tutorly_/php_files/RequestOffers.php?id=<?php echo($row[$id])?>">Back To Requests</a>
+
+
+
+</div> 
+<?php }//close else
+ 
+ 
+?>
 </body>
 </html>
