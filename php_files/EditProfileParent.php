@@ -174,14 +174,60 @@ if(isset($_POST['submit'])){
        
      .detail{
         text-align: center;
-        height: 800px;       
+        height: 600px;       
         margin: -2% ;
+        
      }
      #button2{
         padding: 15px;
 
 
      }
+     *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    margin-left: 350px;
+    margin-bottom: -23px;
+padding: 5px;
+    bottom: 10px;
+    transform: translate(-50%,-10%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
     </style>
      </head>
      <body>
@@ -204,15 +250,23 @@ if(isset($_POST['submit'])){
                             //print_r("ygbyb8yn".$row['email']);
                         ?>
                 <div class="holder"> 
-                    <div class = "detail"> 
-                    
-                    <div class="forthepic">
-                    <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Parent Picture" height="250"><br>
-                    <p>Upload a different photo:</p>
+                   
+                    <div class="profile-pic-div">
+  <img src="/Tutorly_/images/TutorPic1.png" id="photo" <?php echo $row['img']; ?> alt="profile picture" /> 
+  <?php 
+            echo ($row['img']); 
+            ?>
+            
+  <input type="file" id="file" name="img" accept="image/*">
+  <label for="file" id="uploadBtn">Choose Photo</label>
+  <script src="app.js"></script>
 
-<input type="file" accept=".jpg, .jpeg, .png" name="img"> 
-    </div>
+</div>
+
+
+<div class = "detail"> 
                      <br>  
+                     
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
                 <input type="text"  id="firstname" name="firstname" placeholder="Enter your first name"
                 value="<?php echo $row['firstName']; ?>"><br>
@@ -238,24 +292,30 @@ if(isset($_POST['submit'])){
                 <br> <label for="Location">Location:</label><br>
                 <input type="text" id="Location" name="Location" placeholder="https://*******"
                 value="<?php echo $row['Location']; ?>"><br>
-
+                       
                
             
                 <input class="botton-bigger" type="submit" name="submit" value="Update" />
     <a class= "button1" href="../php_files/HomePageParent.php">Back</a>
-    </div>
-                        </div>
+   
 
                        
-                        
+    </div>      
    
-            <h5>
+            
                 
-                <a class= "button1" href="../php_files/DeletProfileParent.php" style="margin-left: 40%;">Delete Profile</a>
+                <a class= "button1" href="../php_files/DeletProfileParent.php" style="margin-left: 10%;">Delete Profile</a>
+                </div>
+                        
+                        
+                        
+
                 
  <?php }}}
+ 
+
                        ?>
-            </h5>
+            
             <br><br>
 
             <br>
