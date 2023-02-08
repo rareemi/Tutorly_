@@ -83,7 +83,7 @@ $result2 = mysqli_query($connection, $kidss);
 <p class ="req1" >
          <label class = "titleLabel">Request</label><br> 
 
-         <label class='classLabel'>Type Of Class: </label>
+         <label class='nameLabel'>Type Of Class: </label>
         <label class='Type'><?php echo($row[$class])?></label><br>
 
 <label class='nameLabel'>No. Kid/s : </label>
@@ -94,10 +94,10 @@ echo($numOfKids );
 
 
 
-<label class="classLabel">Day: </label>
+<label class="nameLabel">Day: </label>
 <label class='Time'><?php echo($row[$day])?></label><br>
 
-<label class='classLabel'>Time: </label>
+<label class='nameLabel'>Time: </label>
 <label class='Time'><?php echo($row[$stime])?> - <?php echo($row[$etime])?></label>
 <br><br>
      <a class ="Offer1" href="http://localhost/Tutorly_/php_files/OfferDetails.php?id=<?php echo($row[$id])?>">Show Offers</a>
