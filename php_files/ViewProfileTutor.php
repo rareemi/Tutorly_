@@ -127,6 +127,7 @@ text-align: center;
                      </p>  </div> 
                      <?php
 }}}  ?>
+<br><br><br>
                      <?php include ("../php_files/footer.php"); ?>
 
      </body>
@@ -138,4 +139,3 @@ text-align: center;
 
 
 
-</html>

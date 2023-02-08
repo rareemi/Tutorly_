@@ -162,6 +162,12 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
     
      </head>
      <style>
+        html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
      .holder{
      width: 800px;
      height: 1400px;
@@ -313,7 +319,7 @@ fuction geterrdet(){
                 <?php
 }}}  ?>
     
-        <?php include ("../php_files/footer.php"); ?>
+    <br><br><?php include ("../php_files/footer.php"); ?>
 
      </body>
 

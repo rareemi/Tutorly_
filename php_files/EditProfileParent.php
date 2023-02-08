@@ -162,6 +162,12 @@ if(isset($_POST['submit'])){
      
    
     <style>
+        html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
         .holder{
         
         width: 720px;

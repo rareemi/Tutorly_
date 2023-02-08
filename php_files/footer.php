@@ -9,7 +9,7 @@
          <th colspan="2"><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
          <th colspan="2"> <a href="FAQ.html" class = "con">FAQs</a> </th> 
       </tr>
-      <tr>
+      <tr style="text-align: center;">
         <td colspan="2"><a href="https://twitter.com" target="_blank" class = "ionicons">
             <ion-icon name="logo-twitter"></ion-icon> </a></td>
         <td><a href = "https://whatsapp.com" target="_blank" class = "ionicons">
@@ -20,7 +20,7 @@
             <ion-icon name="logo-snapchat"></ion-icon></a></td>
       </tr>
       <tr>
-        <td colspan="6">&copy; A  Tutorly, 2022</td>
+        <td colspan="6" style="text-align: center;">&copy; A  Tutorly, 2022</td>
       </tr>
          
     </table> <br>
