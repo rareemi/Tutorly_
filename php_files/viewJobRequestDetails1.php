@@ -25,8 +25,8 @@
                         </li>
                         <li><a href = "#"> Requests</a>
                             <ul> 
-                                <li><a href = "/html_files/jobRequest.php"> Post</a></li>
-                                <li><a href = "/html_files/EditRequest.php"> Edit</a></li>
+                                <li><a href = "jobRequest.php"> Post</a></li>
+                                <li><a href = "/html_files/editRequest.php"> Edit</a></li>
                             </ul>
                         </li> 
                         <li><a href = "../php_files/RequestOffers.php"> Offers</a></li>
@@ -62,7 +62,7 @@ if(isset($_GET['id'])){
 
 <h2 id="offerH2">Job Request Details</h2>
 
-<!--<?php print_r($jobReq);?>-->
+ <!--?php print_r($jobReq);?>--> 
 
 
 <?php 
