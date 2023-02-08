@@ -26,8 +26,8 @@
                         </li>
                         <li><a href = "#"> Requests</a>
                             <ul> 
-                                <li><a href = "jobRequest.php"> Post</a></li>
-                                <li><a href = "/html_files/editRequest.php"> Edit</a></li>
+                                <li><a href = "/php_files/jobRequest.php"> Post</a></li>
+                                <li><a href = "/php_files/editRequest.php"> Edit</a></li>
                             </ul>
                         </li> 
                         <li><a href = "../php_files/RequestOffers.php"> Offers</a></li>
