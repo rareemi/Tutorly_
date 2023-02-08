@@ -102,7 +102,7 @@ next($row);
 //next($row);
 
 $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
-$result2 = mysqli_query($conn, $kidss);}
+$result2 = mysqli_query($conn, $kidss);
 ?> 
 <div class="container">
 
@@ -285,5 +285,8 @@ while($kidrow = mysqli_fetch_row($result2)){
                      
                 </table> <br>
             </footer>
+            <?php ////} 
+}//end if
+?>
  </body>
  </html>
