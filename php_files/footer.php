@@ -6,8 +6,8 @@
     <table >
       <tr>
          <th colspan="2"><a href="mailto:#" class = "con">ContactUs</a>  </th>
-         <th colspan="2"><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-         <th colspan="2"> <a href="FAQ.html" class = "con">FAQs</a> </th> 
+         <th colspan="2"><a href="../html_files/AboutUs.html " class ="con">aboutUs</a>  </th>
+         <th colspan="2"> <a href="../html_files/FAQ.html" class = "con">FAQs</a> </th> 
       </tr>
       <tr style="text-align: center;">
         <td colspan="2"><a href="https://twitter.com" target="_blank" class = "ionicons">

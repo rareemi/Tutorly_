@@ -17,7 +17,7 @@
                     </ul> 
                 </li>
                 <li><a href = "/html_files/offerNstatue.html"> My Offer </a></li>
-                <li><a href = "MyRate&Reviews.html"> Rate &amp; Reviews </a></li>
+                <li><a href = "../php_files/MyRate&Reviews.php"> Rate &amp; Reviews </a></li>
                 
           
 

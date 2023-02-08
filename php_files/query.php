@@ -68,7 +68,7 @@ function tutor_signup_handler($email, $password, $fname, $lname, $gender, $id, $
 function get_rates($email)
 {
     global $conn;
-    $sql = "SELECT review.rate, review.feedback, review.date, review.time , parent.firstName,parent.lastName,parent.img FROM `review`, `parent` WHERE review.parentEmail = parent.email AND review.babysitterEmail = '" . $email . "'";
+    $sql = "SELECT review.Rate	, review.feedBack, review.Date, review.time , parent.firstName,parent.lastName,parent.img FROM `review`, `parent` WHERE review.parentEmail = parent.email AND review.tutorEmail = '" . $email . "'";
     $result = mysqli_query($conn, $sql);
     // dd(mysqli_fetch_assoc($result));
     return $result;

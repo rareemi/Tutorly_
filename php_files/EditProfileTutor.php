@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(E_ALL);
-$servername= "localhost";
+$servername= "localhost"; 
 $username= "root" ;
 $password= "";
 $dbname= "381" ;
@@ -13,10 +13,10 @@ die("Connection failed: " . mysqli_connect_error());
 $fname_err = $lname_err = $gender_err = $id_err = $age_err = $email_err = $city_err = $phone_err = $password_err =  $msg_err = $notification = "";
 if(isset($_POST['submit'])){
     
+    
 
 $loggedInUser = $_SESSION['email'];
 $firstname  =    $_POST['firstname'];
-
 $lastname =    $_POST['lastname'];
 $gender =    $_POST['gender'];
 $id =    $_POST['id'];
@@ -34,7 +34,7 @@ $fname = $_POST["firstname"];
     if (isset($_POST["gender"]))
         $gender = $_POST["gender"];
     
-    $ID = $_POST["ID"];
+    $id = $_POST["id"];
     $age = $_POST["age"];
     $email = $_POST["eMail"];
     $city = $_POST["city"];
@@ -83,7 +83,7 @@ $fname = $_POST["firstname"];
         $valid = false;
     }}
     
-    if (!preg_match("/^\\d+$/", $ID)) {
+    if (!preg_match("/^\\d+$/", $id)) {
         $id_err = " please enter a valid id!";
         $valid = false;
     }
@@ -109,7 +109,7 @@ if($_FILES['img']['name']!=""){
         
         if($fileSize < 6161400){ 
     
-            $fileNewName = "../images/TutorPic1.png".$imageName; //
+            $fileNewName = "../images/".$imageName; //
             
             $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
             
@@ -118,11 +118,11 @@ if($_FILES['img']['name']!=""){
 
 if(isset($_POST['password']) && $_POST['password']!= ""){
 $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
-$sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
+$sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
 }else{
-    $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-    ,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName' WHERE email = '$loggedInUser'";
+    $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
+    ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio', img='$imageName' WHERE email = '$loggedInUser'";
 }
     
                 $results = mysqli_query($connection,$sql);
@@ -135,11 +135,11 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
 
         if(isset($_POST['password']) && $_POST['password']!= ""){
             $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-            ,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
+            ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
 
             }else{
                 $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
-                ,gender='$gender',ID='$ID',age='$age',city='$city',phone='$phone',bio='$bio' WHERE email = '$loggedInUser'";
+                ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio' WHERE email = '$loggedInUser'";
                 
             }
             $results = mysqli_query($connection,$sql);
@@ -210,27 +210,27 @@ $sql = "UPDATE `babysitter` SET firstName = '$firstname',lastName= '$lastname', 
                 <div class = "detail"> 
                 
                 <div class="forthepic">
-                    <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
+                    <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
                     <p>Upload a different photo:</p>
     </div>
 <input type="file" accept="image/*" name="img">                       
    
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
-                <input type="text"  id="FName" name="FName" placeholder="Enter your first name"
+                <input type="text"  id="firstname" name="firstname" placeholder="Enter your first name"
                 value="<?php echo $row['firstName']; ?>"><br>
             
                 <label for="lastname">Last Name:</label><span style="color:red"><?php echo $lname_err; ?> </span>
-                <br><input type="text" id="LName" name="LName" placeholder="Enter your last name"
+                <br><input type="text" id="lastname" name="lastname" placeholder="Enter your last name"
                 value="<?php echo $row['lastName']; ?>">
                 <br>
 
             <label for="id">ID: </label><span style="color:red;"><?php echo $id_err; ?> </span><br>
-            <input type="text" id="id" name="idd"  placeholder="example:1126354857"
+            <input type="text" id="id" name="id"  placeholder="example:1126354857"
             value="<?php echo $row['ID']; ?>"><br>
 
-            <label for="Age">Age: </label><span style="color:red;">  </span><br>
-            <input type="text" id="Age" name="age"  placeholder="30"
+            <label for="age">Age: </label><span style="color:red;">  </span><br>
+            <input type="text" id="age" name="age"  placeholder="30"
             value="<?php echo $row['age']; ?>"><br>
 
             <label>Gender:</label>
@@ -258,7 +258,7 @@ if($_GET['error'] == 'emailDup'){
                    
 
             <br> <label for="phone">Phone:</label><span style="color:red;"> <?php echo $phone_err; ?> </span><br>
-            <input type="text" id="phone" name="email" placeholder="+966 5*****" onblur="myFunction()"
+            <input type="text" id="phone" name="phone" placeholder="+966 5*****" onblur="myFunction()"
                 value="<?php echo $row['phone']; ?>">
                 <script>
    var errordet=false;
@@ -289,12 +289,11 @@ fuction geterrdet(){
             <label for="password">Password:</label><span style="color:red"> <?php echo $password_err; ?></span><br>
                 <input type="password" class="inputing-text" id="password" name="password" placeholder="  at least 6 characters ">
                 <p class="more-space-on-bottom"></p>
-                <input class="botton-bigger" type="submit" name="submit" value="Update" />
 
                 <br>
                 
                 <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
-                    <input type="text" class="inputing-text" id="loc" name= "City" placeholder=" example:Riyadh"
+                    <input type="text" class="inputing-text" id="city" name= "city" placeholder=" example:Riyadh"
                     value="<?php echo $row['city']; ?>">
 
             <br> <label for="bio">Bio:</label><span style="color:red;"> <?php echo $msg_err; ?></span> </span><br>
@@ -304,7 +303,7 @@ fuction geterrdet(){
 <br>
 
         
-               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="submit" />
+               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="Update" />
 <a class= "button1" href="../php_files/HomePageTutor.php">Back</a>
 
 </p>                    

@@ -83,7 +83,7 @@ font-weight: 650;
             <div class="holder"> 
                 <div class = "detail"> 
                 <div class="forthepic">
-               <img class = "pic"src="../images/TutorPic1.png"<?php echo $row['img']; ?>alt="Tutor Picture" height="250"></div><br>
+               <img class = "pic"src="../images/<?php echo $row['img']; ?> ?>"alt="Parent Picture" height="250"></div><br>
 
                <p class="needs-container"> First Name: <span class="par"><?php echo $row['firstName']; ?></span>
                 </p>
