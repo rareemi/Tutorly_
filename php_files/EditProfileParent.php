@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
     $lastname =    $_POST['lastname'];
     $City =    $_POST['City'];
     $eMail =    $_POST['eMail'];
-    $SecondaryNumber =    $_POST['SecondaryNumber'];
+   
     $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
 
     $fname = $_POST['firstname'];
@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
         $email_err = " please enter a valid email!";
         $valid = false;
     }
-    
+   
    
     if ($password!=""&&strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters! ";
@@ -53,40 +53,9 @@ if(isset($_POST['submit'])){
         $city_err = " please enter a valid city!";
         $valid = false;
     }
-    if ($district == "" || !ctype_alpha(str_replace(" ", "", $district))) {
-        $district_err = " please enter a valid district!";
+    if ($location == ""|| !filter_var($location, FILTER_VALIDATE_URL)) {
+        $location_err = " please enter a valid email!";
         $valid = false;
-    }
-    if ($bldg_number == "" || !is_numeric($bldg_number)) {
-        $bldg_number_err = " please enter a valid building number!";
-        $valid = false;
-    }else{
-        if(strlen($bldg_number)!=4){
-            $bldg_number_err = " building number must be 4 number! ";
-            $valid = false;
-        }
-    }
-    if ($street == "" || !ctype_alpha(str_replace(" ", "", $street))) {
-        $street_err = " please enter a valid street!";
-        $valid = false;
-    }
-    if ($postal_code == "" || !is_numeric($postal_code)) {
-        $postal_code_err = " please enter a valid postal code!";
-        $valid = false;
-    }else{
-        if(strlen($postal_code)!=5){
-            $postal_code_err = " Postal code must be 5 number! ";
-            $valid = false;
-        }
-    }
-    if ($_2nd_number == "" || !is_numeric($_2nd_number)) {
-        $_2nd_number_err = " please enter a valid secondary number!";
-        $valid = false;
-    }else{
-        if(strlen($_2nd_number)!=4){
-            $_2nd_number_err = " Secondary number must be 4 number! ";
-            $valid = false;
-        }
     }
 
     
@@ -141,13 +110,11 @@ if(isset($_POST['submit'])){
         //$userPassword = password_hash(mysqli_real_escape_string($connection,$_POST['password']), PASSWORD_DEFAULT);
         $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber', `img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
         
         }else{
             $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber', `img` = '$imageName' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
         }
                         $results = mysqli_query($connection,$sql);
                         echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
@@ -159,23 +126,20 @@ if(isset($_POST['submit'])){
         
                 if(isset($_POST['password']) && $_POST['password']!= ""){
                     $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber',password ='$userPassword' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
                     $results = mysqli_query($connection,$sql);
                     echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
                     exit;
                     }else{
                         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-          `SecondaryNumber` = '$SecondaryNumber' WHERE email = '$loggedInUser'";
+         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
                        $results = mysqli_query($connection,$sql);
                        echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
                     exit; 
                     }
                     
                     $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-                    `City` = '$City', `District` = '$District', `Street` = '$Street', `BuildingNumber` = '$BuildingNumber', `PostalCode` = '$PostalCode',
-                     `SecondaryNumber` = '$SecondaryNumber' WHERE email = '$loggedInUser'";
+                    `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
                                    
                                
                     $results = mysqli_query($connection,$sql);
