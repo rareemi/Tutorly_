@@ -9,14 +9,14 @@ $database= mysqli_select_db($connection, $dbname);
                
 if (!$connection) 
 die("Connection failed: " . mysqli_connect_error());
-$fname_err = $lname_err = $email_err = $password_err = $city_err = $location_err = "";
+$fname_err = $lname_err = $email_err = $password_err = $city_err  = "";
 
 if(isset($_POST['submit'])){
     
     $loggedInUser = $_SESSION['email'];
     $firstname  =    $_POST['firstname'];
     $lastname =    $_POST['lastname'];
-    $City =    $_POST['City'];
+    $City =    $_POST['city'];
     $eMail =    $_POST['eMail'];
    
     $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
@@ -26,8 +26,9 @@ if(isset($_POST['submit'])){
     $email = $_POST['eMail'];
     $password = $_POST["password"];
     //$confirmpassword= validate($_POST["confirmpassword"]);
-    $city = $_POST['City'];
-    $location = $_POST['location'];
+    $city = $_POST['city'];
+    if (isset($_POST["Location"]))
+        $location = $_POST['Location'];
     
 
     $valid = true;
@@ -53,10 +54,7 @@ if(isset($_POST['submit'])){
         $city_err = " please enter a valid city!";
         $valid = false;
     }
-    if ($location == ""|| !filter_var($location, FILTER_VALIDATE_URL)) {
-        $location_err = " please enter a valid email!";
-        $valid = false;
-    }
+    
 
     
     
@@ -99,7 +97,7 @@ if(isset($_POST['submit'])){
                 if($fileSize < 6161400){
                     //var_dump(basename($imageName));
             
-                    $fileNewName = "../public/userImages/".$imageName;
+                    $fileNewName = "../images/".$imageName;
                     
                     $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
                     
@@ -110,11 +108,11 @@ if(isset($_POST['submit'])){
         //$userPassword = password_hash(mysqli_real_escape_string($connection,$_POST['password']), PASSWORD_DEFAULT);
         $userPassword =mysqli_real_escape_string($connection,$_POST['password']);
         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
+         `city` = '$City', `Location` = '$location',`img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
         
         }else{
             $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
+         `city` = '$City', `Location` = '$location',`img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
         }
                         $results = mysqli_query($connection,$sql);
                         echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
@@ -126,15 +124,15 @@ if(isset($_POST['submit'])){
         
                 if(isset($_POST['password']) && $_POST['password']!= ""){
                     $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
+         `city` = '$City', `Location` = '$location',password ='$userPassword' WHERE email = '$loggedInUser'";
                     $results = mysqli_query($connection,$sql);
-                    echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
+                    echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileParent.php";</script>';
                     exit;
                     }else{
                         $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `City` = '$City', `location` = '$location' WHERE email = '$loggedInUser'";
+         `city` = '$City', `Location` = '$location' WHERE email = '$loggedInUser'";
                        $results = mysqli_query($connection,$sql);
-                       echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
+                       echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileParent.php";</script>';
                     exit; 
                     }
                     
@@ -209,18 +207,18 @@ if(isset($_POST['submit'])){
                     <div class = "detail"> 
                     
                     <div class="forthepic">
-                    <img class = "pic"src="../images/TutorPic1.png" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
+                    <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
                     <p>Upload a different photo:</p>
 
 <input type="file" accept="image/*" name="img">                       
     </div>
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
-                <input type="text"  id="FName" name="FName" placeholder="Enter your first name"
+                <input type="text"  id="firstname" name="firstname" placeholder="Enter your first name"
                 value="<?php echo $row['firstName']; ?>"><br>
             
                 <label for="lastname">Last Name:</label><span style="color:red"><?php echo $lname_err; ?> </span>
-                <br><input type="text" id="LName" name="LName" placeholder="Enter your last name"
+                <br><input type="text" id="lastname" name="lastname" placeholder="Enter your last name"
                 value="<?php echo $row['lastName']; ?>">
 
                 <br> <label for="eMail">Email:</label><span style="color:red"> <?php echo $email_err; ?></span><br>
@@ -235,11 +233,11 @@ if(isset($_POST['submit'])){
                 <br>
                 
                 <label >City:</label><br><span style="color:red"> <?php echo $city_err; ?></span>
-                    <input type="text" class="inputing-text" id="loc" name= "City" placeholder=" example:Riyadh"
+                    <input type="text" class="inputing-text" id="loc" name= "city" placeholder=" example:Riyadh"
                     value="<?php echo $row['city']; ?>">
 
-                <br> <label for="adress">Location:</label><br><span style="color:red"> <?php echo $location_err; ?></span>
-                <input type="text" id="adress" name="adress" placeholder="https://*******"
+                <br> <label for="Location">Location:</label><br>
+                <input type="text" id="Location" name="Location" placeholder="https://*******"
                 value="<?php echo $row['Location']; ?>"><br>
 
                
