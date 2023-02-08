@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             $_POST["FName"] == $_POST["LName"] = $_POST["gender"] = $_POST["age"] = $_POST["id"] = $_POST["email"] = $_POST["pass"] = $_POST["city"] = $_POST["phone"] = $_POST["bio"] = "";
-            echo '<script>alert("Registration successful!");window.location.href="LoginPage.php";</script>';
+            echo '<script>alert("Registration successful!");window.location.href="LoginTutor.php";</script>';
 
         }
     }

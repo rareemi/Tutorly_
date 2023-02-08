@@ -1,16 +1,18 @@
 <?php
 require("query.php");
-$fname_err = $lname_err = $email_err = $password_err = $city_err = $Location_Err= "";
+$fname_err = $lname_err = $email_err = $password_err = $city_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fname_err = $lemail_err = $email_err = $password_err = $city_err = $Location_Err= "";
+    $fname_err = $lemail_err = $email_err = $password_err = $city_err =  "";
 
     $fname = validate($_POST["FName"]);
     $lname = validate($_POST["LName"]);
     $email = validate($_POST["email"]);
     $password = validate($_POST["pass"]);
     $city = validate($_POST["city"]);
-    $Location = validate($_POST["Location"]);
+    if (isset($_POST["Loaction"]))
+        $loaction = $_POST["Loaction"];
+    
 
     $valid = true;
     if ($fname == "" || !ctype_alpha(str_replace(" ", "", $fname))) {
@@ -29,10 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password_err = " please enter a valid password!";
         $valid = false;
     }
-    if($confirmpassword!==$password){
-        $password_err = " please enter the same password!";
-        $valid = false;
-    }
     if (strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters! ";
         $valid = false;
@@ -41,9 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $city_err = " please enter a valid city!";
         $valid = false;
     }
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$Location)) {
-          $Location_Err = "Invalid URL";
-        }
       
     if (get_parent_email($email) > 0) {
         $email_err = " this email is already registered, please enter a different email!";
@@ -62,15 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($imageName == "")
             $imageName = "defultpico.jpg";
 
-        if (parent_signup_handler($fname, $lname, $email, $password, $city, $Location,$imageName)) {
+            
+
+        if (parent_signup_handler( $email, $password,$fname, $lname, $city,$loaction ,$imageName)) {
 //            $notification = 'Registration successful!';
             $_POST["FName"] = $_POST["LName"] = $_POST["email"] = $_POST["pass"] = $_POST["city"] =$_POST["Location"]= "";
 
-            $target_dir = "../public/userImages/";
+            $target_dir = "../images/";
             $target_file = $target_dir . basename($_FILES["img"]["name"]);
             move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
-            echo '<script>alert("Registration successful!");window.location.href="LoginPage.php";</script>';
+            echo '<script>alert("Registration successful!");window.location.href="LoginParent.php";</script>';
 
         }
     }
@@ -116,8 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" id="city" name="city"><br>
 
 <!--Location-->
-<label>Enter  URL loaction:<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $Location_Err; ?></span></label>
-<input type="text" id="city" name="Loaction"><br><!--Photo--> 
+<label>Enter  URL loaction:</label>
+<input type="text" id="Location" name="Loaction"><br><!--Photo--> 
 <br>
 <img src="../images/TutorPic1.png" class="pic" style="height:90px; margin-left: 100px;"  alt="defult picture"><br>
                     <p>upload picture: (optional)</p>

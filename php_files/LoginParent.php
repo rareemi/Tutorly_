@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Tutor</title>
+<title>Login Parent</title>
 <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
 <link rel ="stylesheet" type= "text/css" href="../css_files/review&rate.css">
 <style> label,p,b{

@@ -30,10 +30,10 @@ function dd($arr)
 
 
 // parent
-function parent_signup_handler($fname, $lname, $email, $password, $city, $district, $street, $bldg_number, $postal, $_2nd_number, $img)
+function parent_signup_handler($email, $password,$fname, $lname, $city, $location, $img)
 {
     global $conn;
-    $sql = "INSERT INTO `parent` VALUES ('" . $email . "','" . $password . "','" . $fname . "','" . $lname . "','" . $city . "','" . $district . "','" . $street . "','" . $bldg_number . "','" . $postal . "','" . $_2nd_number . "','" . $img . "')";
+    $sql = "INSERT INTO `parent` VALUES ('" . $email . "','" . $password . "','" . $fname . "','" . $lname . "','" . $city . "','" . $location . "','"  . $img . "')";
     $result = mysqli_query($conn, $sql);
     return $result;
 }
