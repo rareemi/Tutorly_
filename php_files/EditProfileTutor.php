@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(E_ALL);
-$servername= "localhost";
+$servername= "localhost"; 
 $username= "root" ;
 $password= "";
 $dbname= "381" ;
@@ -12,6 +12,7 @@ if (!$connection)
 die("Connection failed: " . mysqli_connect_error());
 $fname_err = $lname_err = $gender_err = $id_err = $age_err = $email_err = $city_err = $phone_err = $password_err =  $msg_err = $notification = "";
 if(isset($_POST['submit'])){
+    
     
 
 $loggedInUser = $_SESSION['email'];
@@ -288,7 +289,6 @@ fuction geterrdet(){
             <label for="password">Password:</label><span style="color:red"> <?php echo $password_err; ?></span><br>
                 <input type="password" class="inputing-text" id="password" name="password" placeholder="  at least 6 characters ">
                 <p class="more-space-on-bottom"></p>
-                <input class="botton-bigger" type="submit" name="submit" value="Update" />
 
                 <br>
                 
@@ -303,7 +303,7 @@ fuction geterrdet(){
 <br>
 
         
-               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="submit" />
+               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="Update" />
 <a class= "button1" href="../php_files/HomePageTutor.php">Back</a>
 
 </p>                    
