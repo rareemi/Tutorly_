@@ -210,7 +210,7 @@ if(isset($_POST['submit'])){
                     <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Parent Picture" height="250"><br>
                     <p>Upload a different photo:</p>
 
-<input type="file" accept="image/*" name="img">                       
+<input type="file" accept=".jpg, .jpeg, .png" name="img"> 
     </div>
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
