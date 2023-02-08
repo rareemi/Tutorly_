@@ -299,14 +299,14 @@ fuction geterrdet(){
 
         
                <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="submit" />
-<a class= "button1" href="../html_files/HomePageTutor.php">Back</a>
+<a class= "button1" href="../php_files/HomePageTutor.php">Back</a>
 
 </p>                    
 </div>
                   
                
      
-            <a class= "button1" id="button2" href="../html_files/DeletProfileTutor.php" style="margin-left: 15%;">Delete Profile</a>
+            <a class= "button1" id="button2" href="../php_files/DeletProfileTutor.php" style="margin-left: 15%;">Delete Profile</a>
                 <br><br>
                 </div> 
         
