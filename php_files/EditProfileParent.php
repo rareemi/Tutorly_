@@ -115,7 +115,7 @@ if(isset($_POST['submit'])){
          `city` = '$City', `Location` = '$location',`img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
         }
                         $results = mysqli_query($connection,$sql);
-                        echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
+                        echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileParent.php";</script>';
                     exit;
                     }
             
@@ -141,7 +141,7 @@ if(isset($_POST['submit'])){
                                    
                                
                     $results = mysqli_query($connection,$sql);
-                    echo '<script>alert("Your edits has been sent successfully!");window.location.href="parenteditprofile.php";</script>';
+                    echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileParent.php";</script>';
                     exit;}}
      ?>
 
