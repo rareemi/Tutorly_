@@ -3,56 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutors Offers</title>
+    <title>Offer Details</title>
     <link rel ="stylesheet" type="text/css" href = "../css_files/common.css">
     <link rel ="stylesheet" type="text/css" href = "../css_files/TutorsOffers.css">
+    <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <header>
-        <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-            <nav>
-                <ul class = "nav_links">
-                    <li><a href = "/html_files/HomePageParent.html"> Home</a></li>
-                    <li><a href = "#"> Profile</a>
-                        <ul>
-                            <li><a href = "/html_files/ViewProfileParent.html"> View</a></li>
-                            <li><a href = "/html_files/EditProfileParent.html"> Edit</a></li>
-                        </ul>
-                    </li>
-                    <li><a href = "#"> Requests</a>
-                        <ul> 
-                            <li><a href = "#"> Post</a></li>
-                            <li><a href = "#"> Edit</a></li>
-                        </ul>
-                    </li> 
-                    <li><a href = "../html_files/RequestOffers.html"> Offers</a></li>
-                    <li><a href = "/html_files/Booking.html"> Booking</a>
-                        <ul>
-                            <li><a href = "/html_files/CurrentBooking.html"> Current</a></li>
-                            <li><a href = "/html_files/PreviousBooking.html"> Previous</a></li>
-                        </ul>
-                    </li>
-                   
-                </ul>
-            </nav>
-            <p><a class= "out" href="../html_files/index.html">Logout</a></p>
-    </header>
+<?php include ("../php_files/parentHeader.php"); ?>
  
-    <h2>Tutor Profile</h2><br><br>
+    <h2>Request Offers</h2><br><br>
     
+    <?php
+include ("../php_files/connectDB.php"); 
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+   $sql1 = "SELECT `babySitterName`,`price` ,`babySitterEmail` 
+    FROM `requests` INNER JOIN `offers` WHERE `offers`.`RequestID` = $id 
+    AND `requests`.`ID` = $id AND `offers`.`offerstatus` != 'rejected' ";
+
+$sql2 = "SELECT `TypeOfServese`,`startDate`,`startTime`,`endTime`,`comments`
+FROM `requests` 
+WHERE `requests`.`ID` = $id ";
+
+$Offresult = mysqli_query($connection,  $sql1);
+$Reqresult = mysqli_query($connection,  $sql2);
+$valu = mysqli_num_rows($Offresult);
+ }// end if set
+
+  ?>
+
+<!-- <h2 id="offerH2">Request Offers</h2> -->
+
+ <?php 
+
+$kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $id";
+$res = mysqli_query($connection, $kidss);
+
+ $requ = mysqli_fetch_row($Reqresult);
+ $serv = key($requ);
+   next($requ);
+
+   $stdate = key($requ);
+   next($requ);
+
+   $sttime = key($requ);
+   next($requ);
+
+   $etime = key($requ);
+   next($requ);
+
+   $com = key($requ);
+   next($requ);
+?>
+<div class="Requestcontainer" style="    background-color: white;
+    position: relative;
+    border-style: solid;
+    border-radius: 30px;
+    width: 75%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;">
+    <label class="serviceLabel">Your Request: </label><br><br>
+
+    <label class="classLabel" >Type Of Class: </label>
+<label class="class"><?php echo(($requ[$serv]))?></label>
+
+<label class="dayLabel">, Day: </label>
+<label class="day"><?php echo(($requ[$stdate]))?> </label>
+
+<label class="timeLabel">, Time: </label>
+<label class="time"><?php echo(($requ[$sttime])) ?> - <?php echo(($requ[$etime]))?></label>
+
+<label class="commentsLabel">, Comments: </label>
+<label class="comments"><?php echo(($requ[$com]))?> </label>
+<label class="commentsLabel">, Kid/s: </label>
+<?php while($kidrow = mysqli_fetch_row($res)){
+    $kname = key($kidrow);
+    next($kidrow);
+
+    $kAge = key($kidrow);
+    next($kidrow);
+    echo $kidrow[$kname].": ".$kidrow[$kAge]." Years. "; }?>
+       
 
 
+<?php
+ if($valu > 0 ){
+
+$x = 0;
+while($x< $valu  ){
+$x++;
+ $row = mysqli_fetch_row($Offresult);
+
+  $tutorname = key($row);
+   next($row);
+
+   $price = key($row);
+   next($row);
+
+ $tutorEm = key($row);
+ next($row);
  
+ $sql3 = "SELECT `img` FROM `tutor` WHERE `email` = '$row[$tutorEm]' ";
+ $result2 = mysqli_query($connection,  $sql3);
+ $row2 = mysqli_fetch_row($result2);
+ $tutorPic = key($row2);
+
+?> 
+
+</div>
 
 <div> 
 <p class="offer">
-    <img src="../images/TutorPic1.png" class="pic" height="190" alt = "Tutor Picture"><br>
-<label class="nameLabel">Tutor Name: </label><br><label class="Name">Sara Mohammed</label><br>
-<label class="ratingLabel">Rating: </label><br><label class="Rate">4.91</label>
-<br>
-<label class="priceLabel">Offerd Price: </label><br><label class="Price">200SR</label>
+    <img src="../images/<?php echo(($row2[$tutorPic])); ?>" class="pic" height="190" alt = "Tutor Picture"><br>
+<label class="nameLabel">Tutor Name: </label><br>
+<label class="Name"><?php echo(($row[$tutorname])); ?></label><br>
+
+
+
+<label class="priceLabel">Offerd Price: </label><br>
+<label lass="Price"><?php echo(($row[$price]))?> SAR</label>
 <br><br>
+
 <a class ="profile" href="../html_files/ShowTutorProfile.html">Show Profile</a><br><br>
+<a class="profile"href="http://localhost/Tutorly_/php_files/ShowTutorProfile.php?id=<?php echo($id) ?>&em=<?php echo( $row[$tutorEm]) ?>">Show Tutor Profile</a>  
+
 <br>
 <!-- 
 <a class ="accept" href="#">Accept</a>
@@ -61,48 +137,13 @@
 </p>
 
 </div>
-<footer> 
-       
-      
-    <p class = "p">
-        <table>
-            <tr>
-         <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
-         <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-         <th> <a href="FAQ.html" class = "con">FAQs</a> </th> 
-            </tr> 
-            </table> <br>
-    
-             <center > 
-    
-              
-                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-               
-    
-    <a href="https://twitter.com" target="_blank" class = "ionicons">
-                
-        <ion-icon name="logo-twitter"></ion-icon> </a>
-            
-                <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                </a>
-                <a href="https://instagram.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-    
-                <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                </a>
-    
-                &copy; A  Tutorly, 2022
-                </center>
-                
-                 
-       
-            </p>
-    
-        </footer>
+
+<?php
+
+}//end while loop 
+}//end if
+else{
+?>
 
 </body>
 </html>

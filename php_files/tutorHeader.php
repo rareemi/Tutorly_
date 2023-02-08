@@ -23,5 +23,5 @@
 
             </ul>
         </nav>
-        <p><a class= "out" href="..\php_files\logout.php" style="margin-right: 100px;" >Logout</a></p>
+        <p><a class= "out" href="../php_files/logout.php" style="margin-right: 100px;" >Logout</a></p>
 </header>

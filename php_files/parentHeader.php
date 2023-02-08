@@ -25,6 +25,6 @@
                    
                 </ul>
             </nav>
-            <p><a class= "out" href="..\php_files\logout.php">Logout</a></p>
+            <p><a class= "out" href="../php_files/logout.php">Logout</a></p>
     </header>
  
