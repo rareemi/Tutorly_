@@ -2,7 +2,7 @@
         <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
             <nav>
                 <ul class = "nav_links">
-                    <li><a href = "../html_files/HomePageParent.php"> Home</a></li>
+                    <li><a href = "../php_files/HomePageParent.php"> Home</a></li>
                     <li><a href = "#"> Profile</a>
                         <ul>
                             <li><a href = "../php_files/ViewProfileParent.php"> View</a></li>

@@ -9,7 +9,7 @@ $database= mysqli_select_db($connection, $dbname);
                
 if (!$connection) 
 die("Connection failed: " . mysqli_connect_error());
-$fname_err = $lname_err = $email_err = $password_err = $city_err = $district_err = $street_err = $bldg_number_err = $postal_code_err = $_2nd_number_err = $notification = "";
+$fname_err = $lname_err = $email_err = $password_err = $city_err = $location_err = "";
 
 if(isset($_POST['submit'])){
     
@@ -27,11 +27,8 @@ if(isset($_POST['submit'])){
     $password = $_POST["password"];
     //$confirmpassword= validate($_POST["confirmpassword"]);
     $city = $_POST['City'];
-    $district = $_POST['District'];
-    $street = $_POST['Street'];
-    $bldg_number = $_POST['BuildingNumber'];
-    $postal_code = $_POST['PostalCode'];
-    $_2nd_number = $_POST['SecondaryNumber'];
+    $location = $_POST['location'];
+    
 
     $valid = true;
     if ($fname == "" || !ctype_alpha(str_replace(" ", "", $fname))) {
