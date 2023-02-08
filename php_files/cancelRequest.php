@@ -28,12 +28,12 @@ footer {
         
     <!--Upper Menue-->
     <?php include("parentHeader.php");
-            include('../PHP_Files/connect_db.php');
+            include('../PHP_Files/connectDB.php');
         
            
             
             $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
-            $q3 = $result = mysqli_query($connection, $query);
+            $q3 = $result = mysqli_query($conn, $query);
             if($q3)
             echo "done3" ;
             ?>
@@ -45,7 +45,7 @@ footer {
         $pemail =  $_SESSION['email'];
         echo "$pemail" ;
        
-           $sql = "SELECT `TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `ID`, `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `ParentEmail`= '$pemail'";
+           $sql = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `comments`, `ID`, `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `parentEmail`= '$pemail'";
 
            $result = mysqli_query($conn,  $sql);
         
@@ -148,7 +148,7 @@ while($kidrow = mysqli_fetch_row($result2)){
     
     <div >
     <div class="container">
-        <h2>No posted job request yet </h2></div>
+        <h2>there is No posted job request yet ! </h2></div>
     <?php } ?>
     <!-- end copy -->
       
