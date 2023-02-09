@@ -39,7 +39,7 @@
             ?>
                 
         <div class="CurrentJobs">
-            <p class="container" style="width: 340px; height: 630px;">
+            <p class="container" style="width: 340px; height:auto;">
              <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              <?php $id= $row['ID'];
                     $sql_kids = "SELECT * FROM `kids`   where ID ='$id' ";
@@ -58,23 +58,21 @@
                }
            }} ?>
            
-              <label class="PriceLabel"> Type Of Class: </label><br>
+              <label class="priceLabel"> Type Of Class: </label><br>
               <label class="Price"><?php echo $row['TypeOfClass']; ?> </label><br>
 
               <label class="priceLabel"> Price: </label><br>
               <label class="Price"><?php echo $row['price'];?>SR</label><br>
-
-              <label class="DateLabel">Date</label><br>
-              <label class="Date"><?php echo $row['date'];?></label><br>
     
-              <label class="DateLabel"> Date: </label>
-              <label class="Date"><?php echo $row['startDate']; ?> </label>
+              <label class="DateLabel"> Date: </label><br>
+              <label class="Date"><?php echo $row['startDate']; ?> </label><br>
 
+              <label class="TimeLabel"> Time: </label><br>
               <label class="TimeLabel"> From: </label>
-              <label class="Time"> <?php echo $row['startTime']; ?></label>
+              <label class="Time"> <?php echo $row['startTime']; ?></label><br>
 
               <label class="TimeLabel"> To: </label>
-              <label class="Time"> <?php echo $row['endTime']; ?></label><br>
+              <label class="Time"> <?php echo $row['endTime']; ?></label><br><br>
 
              
              <a class ="email" href="mailto:<?php echo($row['parentEmail']);?>; ?>">Contact with parent</a>
