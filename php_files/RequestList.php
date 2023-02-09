@@ -118,7 +118,7 @@ echo($numOfKids );
            <input  name="toTime" type="hidden" value="<?php echo($row[$end_time])?>"/>
            <input type="submit" class="sendOffer" name="offer_submit" value="Send"/> 
 
-</p>
+
 </form>
 </p>
 </div>
