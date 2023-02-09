@@ -46,7 +46,11 @@ if( isset($_POST['Class']) && isset($_POST['form_day']) && isset($_POST['from_ti
         $comments = "no comment added";
 
        //not sure yet !
+<<<<<<< HEAD
         $name = $_SESSION['kidsname'];
+=======
+        $name = $_SESSION['firstName'];
+>>>>>>> 9beaf7c1084c57c4bfb94185ac06faa1e149947e
         $pemail =  $_SESSION['email'];
 
         $createdAt = $date = date('m/d/Y h:i:s', time());
