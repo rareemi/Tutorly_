@@ -60,7 +60,7 @@ if(isset($_GET['offer_submit'])){
 //if no conflect 
 $tutorname = $_SESSION['firstName'];
 
-$sql = "INSERT INTO `offer`(`id`, `price`, `tutorName`, `RequestID`, `offerstatus`, `tutorEmail`, `startDate` `startTime`, `endTime`) VALUES ( NULL ,'$OfferPrice','$tutorname','$id','pending','$tutoremail','$oDay','$oTime1' , '$oTime2' )";
+$sql = "INSERT INTO `offer`(`id`, `price`, `tutorName`, `RequestID`, `offerstatus`, `tutorEmail`, `startDate`, `startTime`, `endTime`) VALUES ( NULL ,'$OfferPrice','$tutorname','$id','pending','$tutoremail','$oDay','$oTime1' , '$oTime2' )";
 $query = mysqli_query($connection,$sql);
 if( $query ){
     $_SESSION['Correct'] = "it is correct";  
