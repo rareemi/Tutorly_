@@ -75,7 +75,7 @@ padding: 5px;
             <div class="holder"> 
                 <div class = "detail"> 
                 <div class="profile-pic-div">
-               <img src="../images/TutorPic1.png"<?php echo $row['img']; ?> id="photo" alt="Parent Picture" height="250"></div><br>
+               <img src="../images/<?php echo $row['img']; ?>" id="photo" alt="Parent Picture" height="250"></div><br>
 
                <p class="needs-container"> First Name: <span class="par"><?php echo $row['firstName']; ?></span>
                 </p>
