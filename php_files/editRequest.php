@@ -31,7 +31,7 @@ footer {
             $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
             $q3 = $result = mysqli_query($connection, $query);
             if($q3)
-            echo "done3" ;
+            
             ?>
 
 <?php
