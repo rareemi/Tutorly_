@@ -1,0 +1,140 @@
+Body{
+    background-color: #d0e4cc ;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    height: 30px;
+    background-color:white;
+    color: black;
+    text-align: center;
+    margin-top: 70px;
+
+}
+
+#sitterPic{
+    position: absolute;
+    width: 35%;
+    height: 30%;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-style:ridge;
+}
+
+#content div   {
+
+    background-color: rgb(248, 250, 219);
+    display: inline-block;
+    width: 250px;
+    position: relative;
+    height: 300px;
+    border-style:solid;
+    border-radius: 30px;
+    margin: 30px  56px 15px 56px ;
+    padding: 3px ;
+
+}
+
+#content div .NameLabel, #content div .PriceLabel , #content div .StartDateLabel ,#content div .EndDateLabel ,#content div .timeslotslabel 
+,#content div .timeslotslabel2, #content div .serviceLabel , #content div .dayLabel,#content div .timeLabel,
+ #content div .req .nameLabel, #content div .req .ageLabel {
+    font-weight:bolder;
+   padding: 5px; 
+   color: rgb(0, 111, 96);
+  
+}
+
+#content div p{
+    line-height: 30px;
+    text-align: center;
+    margin-top: 120px;
+}
+
+#content div .req{
+
+    margin-top: 30px;
+}
+
+
+
+#content button {   
+     position: absolute;
+    height: 30px;
+    margin-left: 60px;
+    border-style: solid;
+    background-color: white; 
+    font-weight: bold; 
+    border: 1px solid black;
+
+}
+
+
+
+/* #content .Accept  {
+    position: absolute;
+    height: 30px;
+    border-style: solid;
+    background-color: white; 
+    font-weight: bold; 
+    margin-left: 130px;
+    color: rgb(39, 141,7);
+   
+} */
+#content .email{
+    margin-left: 130px;
+    color:black;
+}
+
+/* #content .Reject{
+    color: rgb(254, 9,9);
+} */
+
+
+ #content input {   
+    position: absolute;
+   height: 30px;
+   margin-left: 60px;
+   border-style: solid;
+   background-color: white; 
+   font-weight: bold; 
+   border: 1px solid black;
+}
+
+
+
+#content .y p a  .contact 
+{position: absolute;
+    margin-left: -30px; }
+
+
+    /* for view job request page */
+
+ #content div  .reqList .serviceLabel , #content div  .reqList .dayLabel,#content div  .reqList .timeLabel{
+    font-weight:bolder;
+   padding: 10px; 
+   /*color: rgb(0, 111, 96);*/
+   color: rgb(111, 35, 0);
+  
+}
+.OfferPrice {
+        position: absolute;
+        left: 40px;
+        top: 210px;
+        font-weight:bolder;
+        padding: 5px; 
+        color: rgb(0, 111, 96);
+        }
+
+.sendOffer{
+     position: absolute;
+      padding: 5px;
+        left: 54px;
+        top: 260px;
+}
+
+
+span{
+   bottom: -1px;
+   padding-left: 7px;
+}
+

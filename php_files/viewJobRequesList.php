@@ -68,7 +68,7 @@ include('../PHP_Files/connectDB.php');
 //`TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`, `expireDate`, `city`, `District` 
 //SELECT * FROM `requests` WHERE `status` = 'unserved' ;
 $val1 = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `ID` FROM  `request` WHERE `status` = 'unserved'";
-$result = mysqli_query($conn, $val1);
+$result = mysqli_query($connection, $val1);
 //`kidsName`, `age`, `TypeOfServese`, `startTime`, `endTime`, `startDate`, `endDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`)
 // if(! $result )
 // echo("wrong");
