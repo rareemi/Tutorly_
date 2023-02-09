@@ -17,7 +17,7 @@ $loggedInUser = $_SESSION['email'];
 
     if(!empty($_POST['uPassword'])){
         $userPassword = mysqli_real_escape_string($connection,$_POST['uPassword']);
-        $sql = "SELECT * FROM `tutor`  INNER JOIN offers ON tutor.email  = offers.tutorEmail WHERE email='$loggedInUser'and offers.offerstatus='accepted'";
+        $sql = "SELECT * FROM `tutor`  INNER JOIN offer ON tutor.email  = offer.tutorEmail WHERE email='$loggedInUser'and offer.offerstatus='accepted'";
         $userFound = mysqli_query($connection,$sql);
         if($userFound){
 
@@ -43,7 +43,7 @@ $loggedInUser = $_SESSION['email'];
     
             while ($row = mysqli_fetch_assoc($userFound)) {
                 if($userPassword==$row['password']){
-                $sql2="DELETE FROM `offers` WHERE tutorEmail='$loggedInUser'";
+                $sql2="DELETE FROM `offer` WHERE tutorEmail='$loggedInUser'";
                 $userFound = mysqli_query($connection,$sql2);
                 $sql2="DELETE FROM `tutor` WHERE email='$loggedInUser'";
                 $userFound = mysqli_query($connection,$sql2);
@@ -51,8 +51,9 @@ $loggedInUser = $_SESSION['email'];
                 exit;
             
             }
-
+            
         }}}
+        
 
 
         $sql = "SELECT * FROM `tutor` WHERE email='$loggedInUser'";

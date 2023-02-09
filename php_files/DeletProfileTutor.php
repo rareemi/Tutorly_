@@ -30,9 +30,8 @@ $database= mysqli_select_db($connection, $dbname);
 
       Delete Profile
                 </h2>
-                
                 <div class="holder">
-        <form action="http://localhost/Tutorly_/php_files/deletetutor.php" method="POST" enctype="multipart/form-data">
+        <form action="../php_files/deletetutor.php" method="POST" enctype="multipart/form-data">
             
             <label for="password">Please enter your password to delete your account:</label>
             <?php
