@@ -33,7 +33,7 @@ if(isset($_GET['offer_submit'])){
         $conflect = false;
         $error_m = '';
         //add constrain same day
-       $sql = "SELECT `startTime` , `endTime` FROM `offers` WHERE `babySitterEmail` = '$bbyemail' AND NOT `offerstatus` = 'rejected' AND `startDate` = '$oDay'";
+       $sql = "SELECT `startTime` , `endTime` FROM `offer` WHERE `TutorEmail` = '$bbyemail' AND NOT `offerstatus` = 'rejected' AND `startDate` = '$oDay'";
         $query = mysqli_query($conn,$sql);
         if( $query ){
         while($row = mysqli_fetch_row($query)){
@@ -52,7 +52,7 @@ if(isset($_GET['offer_submit'])){
      $conflect = true; 
      $_SESSION['ERROR2'] = "it is error";
 
-     header("Location: http://localhost/Tutorly_/HTML_Files/viewJobRequestList.php");
+     header("Location:.. /php_files/RequestList.php");
       exit;
       
      } 
@@ -64,7 +64,7 @@ $sql = "INSERT INTO `offer`(`id`, `price`, `tutorName`, `RequestID`, `offerstatu
 $query = mysqli_query($conn,$sql);
 if( $query ){
     $_SESSION['Correct'] = "it is correct";  
-    header("Location: http://localhost/Tutorly_/HTML_Files/viewJobRequestList.php");
+    header("Location:.. /php_files/RequestList.php");
 }
 else{
     echo 'fail';

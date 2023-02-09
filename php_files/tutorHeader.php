@@ -9,7 +9,7 @@
                         <li><a href = "../php_files/EditProfileTutor.php"> Edit</a></li>
                     </ul> 
                 </li>
-                <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>
+                <li><a href = "../php_files/RequestList.php"> Requests</a></li>
                 <li><a href = "#"> Jobs </a>
                     <ul> 
                         <li><a href = "../php_files/CurrentJobs.php"> Current</a></li>
