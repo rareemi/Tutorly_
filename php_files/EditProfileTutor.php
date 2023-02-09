@@ -56,7 +56,7 @@ $fname = $_POST["firstname"];
         $valid = false;
     }
 
-    if ($passwor==""&&strlen($password) < 6) {
+    if ($passwor!=""&&strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters!";
         $valid = false;
     }
@@ -170,23 +170,61 @@ $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email
      }
      .holder{
      width: 800px;
-     height: 1400px;
+     height: 1100px;
      margin:0.5%
      padding: 15px;
      } 
      
      
      .detail{
-        height: 1366px;
-        width: 800px;
+        height: 850px;
+        width: 790px;
         text-align: center;
-        margin: -3.5%;
+        margin: -2.5%;
      }
      #button2{
         padding: 15px;
         margin: 10%;
 
      }
+     .profile-pic-div{
+    height: 200px;
+    width: 200px;
+    margin-left: 350px;
+    margin-bottom: -23px;
+padding: 5px;
+    bottom: 10px;
+    transform: translate(-50%,-10%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
      
 </style>
      <body>
@@ -207,14 +245,19 @@ $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email
                                     //print_r("ygbyb8yn".$row['email']);
                                 ?>
             <div class="holder"> 
-                <div class = "detail"> 
                 
-                <div class="forthepic">
-                    <img class = "pic"src="../images/<?php echo $row['img']; ?>" class="TutorPic" <?php echo $row['img']; ?> alt="Tutor Picture" height="250"><br>
-                    <p>Upload a different photo:</p>
-    </div>
-<input type="file" accept="image/*" name="img">                       
+                
+            <div class="profile-pic-div">
+                        <!--../images/TutorPic1.png-->
+  <img src="../images/TutorPic1.png<?php echo $row['img']; ?>" id="photo"  alt="profile picture" />   
+            
+  <input type="file" id="file" name="img" accept="image/*">
+  <label for="file" id="uploadBtn">Choose Photo</label>
+  <script src="app.js"></script>
+  
+</div>                     
    
+<div class = "detail"> 
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
                 <input type="text"  id="firstname" name="firstname" placeholder="Enter your first name"
@@ -254,7 +297,7 @@ if($_GET['error'] == 'emailDup'){
 
 ?>
                 <input type="email" class="inputing-text" id="eMail" name="eMail" placeholder=" example:a@gmail.com" 
-                value="<?php echo $row['email']; ?>"><br>
+                value="<?php echo $row['email']; ?>">
                    
 
             <br> <label for="phone">Phone:</label><span style="color:red;"> <?php echo $phone_err; ?> </span><br>
@@ -288,7 +331,6 @@ fuction geterrdet(){
 
             <label for="password">Password:</label><span style="color:red"> <?php echo $password_err; ?></span><br>
                 <input type="password" class="inputing-text" id="password" name="password" placeholder="  at least 6 characters ">
-                <p class="more-space-on-bottom"></p>
 
                 <br>
                 
