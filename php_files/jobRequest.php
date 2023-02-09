@@ -31,7 +31,7 @@ if( isset($_POST['Class']) && isset($_POST['form_day']) && isset($_POST['from_ti
         $valid = false;
     }
 
-    $count = count($_POST["kidsname"]);
+    $count = count($_POST["kidName"]);
     for($x =0 ; $x < $count ; $x++) {
        $kidName = $_POST["kidsname"]["$x"];
        if($kidName == "" || !ctype_alpha(str_replace(" ", "", $kidName))){
@@ -46,8 +46,8 @@ if( isset($_POST['Class']) && isset($_POST['form_day']) && isset($_POST['from_ti
         $comments = "no comment added";
 
        //not sure yet !
-        $name = $_SESSION['firstName'];
-        $pemail =  $_SESSION['email'];
+        $name = $_SESSION['kidName'];
+        $pemail =  $_SESSION['parentEmail'];
 
         $createdAt = $date = date('m/d/Y h:i:s', time());
 //until here !
