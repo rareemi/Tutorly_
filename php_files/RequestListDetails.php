@@ -52,7 +52,6 @@ if(isset($_GET['id'])){
 
 
 <?php 
-
 if($valu > 0 ){
 
 //$x = 0;
@@ -212,7 +211,7 @@ while($kidrow = mysqli_fetch_row($result2)){
  </div> -->
  
 <?php 
-}//end if
+} //end if
 ?>
 <?php include("../php_files/footer.php");?>
 </body>
