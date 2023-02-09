@@ -9,7 +9,7 @@ $database= mysqli_select_db($connection, $dbname);
                
 if (!$connection) 
 die("Connection failed: " . mysqli_connect_error());
-$fname_err = $lname_err = $email_err = $password_err = $city_err  = "";
+$fname_err = $lname_err = $email_err = $password_err = $city_err = $notification  = "";
 
 if(isset($_POST['submit'])){
     
@@ -71,8 +71,7 @@ if(isset($_POST['submit'])){
      
     
     
-    //if(isset($_POST['password']) && $_POST['password']!= "")
-    //$userPassword = password_hash(mysqli_real_escape_string($connection,$_POST['password']), PASSWORD_DEFAULT,array("cost" => 10)); 
+    
     
     
     if ($valid){
@@ -96,8 +95,8 @@ if(isset($_POST['submit'])){
                 
                 if($fileSize < 6161400){
                     //var_dump(basename($imageName));
-            
-                    $fileNewName = "../images/".$imageName;
+                   
+                    $fileNewName = "../images/TutorPic1.png".$imageName;
                     
                     $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
                     
@@ -250,19 +249,17 @@ padding: 5px;
                             //print_r("ygbyb8yn".$row['email']);
                         ?>
                 <div class="holder"> 
-                   
+                <form action="/store-image" method="POST">
                     <div class="profile-pic-div">
   <img src="/Tutorly_/images/TutorPic1.png" id="photo" <?php echo $row['img']; ?> alt="profile picture" /> 
-  <?php 
-            echo ($row['img']); 
-            ?>
+  
             
   <input type="file" id="file" name="img" accept="image/*">
   <label for="file" id="uploadBtn">Choose Photo</label>
   <script src="app.js"></script>
-
+  
 </div>
-
+                        </form>
 
 <div class = "detail"> 
                      <br>  

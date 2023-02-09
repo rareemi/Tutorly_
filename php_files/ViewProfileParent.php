@@ -54,6 +54,27 @@ padding:  .375rem .75rem;
 overflow:  auto;
 font-weight: 650;
 }
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    margin-left: 300px;
+    margin-bottom: -23px;
+padding: 5px;
+    bottom: 10px;
+    transform: translate(-50%,-1%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+#but{
+    margin-left: 3px;
+
+}
 
   </style>
    
@@ -82,8 +103,8 @@ font-weight: 650;
 
             <div class="holder"> 
                 <div class = "detail"> 
-                <div class="forthepic">
-               <img class = "pic"src="../images/<?php echo $row['img']; ?> ?>"alt="Parent Picture" height="250"></div><br>
+                <div class="profile-pic-div">
+               <img src="../images/TutorPic1.png"<?php echo $row['img']; ?> id="photo" alt="Parent Picture" height="250"></div><br>
 
                <p class="needs-container"> First Name: <span class="par"><?php echo $row['firstName']; ?></span>
                 </p>
@@ -103,7 +124,7 @@ font-weight: 650;
                 <p class="needs-container">Location: <span class="par"><?php echo $row['Location']; ?></span>
 <br>
 <br>
-<a class= "button1" href="../php_files/HomePageParent.php">back</a>
+<a class= "button1" id="but" href="../php_files/HomePageParent.php">back</a>
 
 </div>
                      </p>  </div>
