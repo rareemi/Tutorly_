@@ -34,8 +34,7 @@ footer {
             
             $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
             $q3 = $result = mysqli_query($connection, $query);
-            if($q3)
-            echo "done3" ;
+            
             ?>
 
 
@@ -43,7 +42,7 @@ footer {
         session_start();
 
         $pemail =  $_SESSION['email'];
-        echo "$pemail" ;
+        
        
            $sql = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `comments`, `ID`, `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `parentEmail`= '$pemail'";
 

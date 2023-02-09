@@ -74,20 +74,19 @@ if(isset($_POST['editsubmit'])){
         $sql = "UPDATE `requests` SET `TypeOfClass`='$Class',`startDate`='$form_day',`startTime`='$from_time',`endTime`='$to_time', `comments` = '$comments' WHERE `ID` = '$id'";
         //$sql = "INSERT INTO `requests` (`TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`, `created_at`, `city`, `District`) VALUES ('$service', '$from_time', '$to_time', '$form_day', '$comments','$name', NULL, 'unserved', '$pemail', '2022-11-04 00:00:00', '$city' , '$district' )";
         //$sql = "INSERT INTO `requests` (`TypeOfServese`, `startTime`, `endTime`, `startDate`, `comments`, `parentName`, `ID`, `status`, `ParentEmail`, `expireDate`, `city`, `District`) VALUES ('$service', '$from_time', '$to_time', '$form_day', '$comments','Mona', NULL, 'unserved', 'parent1@gmail.com', '2022-11-04', 'Riyadh' , 'aldreya')";
-        echo 'done0';
+        
         $query = mysqli_query($connection,$sql);
-        echo 'done01';
+        
        // isset($_POST['kidsname']) && isset($_POST['kidsages']) &&
      
-       if( $query ){
-        echo 'done1111';}
+      
        // print_r($_POST);}
 
         //remove kids
         $sql = "DELETE FROM `kids` WHERE `ID` = $id";
         $query = mysqli_query($connection,$sql);
         if( $query ){
-            echo 'done1';
+         
 
         //add kids
         $count = count($_POST["kidsname"]);
