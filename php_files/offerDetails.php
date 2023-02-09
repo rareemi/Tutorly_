@@ -129,35 +129,34 @@ $x++;
 <label class="Price"><?php echo(($row[$price]))?> SAR</label>
 <br><br>
 
-<button  onclick="return checkAcce()" style = "border=none; background-color= #F5FBFF;">
-<a class = "accept" href ='http://localhost/Tutorly_/php_files/setAccepted.php?id=<?php echo($id)?>&name=<?php echo($row[$tutorName]) ?>'>Accept </a> </button>
-  <button onclick ="return checkDelet()"> 
-  <a class = "reject" href='http://localhost/Tutorly_/php_files/setRejected.php?id=<?php echo($id)?>&name=<?php echo($row[$tutorName]) ?>'>Reject</a></button><br><br>
-<br>
+
+<button class ="Accept" onclick="return checkAcce()"
+style= "  margin-left: 2px;"
+>
+    <a style="  color: rgb(39, 141,7);
+    text-decoration: none;" href ='http://localhost/Tutorly_/php_files/setAccepted.php?id=<?php echo($id)?>&name=<?php echo($row[$tutorName]) ?>'>Accept </a> </button>
+
+ <br>
+ <button class="Reject" onclick="return checkDelet()"
+>
+    <a style=" color: rgb(254, 9,9);
+    text-decoration: none;" href='http://localhost/Tutorly_/php_files/setRejected.php?id=<?php echo($id)?>&name=<?php echo($row[$tutorName]) ?>'>  Reject  </a></button><br><br>
 
 
-<script>
 
-function checkDelet(){
-   return confirm("Are you sure you want to Reject offer?");
-}
 
-function checkAcce(){
-  
-   return confirm("Are you sure you want to Accept offer?");
-}
-
-</script>
 <a class="profile"href="http://localhost/Tutorly_/php_files/ShowTutorProfile.php?id=<?php echo($id) ?>&em=<?php echo( $row[$tutorEm]) ?>">Show Tutor Profile</a>  
-
 <br>
+<br>
+
+
 <!-- 
 <a class ="accept" href="#">Accept</a>
 <a class="reject" href="#"> Reject </a>
 <br> -->
 </p>
-
 </div>
+
 
 <?php
 
@@ -181,6 +180,20 @@ else{
   
      include("../php_files/footer.php");
 ?>
+
+<script>
+
+function checkDelet(){
+   return confirm("Are you sure you want to Reject offer?");
+}
+
+function checkAcce(){
+  
+   return confirm("Are you sure you want to Accept offer?");
+}
+
+</script>
+
 
 </body>
 </html>
