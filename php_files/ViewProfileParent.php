@@ -46,6 +46,12 @@ padding: 5px;
     margin-left: 3px;
 
 }
+html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
 
   </style>
    
@@ -73,7 +79,7 @@ padding: 5px;
                         ?>
 
             <div class="holder"> 
-                <div class = "detail"> 
+                <div class = "detail style="width: 340px; height: auto;> 
                 <div class="profile-pic-div">
                <img src="../images/<?php echo $row['img']; ?>" id="photo" alt="Parent Picture" height="250"></div><br>
 
