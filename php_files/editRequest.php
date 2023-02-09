@@ -25,13 +25,11 @@ footer {
     <body>
         
          <!--Upper Menue-->
-         <?php include("parentHeader.php");
-            include('../PHP_Files/connectDB.php');
-        
-         
-            
+         <?php include("../php_files/parentHeader.php");
+           include('../php_files/connectDB.php');
+           
             $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
-            $q3 = $result = mysqli_query($conn, $query);
+            $q3 = $result = mysqli_query($connection, $query);
             if($q3)
             echo "done3" ;
             ?>
@@ -47,7 +45,7 @@ unset($_SESSION['editDone']);
         
            $sql = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `comments`, `ID` , `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `parentEmail`= '$pemail '";
 
-           $result = mysqli_query($conn,  $sql);
+           $result = mysqli_query($connection,  $sql);
         
            $valu = mysqli_num_rows($result);
     
@@ -87,13 +85,13 @@ unset($_SESSION['editDone']);
      next($row);
 
      $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
-     $result2 = mysqli_query($conn, $kidss);
+     $result2 = mysqli_query($connection, $kidss);
     ?> 
 
-        <div class="container">
+        <div class="container" style="height:auto; width:40%; margin-left:30%;">
 
 
-    <p class="canceledInfo">
+    <p >
     <label class="nameLabel">Kid/s : </label> <br>
 <label class="Name"><?php 
 while($kidrow = mysqli_fetch_row($result2)){
@@ -109,7 +107,7 @@ while($kidrow = mysqli_fetch_row($result2)){
 }
 ?></label> 
 
-<?php echo(($row[$age]))?>
+
 <br>
         <label class="serviceLabel">Type Of Class: </label>
         <label class="service"><?php echo(($row[$TypeOfClass]))?></label><br><br>
@@ -133,7 +131,7 @@ while($kidrow = mysqli_fetch_row($result2)){
         <label id="demo" ><?php echo($newDate)?></label><br><br>
 
    
-    <button class="Bottons editBotton" ><a href='../HTML_Files/editingJobRequest.php?id=<?php echo($row[$id])?>'>Edit Job Request</a></button>
+    <input class="Botton resetBotton" type="submit" onclick="location.href ='../php_files/editingRequest.php?id=<?php echo($row[$id])?>'" value="Edit Job Request" style="left: 8px;">
     </p>
 
 </div> <!-- end container -->
@@ -145,55 +143,14 @@ while($kidrow = mysqli_fetch_row($result2)){
     ?>
     
     <div >
-    <div class="container">
+    <div class="container" style="height:auto; width:40%; margin-left:30%;">
         <h2>No posted job request yet </h2></div>
     <?php } ?>
     <!-- end copy -->
             </div> <!-- end container -->
         </div> <!-- end postingPage -->
 
-        footer> 
-       
-      
-    <p class = "p">
-        <table>
-            <tr>
-         <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
-         <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-         <th> <a href="FAQ.html" class = "con">FAQs</a> </th> 
-            </tr> 
-            </table> <br>
-    
-             <center > 
-    
-              
-                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-               
-    
-    <a href="https://twitter.com" target="_blank" class = "ionicons">
-                
-        <ion-icon name="logo-twitter"></ion-icon> </a>
-            
-                <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                </a>
-                <a href="https://instagram.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-    
-                <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                    <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                </a>
-    
-                &copy; A  Tutorly, 2022
-                </center>
-                
-                 
-       
-            </p>
-    
-        </footer>
+        <?php include("../php_files/footer.php");?>
  <!-- end footer -->
     </body>
 

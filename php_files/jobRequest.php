@@ -7,10 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $username = "root";
 $password = "";
 $dbname = "381";
-if (!$conn = mysqli_connect($servername, $username, $password, $dbname)) 
+if (!$connection = mysqli_connect($servername, $username, $password, $dbname)) 
 die("Connection failed: " . mysqli_connect_error());
-if( isset($_POST['class']) && isset($_POST['form_day']) && isset($_POST['from_time']) && isset($_POST['to_time'])){
-    $class = $_POST['class'];
+
+if(!$database= mysqli_select_db($connection, $dbname))
+    die("Could not open database failed: " . mysqli_connect_error());
+
+if( isset($_POST['Class']) && isset($_POST['form_day']) && isset($_POST['from_time']) && isset($_POST['to_time'])){
+    $class = $_POST['Class'];
     $form_day = $_POST['form_day'];
     $from_time = $_POST['from_time'];
     $to_time = $_POST['to_time'];
@@ -41,25 +45,23 @@ if( isset($_POST['class']) && isset($_POST['form_day']) && isset($_POST['from_ti
         else
         $comments = "no comment added";
 
-//not sure yet ! 
-$name = $_SESSION['firstName'];
-       // $city = $_SESSION['City'];
-       // $district = $_SESSION['District'];
+       //not sure yet !
+        $name = $_SESSION['firstName'];
         $pemail =  $_SESSION['email'];
 
         $createdAt = $date = date('m/d/Y h:i:s', time());
 //until here !
 
 echo "$createdAt";
-        $sql = "INSERT INTO `request` (`TypeOfClass`, `ID`, `status`,  `parentEmail`, `startDate`, `startTime`, `endTime`, `comments`, `created_at`) VALUES ('$class', NULL, 'unserved', '$pemail' ,  '$form_day', '$from_time', '$to_time', '$comments', now() )";
+        $sql = "INSERT INTO `requests` (`TypeOfClass`, `ID`, `status`,  `parentEmail`, `startDate`, `startTime`, `endTime`, `comments`, `created_at`) VALUES ('$class', NULL, 'unserved', '$pemail' ,  '$form_day', '$from_time', '$to_time', '$comments', now() )";
 
-        $query = mysqli_query($conn,$sql);
+        $query = mysqli_query($connection,$sql);
 
         if( $query ){
             echo 'done1';
             
             //Insert ID
-           $id = mysqli_insert_id($conn);
+           $id = mysqli_insert_id($connection);
            print("Insert ID: ".$id ."\n");
             $count = count($_POST["kidsname"]);
             print("count: ". $count ."\n");
@@ -67,7 +69,7 @@ echo "$createdAt";
                $kidName = $_POST["kidsname"]["$x"];
                $kidAge = $_POST["kidsage"]["$x"];
                 $sql = "INSERT INTO `kids` (`ID`, `kidName`, `kidAge`) VALUES ('$id', '$kidName', '$kidAge')";
-                $query = mysqli_query($conn,$sql);
+                $query = mysqli_query($connection,$sql);
               }
               echo '<script>alert("Posted successful!");window.location.href="jobRequest.php";</script>';
     
@@ -76,20 +78,8 @@ echo "$createdAt";
         else{
             echo 'fail';
             }  
-
-}
-
-
-
-
-
-
-
-
-
-}
-}
-?>
+        }}
+}?>
 
 
 
@@ -99,44 +89,16 @@ echo "$createdAt";
     <head>
         <title>Post Job Request</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="jobRequestStyle.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="../css_files/jobRequestStyle.css">
+        <link rel="stylesheet" href="../css_files/common.css">
         <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
-
+        <script src="addKids.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
     </head>
     
     <body>
-        <header>
-            <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-                <nav>
-                    <ul class = "nav_links">
-                        <li><a href = "../php_files/HomePageParent.php"> Home</a></li>
-                        <li><a href = "#"> Profile</a>
-                            <ul>
-                                <li><a href = "../php_files/ViewProfileParent.php"> View</a></li>
-                                <li><a href = "../php_files/EditProfileParent.php"> Edit</a></li>
-                            </ul>
-                        </li>
-                        <li><a href = "#"> Requests</a>
-                            <ul> 
-                                <li><a href = "/html_files/jobRequest.php"> Post</a></li>
-                                <li><a href = "/html_files/EditRequest.html"> Edit</a></li>
-                            </ul>
-                        </li> 
-                        <li><a href = "../php_files/RequestOffers.php"> Offers</a></li>
-                        <li><a href = "#"> Booking</a>
-                            <ul>
-                                <li><a href = "../php_files/CurrentBooking.php"> Current</a></li>
-                                <li><a href = "../php_files/PreviousBooking.php"> Previous</a></li>
-                            </ul>
-                        </li>
-                       
-                    </ul>
-                </nav>
-                <p><a class= "out" href="../php_files/logout.php">Logout</a></p>
-        </header>
+    <?php include("../php_files/parentHeader.php");?>
        
     
     
@@ -166,7 +128,7 @@ echo "$createdAt";
                         </div>
                 
                 <label class="serviceLabel"> Type Of Class: <span class="errspan" style="color:red;font-size: 15px;"><?php echo $class_err; ?></span>
-                    <input class="inptService" name="service" type="text" placeholder="Enter type of class your Kid need " required> 
+                    <input class="inptService" name="Class" type="text" placeholder="Enter type of class your Kid need " required> 
                 </label>
                 
                 <label class="durationLabel"> Duration: <br> <span class="errspan" style="color:red;font-size: 15px;"><?php echo $to_time_err; ?></span><br>
@@ -184,32 +146,6 @@ echo "$createdAt";
             </form>
             </div> <!-- end container -->
         </div> <!-- end postingPage -->
-        <footer> 
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
-                  
-                <p class = "p" >
-                <table >
-                  <tr>
-                     <th colspan="2"><a href="mailto:#" class = "con">ContactUs</a>  </th>
-                     <th colspan="2"><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-                     <th colspan="2"> <a href="FAQ.html" class = "con">FAQs</a> </th> 
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td colspan="2"><a href="https://twitter.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-twitter"></ion-icon> </a></td>
-                    <td><a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-whatsapp"></ion-icon></a></td>
-                    <td><a href="https://instagram.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-instagram"></ion-icon></a></td>
-                    <td><a href="https://snapchat.com" target="_blank" class = "ionicons">
-                        <ion-icon name="logo-snapchat"></ion-icon></a></td>
-                  </tr>
-                  <tr>
-                    <td colspan="6" style="text-align: center;">&copy; A  Tutorly, 2022</td>
-                  </tr>
-                     
-                </table> <br>
-            </footer>
+        <?php include("../php_files/footer.php");?>
     </body>
 </html>
