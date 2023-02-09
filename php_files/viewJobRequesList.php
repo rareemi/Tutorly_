@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Job Request List</title>
-   <!-- <link rel="stylesheet" type="text/css" href="../CSS_Files/viewOfferListStyle.css">-->
+   <link rel="stylesheet" type="text/css" href="../CSS_Files/viewOfferListStyle.css">
      <link rel="stylesheet" type="text/css" href="../CSS_Files/viewJobRequestListStyle.css"> 
     <link rel="stylesheet" href="../CSS_Files/commmon.css">
     <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
