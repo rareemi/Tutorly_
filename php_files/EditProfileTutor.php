@@ -303,7 +303,7 @@ fuction geterrdet(){
 <br>
 
         
-               <!----> <input class="botton-bigger" type="submit" name="submit" onclick="return geterrdet()" value="Update" />
+               <!----> <input class="botton-bigger" type="submit" name="submit"  value="Update" />
 <a class= "button1" href="../php_files/HomePageTutor.php">Back</a>
 
 </p>                    

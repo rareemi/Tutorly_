@@ -14,7 +14,7 @@ $database= mysqli_select_db($connection, $dbname);
 <?php include ("../php_files/parentHeader.php"); ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset = "utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@ $database= mysqli_select_db($connection, $dbname);
                 
                  
         <div class="holder">
-        <form action="http://localhost/Tutorly_/php_files/deleteparent.php" method="POST" enctype="multipart/form-data">
+        <form action="../php_files/deleteparent.php" method="POST" enctype="multipart/form-data">
             
             <label for="password">Please enter your password to delete your account:</label>
             <?php
@@ -50,7 +50,7 @@ if($_GET['error'] == 'failToDelete'){
     
 <?php
 }
-elseif($_GET['error'] == 'acceptedOffer'){
+elseif($_GET['error'] == 'serReq'){
     ?>
     
     <span style="color:red;">
