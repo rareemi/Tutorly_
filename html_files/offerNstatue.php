@@ -1,3 +1,11 @@
+<?php
+session_start();
+require("../php_files/query.php");
+$requests = get_requests($_SESSION['email']);
+
+?>
+
+<?php include("tutorHeader.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,41 +34,33 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src = "../images/logo.png" class ="logo" width = "140"  height= "140" alt="logo"  >
-    <nav>
-        <ul class = "nav_links">
-            <li><a href = "/html_files/HomePageTutor.html"> Home</a></li>
-            <li><a href = "#"> Profile</a>
-                <ul> <!--this for drop-down menu-->
-                    <li><a href = "/html_files/ViewProfileTutor.html"> View</a></li>
-                    <li><a href = "/html_files/EditProfileTutor.html"> Edit</a></li>
-                </ul> 
-            </li>
-            <li><a href = "/html_files/JobRequestTutor.html"> Requests</a></li>
-            <li><a href = "#"> Jobs </a>
-                <ul> 
-                    <li><a href = "/html_files/CurrentJobs.html"> Current</a></li>
-                    <li><a href = "/html_files/Previousjobs.html"> Previous</a></li>
-                </ul> 
-            </li>
-            <li><a href = "MyRate&Reviews.html"> Rate & Reviews </a></li>
-            
-        </a></li>
-
-        </ul>
-    </nav>
-    <p><a class= "out" href="../html_files/index.html">Logout</a></p>
-</header>
+  
   <h2> Offers with Status</h2> <br>
 <table class="tableS" border="1"> 
 <thead>
   <tr>     <th> </th> <th>Date </th><th> Duration</th> <th> Student Name</th> <th>Subject </th><th> Price</th><th> Status</th></tr>
 </thead>
-<tbody>
-  <tr><td>1</td><td>2022-12-31</td><td>2 hours</td><td>jory</td><td>English</td><td>200sr</td><td class="Green">Accepted</td></tr>
-  <tr><td>2</td><td>2022-12-22</td><td>3 hours</td><td>Tamim</td><td>Math</td><td>45sr</td><td class="Green">Accepted</td></tr>
-  <tr><td>3</td><td>2022-11-1</td><td>2 hours</td><td>Ali</td><td>Math</td><td>300sr</td><td class="Red">Rejected</td></tr>
+<tbody> 
+<?php
+      $count = 1;
+      while ($row = mysqli_fetch_assoc($requests)) {
+        echo '
+            <tr>
+              <td>' . $count . '</td>
+              <td>' . $row["startDate"] . '</td>
+              <td>' . $row["startTime"] . " - " . $row["endTime"] . '</td>
+              <td>' . $row["TypeOfClass"] . '</td>
+              #<td> ' . $row["price"] . '</td>';
+        if (strtolower($row["status"]) == "accepted")
+          echo '<td class="Green">' . $row["status"] . '</td>';
+        else if (strtolower($row["status"]) == "served")
+          echo '<td class="Green">' . $row["status"] . '</td>';
+        else if (strtolower($row["status"]) == "unserved")
+          echo '<td class="Red">' . $row["status"] . '</td>';
+        echo '</tr>';
+         $count = $count +1;
+      }
+      ?>
 </tbody>
 
 
@@ -68,7 +68,7 @@
 </table>
 
 
-<footer > 
+
        
       
 
