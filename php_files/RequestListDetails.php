@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
 
     <style>
+        
         html, body {
     height: 100%;
     width: 100%;

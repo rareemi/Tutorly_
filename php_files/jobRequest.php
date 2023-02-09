@@ -95,6 +95,15 @@ echo "$createdAt";
         <script src="addKids.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
+        <style>
+       
+       html, body{
+      display:inline-block;
+       }
+      footer{
+      display:table;
+       }
+       </style>
     </head>
     
     <body>
@@ -103,7 +112,7 @@ echo "$createdAt";
     
     
 
-        <div class="postingPage">
+        <div style=" height : auto ; " class="postingPage">
             <h2>Post Job Request</h2>
         
             <div class="containerr">
