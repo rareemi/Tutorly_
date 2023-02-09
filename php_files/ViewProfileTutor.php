@@ -45,7 +45,15 @@ padding: 5px;
 #but{
     margin-left: 3px;
 
+    
 }
+html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
+
 
 </style>
      <body>
