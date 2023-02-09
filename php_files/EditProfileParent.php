@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
         $valid = false;
     }
    
-   
+   //!=
     if ($password ==""&&strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters! ";
         $valid = false;
@@ -94,8 +94,9 @@ if(isset($_POST['submit'])){
                 //Process Image
                 
                 if($fileSize < 6161400){
-                    //var_dump(basename($imageName));
-                   
+                    //var_dump(basename($imageName))
+                    
+                   //../images/TutorPic1.png
                     $fileNewName = "../images/".$imageName;
                     
                     $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
@@ -251,6 +252,7 @@ padding: 5px;
                 <div class="holder"> 
                 <form action="/store-image" method="POST">
                     <div class="profile-pic-div">
+                        <!--../images/TutorPic1.png-->
   <img src="/Tutorly_/images/<?php echo $row['img']; ?>" id="photo"  alt="profile picture" /> 
   
             

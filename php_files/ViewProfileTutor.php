@@ -25,36 +25,25 @@ die("Connection failed: " . mysqli_connect_error());
 </head>
 <style>
 
-.more-space-on-bottom {
-    display: block;
-    margin-bottom: 20px;
-    margin-top: 20px;
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    margin-left: 300px;
+    margin-bottom: -23px;
+padding: 5px;
+    bottom: 10px;
+    transform: translate(-35%,-1%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
 }
-.needs-container {
-    font-size: larger;
-    height: 30px;
-width: 580px;
-display: block;
-margin-top: 10px;
-margin-bottom: 10px;
-background-clip: padding-box;
-border-radius: 0.25rem;
-padding: .375rem .75rem;
-font-weight: 650;
+
+#photo{
+    height: 100%;
+    width: 100%;
 }
-.bio-par {
-    font-size:  larger;
-    height:  100px;
-width:  580px;
-display: block;
-margin-top:  10px;
-margin-bottom:  10px;
-background-clip:  padding-box;
-border-radius:  0.25rem;
-padding:  .375rem .75rem;
-overflow:  auto;
-font-weight: 650;
-text-align: center;
+#but{
+    margin-left: 3px;
 
 }
 
@@ -81,8 +70,8 @@ text-align: center;
             <div class="holder"> 
                 <div class = "detail"> 
 
-                <div class="forthepic">
-               <img class = "pic"src="../images/<?php echo $row['img']; ?> ?>" alt="Tutor Picture" height="250"></div><br>
+                <div class="profile-pic-div">
+               <img src="../images/TutorPic1.png"<?php echo $row['img']; ?> id="photo"  alt="Tutor Picture" height="250"></div><br>
 
                        <p class="needs-container"> First Name: <span class="par"><?php echo $row['firstName']; ?></span>
             </p>
@@ -122,7 +111,7 @@ text-align: center;
                 <?php echo $row['bio']; ?>
                 </span>
             </p>
-<a class= "button1" href="../php_files/HomePageTutor.php">back</a>
+<a class= "button1" id="but" href="../php_files/HomePageTutor.php">back</a>
                 </p>
                      </p>  </div> 
                      <?php

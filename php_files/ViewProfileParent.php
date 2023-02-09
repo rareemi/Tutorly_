@@ -24,37 +24,8 @@ die("Connection failed: " . mysqli_connect_error());?>
      href="../css_files/ViewProfileParent.css">
 </head>
 <style>
-  .more-space-on-bottom {
-    display: block;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-.needs-container {
-    font-size: larger;
-    height: 30px;
-width: 580px;
-display: block;
-margin-top: 10px;
-margin-bottom: 10px;
-background-clip: padding-box;
-border-radius: 0.25rem;
-padding: .375rem .75rem;
-font-weight: 650;
-}
-.bio-par {
-    font-size:  larger;
-    height:  100px;
-width:  580px;
-display: block;
-margin-top:  10px;
-margin-bottom:  10px;
-background-clip:  padding-box;
-border-radius:  0.25rem;
-padding:  .375rem .75rem;
-overflow:  auto;
-font-weight: 650;
-}
-.profile-pic-div{
+ 
+ .profile-pic-div{
     height: 200px;
     width: 200px;
     margin-left: 300px;
