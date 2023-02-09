@@ -20,6 +20,12 @@ font-weight: bolder;
 margin: 2px;
   cursor: text;
 }
+html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
     </style>
     </head>
      <body>

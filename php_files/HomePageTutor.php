@@ -26,7 +26,14 @@ padding: 16px;
 font-size: 90px; 
 font-weight: bolder;
 margin: 2px;
- cursor: pointer; }
+ cursor: pointer; 
+}
+html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
     </style>
      
      <body>
