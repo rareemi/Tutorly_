@@ -7,7 +7,6 @@
   <!--  <link rel="stylesheet" type="text/css" href="../CSS_Files/viewJobRequestListStyle.css"> -->
     <link rel="stylesheet" type="text/css" href="../CSS_Files/jobRequestStyle.css">
     <link rel="stylesheet" href="../CSS_Files/common.css">
-   <!-- <link rel="stylesheet" href="../CSS_Files/menustyle.css"> -->
     <script src="https://kit.fontawesome.com/b8b24b0649.js" crossorigin="anonymous"></script>
 </head>
 
