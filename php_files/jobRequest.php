@@ -33,7 +33,7 @@ if( isset($_POST['Class']) && isset($_POST['form_day']) && isset($_POST['from_ti
 
     $count = count($_POST["kidName"]);
     for($x =0 ; $x < $count ; $x++) {
-       $kidName = $_POST["kidsname"]["$x"];
+       $kidName = $_POST["kidName"]["$x"];
        if($kidName == "" || !ctype_alpha(str_replace(" ", "", $kidName))){
        $kidName_err =" please enter a valid name!";
        $valid = false;}
