@@ -51,12 +51,12 @@ $requests = get_requests($_SESSION['email']);
               <td>' . $row["startTime"] . " - " . $row["endTime"] . '</td>
               <td>' . $row["TypeOfClass"] . '</td>
               #<td> ' . $row["price"] . '</td>';
-        if (strtolower($row["status"]) == "accepted")
-          echo '<td class="Green">' . $row["status"] . '</td>';
-        else if (strtolower($row["status"]) == "served")
-          echo '<td class="Green">' . $row["status"] . '</td>';
-        else if (strtolower($row["status"]) == "unserved")
-          echo '<td class="Red">' . $row["status"] . '</td>';
+        if (strtolower($row["offerstatus"]) == "accepted")
+          echo '<td class="Green">' . $row["offerstatus"] . '</td>';
+        else if (strtolower($row["offerstatus"]) == "served")
+          echo '<td class="Green">' . $row["offerstatus"] . '</td>';
+        else if (strtolower($row["offerstatus"]) == "unserved")
+          echo '<td class="Red">' . $row["offerstatus"] . '</td>';
         echo '</tr>';
          $count = $count +1;
       }
