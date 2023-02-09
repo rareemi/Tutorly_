@@ -36,7 +36,7 @@ $rates = get_rates($_SESSION["email"]);
             // dd($row);
             echo '<div class="Sub" style="margin-left:35px;width:90%;">
             
-                            <img class="pic"style="background-color:#98C1D9;float:left;width:13%;margin-right:5%;" src="../images/' . $row["img"] . '"><br>
+                            <img class="pic"style="background-color:#98C1D9;float:left;width:10%;margin-right:5%;" src="../images/' . $row["img"] . '"><br>
                             <Strong style="background-color:#98C1D9;font-weight: bold;font-size: 20px;">' . $row["firstName"] . " " . $row["lastName"] . '</Strong>
                             <p style="background-color:#98C1D9;font-size: 15px;position: absolute;right:22%;text-align: right;">' . $row["time"] . " " . $row["Date"] . '</p><br>
                             ';
