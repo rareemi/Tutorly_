@@ -10,6 +10,8 @@ if(isset($_GET['id'])){
    $result1 = mysqli_query($connection,$sql);
    $result1 = mysqli_query($connection,$sq2);
 
-   header("Location: http://localhost/Tutorly_/php_files/RejectOthers.php?id=$id&name=$name");
+   //header("Location: http://localhost/Tutorly_/php_files/RejectOthers.php?id=$id&name=$name");
+   header("Location: http://localhost/Tutorly_/php_files/RequestOffers.php");
+
    
 }
