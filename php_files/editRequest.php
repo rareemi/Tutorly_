@@ -132,6 +132,7 @@ while($kidrow = mysqli_fetch_row($result2)){
 
    
     <input class="Botton resetBotton" type="submit" onclick="location.href ='../php_files/editingRequest.php?id=<?php echo($row[$id])?>'" value="Edit Job Request" style="left: 8px;">
+    <input class="Botton resetBotton" type="submit" onclick="location.href ='../php_files/cancelRequest.php?id=<?php echo($row[$id])?>'" value="Cancel Job Request" style="left: 8px;">
     </p>
 
 </div> <!-- end container -->
