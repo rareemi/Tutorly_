@@ -16,7 +16,7 @@
                         <li><a href = "../php_files/Previousjobs.php"> Previous</a></li>
                     </ul> 
                 </li>
-                <li><a href = "/html_files/offerNstatue.html"> My Offer </a></li>
+                <li><a href = "../Tutorly_/html_files/offerNstatue.php"> My Offer </a></li>
                 <li><a href = "../php_files/MyRate&Reviews.php"> Rate &amp; Reviews </a></li>
                 
           
