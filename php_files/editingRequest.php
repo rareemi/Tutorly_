@@ -31,7 +31,7 @@ footer {
 <?php
 session_start();
         include('../php_files/connectDB.php');
-        $pemail =  $_SESSION['email'];
+        $email =  $_SESSION['email'];
         if(isset($_GET['id'])){
             // echo("set");
                $id2 = mysqli_real_escape_string($connection,$_GET['id']);
@@ -39,7 +39,7 @@ session_start();
 
            $result = mysqli_query($connection,  $sql);
         //  $offers = mysqli_fetch_all($result, MYSQLI_ASSOC);
-           $valu = mysqli_num_rows($result);
+           $value = mysqli_num_rows($result);
         }
 
            //$sql2 = "SELECT `ID`, `kidName`, `kidAge` FROM `kids` WHERE `requests`.`ID` = `kids`.`ID`";
@@ -51,7 +51,7 @@ session_start();
 
      <?php 
     
-     if($valu > 0 ){
+     if($value > 0 ){
     
     //$x = 0;
     //while($x< $valu  ){
@@ -86,10 +86,10 @@ session_start();
     <p class="canceledInfo">
 
     <div id="kids_info">
-                    <label class="nameLabel"> Kid/s Name: <span class="errspan" style="color:red;font-size: 15px;"><?php  if(isset($_SESSION['nameErr'])) echo $_SESSION['nameErr']; ?></span>
+                    <label class="nameLabel"> Kid Name: <span class="errspan" style="color:red;font-size: 15px;"><?php  if(isset($_SESSION['nameErr'])) echo $_SESSION['nameErr']; ?></span>
                     </label>
                     
-                    <label class="ageLabel" style="float: right; margin-right: 190px" > Kid/s Age: 
+                    <label class="ageLabel" style="float: right; margin-right: 190px" > Kid Age: 
                     </label>
                     
                     <script type="text/javascript">
@@ -233,9 +233,8 @@ echo '<script type="text/javascript">add_more_fields(n, a);</script>';
             </div> <!-- end container -->
         </div> <!-- end postingPage -->
 
-        <?php include("../php_files/footer.php");?>
-         <!-- end footer -->
-
+        
+         
             <script src="addKids.js"></script>
             <script>
             var kids_info = document.getElementById('kids_info');
