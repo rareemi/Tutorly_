@@ -149,6 +149,8 @@ if(isset($_SESSION['Correct'])){
 
    
 </div>
+<p class="more-space-on-bottom" ></p>
+
 <?php include("../php_files/footer.php");?>
 </body>
 </html>
