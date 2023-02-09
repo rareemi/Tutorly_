@@ -56,7 +56,7 @@ $fname = $_POST["firstname"];
         $valid = false;
     }
 
-    if ($password!=""&&strlen($password) < 6) {
+    if ($passwor==""&&strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters!";
         $valid = false;
     }
