@@ -116,7 +116,7 @@ echo($numOfKids );
            <input  name="day" type="hidden" value="<?php echo($row[$start_day])?>"/>
            <input  name="fromTime" type="hidden" value="<?php echo($row[$start_time])?>"/>
            <input  name="toTime" type="hidden" value="<?php echo($row[$end_time])?>"/>
-            <input type="submit" class="sendOffer" name="offer_submit" value="Send"/> 
+           <input type="submit" class="sendOffer" name="offer_submit" value="Send"/> 
 
 </p>
 </form>
@@ -149,40 +149,6 @@ if(isset($_SESSION['Correct'])){
 
    
 </div>
-    <footer> <!-- footer -->
-        <table class="tableF">
-            <tr>
-                <th><a href="aboutUs.html"> About Us </a></th>
-                <th><a href="FAQ.html"> FAQs </a></th>
-                <th><a href="ContactUs.php"> Contact Us </a></th>
-            </tr>
-        </table>
-        <div id="shareProfile">
-                <h4>Share the website</h4>
-            
-                <a href="https://facebook.com" target="_blank">
-                    <i class="fa-brands fa-facebook fa-2x"></i>
-                </a>
-        
-                <a href="https://twitter.com" target="_blank">
-                    <i class="fa-brands fa-twitter fa-2x"></i>
-                </a>
-        
-                <a href="https://linkedin.com" target="_blank">
-                    <i class="fa-brands fa-linkedin fa-2x"></i>
-                </a>
-        
-                <a href="https://instagram.com" target="_blank">
-                    <i class="fa-brands fa-instagram fa-2x"></i>
-                </a>
-        
-                <a href="https://web.whatsapp.com" target="_blank">
-                    <i class="fa-brands fa-whatsapp fa-2x"></i>
-                </a>
-            </div><br> 
-        <div class="footer">
-        &copy; A Watchful Eye, 2022
-        </div>
-        </footer> <!-- end footer -->
+<?php include("../php_files/footer.php");?>
 </body>
 </html>

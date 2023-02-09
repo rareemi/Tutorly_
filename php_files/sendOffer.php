@@ -64,7 +64,7 @@ $sql = "INSERT INTO `offer`(`id`, `price`, `tutorName`, `RequestID`, `offerstatu
 $query = mysqli_query($conn,$sql);
 if( $query ){
     $_SESSION['Correct'] = "it is correct";  
-    header("Location:.. /php_files/RequestList.php");
+    header("Location: http://localhost/Tutorly_/HTML_Files/viewJobRequestList.php");
 }
 else{
     echo 'fail';
