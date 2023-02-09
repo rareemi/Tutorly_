@@ -12,10 +12,10 @@ if(isset($_GET['offer_submit'])){
     $password = "";
     $dbname = "381";
     
-    if (!$conn= mysqli_connect($servername,$username,$password)) 
+    if (!$connection= mysqli_connect($servername,$username,$password)) 
     die("Connection failed: " . mysqli_connect_error());
     
-    if(!$database= mysqli_select_db($conn, $dbname))
+    if(!$database= mysqli_select_db($connection, $dbname))
     die("Could not open database failed: " . mysqli_connect_error());
 
    if(isset($_GET['OfferPrice']) && isset($_GET['id']) && isset($_GET['day'])&& isset($_GET['fromTime'])&& isset($_GET['toTime'])){
@@ -33,8 +33,8 @@ if(isset($_GET['offer_submit'])){
         $conflect = false;
         $error_m = '';
         //add constrain same day
-       $sql = "SELECT `startTime` , `endTime` FROM `offer` WHERE `TutorEmail` = '$bbyemail' AND NOT `offerstatus` = 'rejected' AND `startDate` = '$oDay'";
-        $query = mysqli_query($conn,$sql);
+       $sql = "SELECT `startTime` , `endTime` FROM `offer` WHERE `tutorEmail` = '$tutoremail' AND NOT `offerstatus` = 'rejected' AND `startDate` = '$oDay'";
+        $query = mysqli_query($connection,$sql);
         if( $query ){
         while($row = mysqli_fetch_row($query)){
     $sTime = key($row);
@@ -52,7 +52,7 @@ if(isset($_GET['offer_submit'])){
      $conflect = true; 
      $_SESSION['ERROR2'] = "it is error";
 
-     header("Location:.. /php_files/RequestList.php");
+     header("Location:../php_files/RequestList.php");
       exit;
       
      } 
@@ -60,14 +60,15 @@ if(isset($_GET['offer_submit'])){
 //if no conflect 
 $tutorname = $_SESSION['firstName'];
 
-$sql = "INSERT INTO `offer`(`id`, `price`, `tutorName`, `RequestID`, `offerstatus`, `tutorEmail`, `startDate` `startTime`, `endTime`) VALUES ( NULL ,'$OfferPrice','$tutorname','$id','pending','$tutoremail','$oTime1' , '$oTime2' , '$oDay' )";
-$query = mysqli_query($conn,$sql);
+$sql = "INSERT INTO `offer`(`id`, `price`, `tutorName`, `RequestID`, `offerstatus`, `tutorEmail`, `startDate` `startTime`, `endTime`) VALUES ( NULL ,'$OfferPrice','$tutorname','$id','pending','$tutoremail','$oDay','$oTime1' , '$oTime2' )";
+$query = mysqli_query($connection,$sql);
 if( $query ){
     $_SESSION['Correct'] = "it is correct";  
-    header("Location: http://localhost/Tutorly_/HTML_Files/viewJobRequestList.php");
+    header("Location:../php_files/RequestList.php");
 }
 else{
     echo 'fail';
+    
     }
 
     }

@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
     }
    
    //!=
-    if ($password ==""&&strlen($password) < 6) {
+    if ($password !=""&&strlen($password) < 6) {
         $password_err = " password needs to be at least 6 characters! ";
         $valid = false;
     }
@@ -97,7 +97,7 @@ if(isset($_POST['submit'])){
                     //var_dump(basename($imageName))
                     
                    //../images/TutorPic1.png
-                    $fileNewName = "../images/".$imageName;
+                    $fileNewName = "../images/TutorPic1.png".$imageName;
                     
                     $uploaded = move_uploaded_file($fileTmpName,$fileNewName);
                     
@@ -112,7 +112,7 @@ if(isset($_POST['submit'])){
         
         }else{
             $sql = "UPDATE `parent` SET `email` = '$eMail', `firstName` = '$firstname', `lastName` = '$lastname',
-         `city` = '$City', `Location` = '$location',`img` = '$imageName',password ='$userPassword' WHERE email = '$loggedInUser'";
+         `city` = '$City', `Location` = '$location',`img` = '$imageName' WHERE email = '$loggedInUser'";
         }
                         $results = mysqli_query($connection,$sql);
                         echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileParent.php";</script>';
@@ -250,10 +250,10 @@ padding: 5px;
                             //print_r("ygbyb8yn".$row['email']);
                         ?>
                 <div class="holder"> 
-                <form action="/store-image" method="POST">
+                
                     <div class="profile-pic-div">
                         <!--../images/TutorPic1.png-->
-  <img src="/Tutorly_/images/<?php echo $row['img']; ?>" id="photo"  alt="profile picture" /> 
+  <img src="../images/TutorPic1.png<?php echo $row['img']; ?>" id="photo"  alt="profile picture" /> 
   
             
   <input type="file" id="file" name="img" accept="image/*">
@@ -261,7 +261,7 @@ padding: 5px;
   <script src="app.js"></script>
   
 </div>
-                        </form>
+                        
 
 <div class = "detail"> 
                      <br>  
