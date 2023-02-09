@@ -21,6 +21,10 @@ footer {
     display: table-row;
     
 }
+a.button1{color: #293241;}
+a.button1:hover{
+    padding: 6px 25px;transition:none;}
+
         </style>
     </head>
     
@@ -130,11 +134,11 @@ while($kidrow = mysqli_fetch_row($result2)){
 ?>
         <label class="commentsLabel" style="color: red;">expier date: </label>
         <label id="demo" ><?php echo($newDate)?></label><br><br>
-<?php echo(($row[$created_at]))?><br>
+<?php echo(($row[$created_at]))?><br><br>
 
 
-   
-    <button class="Bottons cancelBotton" onclick="return checkDelet()" ><a href='../PHP_Files/cancelingRequest.php?id=<?php echo($row[$id])?>'>Cancel Job Request</a></button>
+<a class="button1"  onclick="location.href ='editRequest.php';" style="padding: 6px 80px;margin-left:20px;">go back</a><br><br>
+<a class="button1" onclick="return checkDelet()" href='../PHP_Files/cancelingRequest.php?id=<?php echo($row[$id])?>' style="margin-left:20px;">Cancel Job Request</a>
     </p>
 
 </div> <!-- end container -->
@@ -146,7 +150,7 @@ while($kidrow = mysqli_fetch_row($result2)){
     ?>
     
     <div >
-    <div class="container">
+    <div class="container"style="width: 420px; height: auto; margin-left:35%;">
         <h2>there is No posted job request yet ! </h2></div>
     <?php } ?>
     <!-- end copy -->
@@ -162,48 +166,7 @@ function checkDelet(){
 
 </script>
 
-<footer> 
-       
-      
-       <p class = "p">
-           <table>
-               <tr>
-            <th><a href="mailto:#" class = "con">ContactUs</a>  </th>
-            <th><a href="aboutUs.html " class ="con">aboutUs</a>  </th>
-            <th> <a href="FAQ.html" class = "con">FAQs</a> </th> 
-               </tr> 
-               </table> <br>
-       
-                <center > 
-       
-                 
-                   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-                  
-       
-       <a href="https://twitter.com" target="_blank" class = "ionicons">
-                   
-           <ion-icon name="logo-twitter"></ion-icon> </a>
-               
-                   <a href = "https://whatsapp.com" target="_blank" class = "ionicons">
-                       <ion-icon name="logo-whatsapp"></ion-icon>
-                   </a>
-                   <a href="https://instagram.com" target="_blank" class = "ionicons">
-                       <ion-icon name="logo-instagram"></ion-icon>
-                   </a>
-       
-                   <a href="https://snapchat.com" target="_blank" class = "ionicons">
-                       <ion-icon name="logo-snapchat"></ion-icon> <br> <br>
-                   </a>
-       
-                   &copy; A  Tutorly, 2022
-                   </center>
-                   
-                    
-          
-               </p>
-       
-           </footer> <!-- end footer -->
+<?php include("../php_files/footer.php");?>
     </body>
 
 </html>

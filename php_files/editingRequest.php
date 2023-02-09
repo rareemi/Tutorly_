@@ -172,7 +172,7 @@ echo '<script type="text/javascript">add_more_fields(n, a);</script>';
                 </label>
                 <br>
                 <input  name="idReq" type="hidden" value="<?php echo($id2)?>"/>
-                <input class="Botton resetBotton" type="submit" onclick="location.href ='editRequest.php';" value="go back" style="left: 10px;">
+                <input class="Botton resetBotton" type="submit" onclick="location.href ='editRequest.php';" value="go back" style="left: 10px;"><br><br>
 
                 <input type="submit" class="Botton editingBotton" style="position: relative;
     left: 10px;
