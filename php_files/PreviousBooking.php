@@ -17,7 +17,7 @@
         
         <h2> Previous Booking</h2>
                 
-        <div class="PreviousBooking">
+        
 
         <?php
 
@@ -42,6 +42,7 @@
          while ($row = mysqli_fetch_assoc($userFound)) {
          if (date('Y-m-d') >$row['startDate']) {
         ?>
+        <div class="PreviousBooking">
             <p class="container" style="width: 340px; height:auto;">
              <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              
@@ -77,11 +78,12 @@
             } ?>
             
              </p>
+             </div>
              <?php }
 }
 }
 } ?>
-        </div>
+       
         <br><br>
         <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageParent.php">Back</a></p>
         <br>
