@@ -7,6 +7,15 @@
     <title>Current Booking</title>
     <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
     <link rel ="stylesheet" type= "text/css" href="../css_files/TutorsOffers.css">
+    <style>
+       
+	 html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
+     </style>
     </head>
      
      <body>
@@ -15,7 +24,7 @@
 
         <h2> Current Booking</h2>
                 
-            <div class="CurrentBooking">
+           
         <?php
 
          $servername= "localhost";
@@ -39,8 +48,8 @@
          while ($row = mysqli_fetch_assoc($userFound)) {
            if ($row['startDate'] >= date('Y-m-d')) {
           ?>
-
-                <p class="container" style="width: 340px; height: auto;">
+             <div class="CurrentBooking"> 
+                <p class="container" style="width:340px; height: auto;">
                  <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
                  
                   <label class="nameLabel">Tutor Name: </label><br>
@@ -62,11 +71,12 @@
                  <a class ="email" href="mailto:<?php echo($row['tutorEmail']);?>; ?>">Send email</a>
                  
                  </p>
+                 </div>
                  <?php }
             }
         }
    } ?>
-            </div>
+   
                 
             <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageParent.php">Back</a></p> <!-- This for back -->
             <br>

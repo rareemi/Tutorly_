@@ -77,11 +77,12 @@
              
              <a class ="email" href="mailto:<?php echo($row['parentEmail']);?>; ?>">Contact with parent</a>
              </p>
+             </div>
              <?php }
 }
 }
 } ?>
-        </div>
+        
         <br>
         <p><a class= "button1"style="margin-left:46%;" href="../php_files/HomePageTutor.php">Back</a></p> <!-- This for back -->
             <br>

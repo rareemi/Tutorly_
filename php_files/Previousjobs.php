@@ -16,7 +16,7 @@
         
             <h2>Previous jobs</h2>
 
-        <div class="Previousjobs">
+        
         <?php
 
          $servername= "localhost";
@@ -40,7 +40,7 @@
         ?>  
 
 
-                
+<div class="Previousjobs">
                     <p class="container" style="width: 340px; height: auto;">
                      <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="parent picture"><br>
 
@@ -80,11 +80,12 @@
 
                      <a class ="email" href="mailto:<?php echo($row['parentEmail']);?>; ?>">Contact with parent</a>
                      </p>
+                     </div>
                      <?php }
 }
 }
 }?>
-                </div>
+                
                 <br>
                 <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageTutor.php">Back</a></p>
                 <br>
