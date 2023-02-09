@@ -62,7 +62,7 @@ if(isset($_GET['id'])){
 
 <h2 id="offerH2">Job Request Details</h2>
 
- <!--?php print_r($jobReq);?>--> 
+ <!--?php print_r($jobReq);?>-->
 
 
 <?php 
