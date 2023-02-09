@@ -201,13 +201,13 @@ $pr = key($row3);
 </div>
 <br>
 
-
+</div>
 
 
 
 <?php include("../php_files/footer.php"); ?>
 
-   </div>
+  
    <br>
 
 
