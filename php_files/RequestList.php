@@ -22,6 +22,11 @@ footer {
     
     display: table;
 }
+
+html, body{
+    display:inline-block;
+     }
+    
         </style>
 </head>
 
