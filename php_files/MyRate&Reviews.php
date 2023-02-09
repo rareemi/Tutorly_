@@ -3,6 +3,7 @@ session_start();
 require("../PHP_Files/query.php");
 $rates = get_rates($_SESSION["email"]);
 ?>
+<?php include ("../php_files/tutorHeader.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,7 @@ $rates = get_rates($_SESSION["email"]);
     </style>
 </head>
 <body>
-<?php include("../php_files/parentHeader.php");?>
+
 
     <h2>Rate & Reviews </h2> 
 
