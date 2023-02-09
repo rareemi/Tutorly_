@@ -148,4 +148,5 @@ echo "$createdAt";
         </div> <!-- end postingPage -->
         <?php include("../php_files/footer.php");?>
     </body>
+    <script src="addKids.js"></script>
 </html>

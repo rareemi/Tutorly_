@@ -28,12 +28,12 @@ footer {
         
     <!--Upper Menue-->
     <?php include("parentHeader.php");
-            include('../PHP_Files/connectDB.php');
+            include('../php_files/connectDB.php');
         
            
             
             $query = "UPDATE requests SET `status` =  'expired' WHERE created_at < (NOW() - INTERVAL 1 HOUR) AND `status` = 'unserved'";
-            $q3 = $result = mysqli_query($conn, $query);
+            $q3 = $result = mysqli_query($connection, $query);
             if($q3)
             echo "done3" ;
             ?>
@@ -47,7 +47,7 @@ footer {
        
            $sql = "SELECT `TypeOfClass`, `startTime`, `endTime`, `startDate`, `comments`, `ID`, `created_at` FROM  `requests` WHERE `status` = 'unserved' AND `parentEmail`= '$pemail'";
 
-           $result = mysqli_query($conn,  $sql);
+           $result = mysqli_query($connection,  $sql);
         
            $valu = mysqli_num_rows($result);
     
@@ -86,13 +86,13 @@ footer {
      next($row);
      
      $kidss = "SELECT `kidName`,`kidAge` FROM `kids` WHERE `kids`.`ID` = $row[$id]";
-     $result2 = mysqli_query($conn, $kidss);
+     $result2 = mysqli_query($connection, $kidss);
     ?> 
 
-        <div class="container">
+        <div class="container" style="height:auto; width:40%; margin-left:30%;">
 
 
-    <p class="canceledInfo">
+    <p >
     <label class="nameLabel">Kid/s : </label> <br>
 <label class="Name"><?php 
 while($kidrow = mysqli_fetch_row($result2)){
@@ -109,7 +109,7 @@ while($kidrow = mysqli_fetch_row($result2)){
 ?></label> <!-- <br><br> --> 
 
 
-<?php echo(($row[$age]))?>
+
 
         <br><label class="serviceLabel">Type Of Class: </label>
         <label class="service"><?php echo(($row[$TypeOfClass]))?></label><br><br>
@@ -131,11 +131,11 @@ while($kidrow = mysqli_fetch_row($result2)){
 ?>
         <label class="commentsLabel" style="color: red;">expier date: </label>
         <label id="demo" ><?php echo($newDate)?></label><br><br>
-<?php echo(($row[$created_at]))?>
+<?php echo(($row[$created_at]))?><br>
 
 
    
-    <button class="Bottons cancelBotton" onclick="return checkDelet()" ><a href='../PHP_Files/cancelJobRequest.php?id=<?php echo($row[$id])?>'>Cancel Job Request</a></button>
+    <button class="Bottons cancelBotton" onclick="return checkDelet()" ><a href='../PHP_Files/cancelingRequest.php?id=<?php echo($row[$id])?>'>Cancel Job Request</a></button>
     </p>
 
 </div> <!-- end container -->
