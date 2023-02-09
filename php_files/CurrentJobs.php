@@ -7,8 +7,15 @@
     <title>Current Jobs</title>
     <link rel ="stylesheet" type= "text/css" href="../css_files/common.css">
     <link rel ="stylesheet" type= "text/css" href="../css_files/TutorsOffers.css">
-    
-
+    <style>
+       
+	 html, body{
+    display:inline-block;
+     }
+    footer{
+    display:table;
+     }
+     </style>
     </head>
 
      <body>
