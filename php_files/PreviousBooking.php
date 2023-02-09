@@ -42,7 +42,7 @@
          while ($row = mysqli_fetch_assoc($userFound)) {
          if (date('Y-m-d') >$row['startDate']) {
         ?>
-            <p class="container" style="width: 340px; height: 630px;">
+            <p class="container" style="width: 340px; height:auto;">
              <img src="../images/<?php echo $row['img']; ?>" class="pic"  height="190" style="padding:20px;" alt="Tutor picture"><br>
              
               <label class="nameLabel">Tutor Name: </label><br>
@@ -53,11 +53,12 @@
 
               <label class="DateLabel">Date: </label><br>
               <label class="Date"><?php echo $row['startDate']; ?> </label> <br> 
-              
-              <label class="TimeLabel"> From: </label><br>
+
+              <label class="TimeLabel"> Time: </label><br>
+              <label class="TimeLabel"> From: </label>
               <label class="Time"> <?php echo $row['startTime']; ?></label><br>
               
-              <label class="TimeLabel"> To: </label><br>
+              <label class="TimeLabel"> To: </label>
               <label class="Time"> <?php echo $row['endTime']; ?></label><br><br>
              
              <a class ="email" href="mailto:<?php echo($row['tutorEmail']);?>; ?>">Send email</a>

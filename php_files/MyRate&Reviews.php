@@ -29,12 +29,13 @@ $rates = get_rates($_SESSION["email"]);
 
     <h2>Rate & Reviews </h2> 
 
-    <div class="containers" style="width:60%;hight:auto;">
+    
         <?php
         while ($row = mysqli_fetch_assoc($rates)) {
             
             // dd($row);
-            echo '<div class="Sub" style="margin-left:35px;width:90%;">
+            echo '<div class="containers" style="width:60%;hight:auto;">
+            <div class="Sub" style="margin-left:35px;width:90%;">
             
                             <img class="pic"style="background-color:#98C1D9;float:left;width:10%;margin-right:5%;" src="../images/' . $row["img"] . '"><br>
                             <Strong style="background-color:#98C1D9;font-weight: bold;font-size: 20px;">' . $row["firstName"] . " " . $row["lastName"] . '</Strong>
@@ -44,10 +45,10 @@ $rates = get_rates($_SESSION["email"]);
                 echo '<span class="fa fa-star checked"style="background-color:#98C1D9;font-size: 20px;"></span>';
             }
             echo '<p style="background-color:#98C1D9;font-size: 18px;"> ' . $row["feedBack"] . ' </p>
-            </div>';
+            </div></div>';
         }
         ?>
-</div>
+
 
    
   <?php include("../php_files/footer.php");?>

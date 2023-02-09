@@ -48,7 +48,7 @@
          $result = $connection->query($sql_email);
          while ($row = $result->fetch_assoc()) {
             if ($row['cunt'] > 0) {?>
-            <div style=" text-align:center; color:red; font-size: 17px"> <?php echo "Tutor already Reviewed\n"; ?> </div>
+            <div style=" text-align:center; color:red;background-color: #98C1D9; font-size: 17px"> <?php echo "Tutor already Reviewed\n"; ?> </div>
             
             <?php } else {
                 
@@ -66,7 +66,7 @@
                     
                     if ($connection->query($sql) === TRUE) { ?>
                     
-                    <div style="text-align: center;color: green;font-size: 20px !important;"> <?php echo "Entered data successfully\n"; ?> </div>
+                    <div style="text-align: center;color: green;background-color: #98C1D9;font-size: 20px !important;"> <?php echo "Entered data successfully\n"; ?> </div>
                     
                     <?php } else {
                         echo "Error: " . $sql . "<br>" . $connection->error;}
@@ -125,7 +125,7 @@
     
          </form>
         </div>
-        <p><a class= "button1" style="margin-left:46%;" href="../php_files//PreviousBooking.php">Back</a></p>
+        <p><a class= "button1" style="margin-left:46%;" href="../php_files/PreviousBooking.php">Back</a></p>
         <br><br>
 
         <?php include("../php_files/footer.php");?>
