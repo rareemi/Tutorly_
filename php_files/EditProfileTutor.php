@@ -136,17 +136,18 @@ $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email
         if(isset($_POST['password']) && $_POST['password']!= ""){
             $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
             ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio',password ='$userPassword' WHERE email = '$loggedInUser'";
-
+$results = mysqli_query($connection,$sql);
+echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileTutor.php";</script>';
+                    exit;
             }else{
                 $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email ='$eMail'
                 ,gender='$gender',ID='$id',age='$age',city='$city',phone='$phone',bio='$bio' WHERE email = '$loggedInUser'";
-                
-            }
-            $results = mysqli_query($connection,$sql);
-            echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileTutor.php";</script>';
-            exit;
+                 $results = mysqli_query($connection,$sql);
+                 echo '<script>alert("Your edits has been sent successfully!");window.location.href="EditProfileTutor.php";</script>';
+                 exit;
+            
 
-}}
+}}}
 ?>
 <?php include ("../php_files/tutorHeader.php"); ?>
 <!DOCTYPE html>
@@ -190,7 +191,7 @@ $sql = "UPDATE `tutor` SET firstName = '$firstname',lastName= '$lastname', email
      .profile-pic-div{
     height: 200px;
     width: 200px;
-    margin-left: 350px;
+    margin-left: 375px;
     margin-bottom: -23px;
 padding: 5px;
     bottom: 10px;
@@ -203,6 +204,7 @@ padding: 5px;
 #photo{
     height: 100%;
     width: 100%;
+
 }
 
 #file{
@@ -225,14 +227,14 @@ padding: 5px;
     cursor: pointer;
     display: none;
 }
-     
+
 </style>
      <body>
         
         <h2>
-            Edit Profile
+            Edit Profile 
         </h2>
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
         <?php $currentUser = $_SESSION['email'];
                         //print($_SESSION['email']);
                         $sql = "SELECT * FROM `tutor` WHERE email ='$currentUser'";
@@ -252,11 +254,12 @@ padding: 5px;
   <img src="../images/TutorPic1.png<?php echo $row['img']; ?>" id="photo"  alt="profile picture" />   
             
   <input type="file" id="file" name="img" accept="image/*">
-  <label for="file" id="uploadBtn">Choose Photo</label>
-  <script src="app.js"></script>
   
-</div>                     
-   
+
+</div>
+<!--                Button whose change profile image-->
+<a class="btn btn-primary" id ="r" href="changephoto.php?email=<?php echo $_SESSION['email'] ?? "bro_200@gmail.com"?>">Change</a>
+ 
 <div class = "detail"> 
                      <br>  
                      <label for="firstname">First Name:</label><span style="color:red"><?php echo $fname_err; ?> </span><br>
