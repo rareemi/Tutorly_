@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userImage = $_FILES['img'];
         $imageName = $userImage['name'];
         if ($imageName == "")
-            $imageName = "defultpico.jpg";
+            $imageName = "../images/TutorPic1.png";
 
             
 

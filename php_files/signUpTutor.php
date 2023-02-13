@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userImage = $_FILES['img'];
         $imageName = $userImage['name'];
         if ($imageName == "")
-            $imageName = "defultpico.jpg";
+            $imageName = "../images/TutorPic1.png";
 
         if (tutor_signup_handler($email, $password, $fname, $lname, $gender, $id, $age, $city, $phone, $msg, $imageName)) {
             $notification = 'Registration successful!';

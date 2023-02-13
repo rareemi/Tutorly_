@@ -31,6 +31,11 @@ $requests = get_requests($_SESSION['email']);
   }
   .Green{color: #2ca12c}
   .Red{color: #de543c}
+  .black{color:black;}
+      footer{
+      display:table;
+      margin-top:10%;
+       }
   </style>
 </head>
 <body>
@@ -53,9 +58,9 @@ $requests = get_requests($_SESSION['email']);
               <td> ' . $row["price"] . '</td>';
         if (strtolower($row["offerstatus"]) == "accepted")
           echo '<td class="Green">' . $row["offerstatus"] . '</td>';
-        else if (strtolower($row["offerstatus"]) == "served")
-          echo '<td class="Green">' . $row["offerstatus"] . '</td>';
-        else if (strtolower($row["offerstatus"]) == "unserved")
+        else if (strtolower($row["offerstatus"]) == "pending")
+          echo '<td class="black">' . $row["offerstatus"] . '</td>';
+        else if (strtolower($row["offerstatus"]) == "rejected")
           echo '<td class="Red">' . $row["offerstatus"] . '</td>';
         echo '</tr>';
          $count = $count +1;

@@ -76,7 +76,7 @@
             }
         }
    } ?>
-   
+   <br>
                 
             <p><a class= "button1" style="margin-left:46%;" href="../php_files/HomePageParent.php">Back</a></p> <!-- This for back -->
             <br>
