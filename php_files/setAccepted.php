@@ -12,7 +12,13 @@ if(isset($_GET['id'])){
 
    //header("Location: http://localhost/Tutorly_/php_files/RejectOthers.php?id=$id&name=$name");
  //  header("Location: http://localhost/Tutorly_/php_files/RequestOffers.php");
+<<<<<<< Updated upstream
  header("Location:http://localhost/Tutorly_/php_files/RequestOffers.php");
+=======
+ header("Location: http://localhost/Tutorly_/php_files/RejectOthers.php");
+ header ("Location: http://localhost/Tutorly_/php_files/RequestOffers.php");
+
+>>>>>>> Stashed changes
 
    
 }

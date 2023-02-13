@@ -9,7 +9,13 @@ if(isset($_GET['id'])){
    // $result = mysqli_query($connection,$sql);
    // header("Location: http://localhost/BabySitterProject/HTML_Files/OfferDetails.php?id=$id");
 
+<<<<<<< Updated upstream
    $sql = "UPDATE `offer` SET `offerstatus` = 'rejected' WHERE `RequestID` = $id ";
+=======
+   $sql = "UPDATE `offer` SET `offerstatus` = 'rejected' WHERE `RequestID` = $id";
+>>>>>>> Stashed changes
    $result = mysqli_query($connection,$sql);
-   header("Location: http://localhost/Tutorly_/php_files/RequestOffers.php");
+
+   header ("Location: http://localhost/Tutorly_/php_files/RequestOffers.php");
 }
+
