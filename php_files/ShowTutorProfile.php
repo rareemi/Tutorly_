@@ -1,3 +1,8 @@
+<?php
+session_start();
+require("../PHP_Files/query.php");
+$rates = get_rates($_SESSION["email"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +16,11 @@
   
 
     <title>Show Tutor Profile</title>
+    <style>
+    .checked {
+                    content:'\f005';
+                    color: yellow;}
+                </style>
 </head>
 
 <body>
@@ -153,9 +163,9 @@ next($row);
        
 
         $count = 0;
-        echo("<i class='fa-solid fa-star fa-2x'></i>");
+        echo("<i class='fa-solid fa-star fa-2x checked'></i>");
         while($count < $finalRate){
-            echo("<i class='fa-solid fa-star fa-2x'></i>");
+            echo("<i class='fa-solid fa-star fa-2x checked'></i>");
             $count++;
         }
     }

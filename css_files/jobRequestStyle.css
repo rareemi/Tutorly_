@@ -100,7 +100,7 @@ h2 {
 
 .inptService {
 height: 30px;
-width: 500px;
+width: 480px;
 display: block;
 margin-top: 10px;
 margin-bottom: 10px;
@@ -109,7 +109,7 @@ color: #495057;
 background-color: #ffffff;
 background-clip: padding-box;
 border-radius: 0.25rem;
-padding: .375rem .75rem;
+padding: .375rem .66rem;
 border: 1px solid #ced4da;
 }
 
@@ -148,7 +148,7 @@ border: 1px solid #ced4da;
 .commentsArea {
     max-width: fit-content;
     max-height: fit-content;
-    height: 300px;
+    height: 200px;
     width: 500px;
     display: block;
     margin-top: 10px;
@@ -184,7 +184,7 @@ border: 1px solid #ced4da;
 .postBotton {
 margin-left: 0px;
 height: 30px;
-width: 530px;
+width: 480px;
 }
 
 .editBotton, .resetBotton {
@@ -226,5 +226,5 @@ a:any-link {
 
  #remove_fields {
   float: right;
-  margin-right: 70px 
+  margin-right: 70px ;
 }

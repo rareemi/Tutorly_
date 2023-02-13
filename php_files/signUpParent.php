@@ -98,23 +98,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p style="font-size:18px"><span style="color:red"> * </span>Mandatory field</p>
 <!--Labels-->
     <label for="FName">First Name:</label><span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $fname_err; ?></span><br>
-    <input type="text" id="FName" name="FName"><br>
+    <input required type="text" id="FName" name="FName"><br>
 
     <label for="LName">Last Name:</label><span style="color:red"> * </span><span style="color:red;font-size: 15px;"><?php echo $lname_err; ?></span><br>
-    <input type="text" id="LName" name="LName">
+    <input required type="text" id="LName" name="LName">
 
     <br> <label for="email">E-mail:<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $email_err; ?></span></label><br>
-    <input type="text" id="email" name="email"><br>
+    <input required type="text" id="email" name="email"><br>
 
     <label for="pass">Password:<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $password_err; ?></span></label><br>
-    <input type="text" id="pass" name="pass">
+    <input required type="text" id="pass" name="pass">
 
     <br> <label for="city">City:<span style="color:red"> * </span><span class="errspan" style="color:red;font-size: 15px;"><?php echo $city_err; ?></span></label><br>
-    <input type="text" id="city" name="city"><br>
+    <input required type="text" id="city" name="city"><br>
 
 <!--Location-->
 <label>Enter  URL loaction:</label>
-<input type="text" id="Location" name="Loaction"><br><!--Photo--> 
+<input required type="text" id="Location" name="Loaction"><br><!--Photo--> 
 <br>
 <img src="../images/TutorPic1.png" class="pic" style="height:90px; margin-left: 100px;"  alt="defult picture"><br>
                     <p>upload picture: (optional)</p>

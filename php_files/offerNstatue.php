@@ -38,7 +38,7 @@ $requests = get_requests($_SESSION['email']);
   <h2> Offers with Status</h2> <br>
 <table class="tableS" border ="1"> 
 <thead>
-  <tr>     <th> </th> <th>Date </th><th> Duration</th> <th> Student Name</th> <th>Subject </th><th> Price</th><th> Status</th></tr>
+  <tr> <th> </th> <th>Date </th><th> Duration</th><th>class </th><th> Price</th><th> Status</th></tr>
 </thead>
 <tbody> 
 <?php
@@ -50,7 +50,7 @@ $requests = get_requests($_SESSION['email']);
               <td>' . $row["startDate"] . '</td>
               <td>' . $row["startTime"] . " - " . $row["endTime"] . '</td>
               <td>' . $row["TypeOfClass"] . '</td>
-              #<td> ' . $row["price"] . '</td>';
+              <td> ' . $row["price"] . '</td>';
         if (strtolower($row["offerstatus"]) == "accepted")
           echo '<td class="Green">' . $row["offerstatus"] . '</td>';
         else if (strtolower($row["offerstatus"]) == "served")

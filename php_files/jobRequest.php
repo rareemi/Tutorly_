@@ -115,7 +115,7 @@ echo "$createdAt";
         <div style=" height : auto ; " class="postingPage">
             <h2>Post Job Request</h2>
         
-            <div class="containerr">
+            <div class="container" style="width: 540px;height : auto; margin-left:30%;">
 
            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
             <p id="formInfo">
@@ -132,22 +132,22 @@ echo "$createdAt";
                     
                         <div class="controls">
                           <a href="#" id="add_more_fields" size="50"><i class="fa fa-plus"></i></a>
-                          <a href="#" id="remove_fields" style="float: right; margin-right: 13px"><i class="fa fa-minus"></i></a>
-                          <p style="margin-left: 140px;">Select + to add child, - to remove child</p>
+                          <a href="#" id="remove_fields" size="50" style="float: right; margin-right: 35%;"><i class="fa fa-minus"></i></a>
+                          <p>Select + to add child, - to remove child</p>
                         </div>
                 
                 <label class="serviceLabel"> Type Of Class: <span class="errspan" style="color:red;font-size: 15px;"><?php echo $class_err; ?></span>
                     <input class="inptService" name="Class" type="text" placeholder="Enter type of class your Kid need " required> 
                 </label>
                 
-                <label class="durationLabel"> Duration: <br> <span class="errspan" style="color:red;font-size: 15px;"><?php echo $to_time_err; ?></span><br>
-                Date:<input class="inputDay" name="form_day" type="date" min="<?php echo date('Y-m-d', strtotime('+1 days')); ?>" required > </label>
+               <br> <label  class="durationLabel">Duration: <br> <span class="errspan" style="color:red;font-size: 15px;"><?php echo $to_time_err; ?></span></label><br>
+               <label class="durationLabel">Date:<input class="inputDay" name="form_day" type="date" min="<?php echo date('Y-m-d', strtotime('+1 days')); ?>" required ></label>
                 <label class="durationLabel"> From: <input class="inputFromTime" name="from_time" type="time" required > </label>
                 <label class="durationLabel"> To: <input class="inpuToTime" name="to_time" type="time"  required> </label>
                 <br><br>
-                <label class="commentsLabel"> Add Comments: (optional)
-                    <textarea class="commentsArea" name="comments" cols="72" rows="6" placeholder="  Add any comment if you have"></textarea>
-                </label>
+                <label class="commentsLabel"> Add Comments: (optional)</label>
+                <textarea class="commentsArea" name="comments" cols="63"  placeholder="  Add any comment if you have"></textarea>
+                
                 <br>
                  
                 <input type="submit" class="Bottons postBotton"  value="Post" name="post_submit"/>
