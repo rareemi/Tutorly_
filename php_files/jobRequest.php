@@ -58,9 +58,7 @@ echo "$createdAt";
         $query = mysqli_query($connection,$sql);
 
         if( $query ){
-            echo 'done1';
-            
-            //Insert ID
+           
            $id = mysqli_insert_id($connection);
            print("Insert ID: ".$id ."\n");
             $count = count($_POST["kidsname"]);
@@ -75,9 +73,6 @@ echo "$createdAt";
     
         
         }
-        else{
-            echo 'fail';
-            }  
         }}
 }?>
 

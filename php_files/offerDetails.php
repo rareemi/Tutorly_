@@ -115,7 +115,6 @@ $x++;
 
 ?> 
 
-</div>
 
 <div> 
 <p class="offer">
@@ -134,13 +133,13 @@ $x++;
 style= "  margin-left: 2px;"
 >
     <a style="  color: rgb(39, 141,7);
-    text-decoration: none;" href ='http://localhost/Tutorly_/php_files/setAccepted.php?id=<?php echo($id)?>'>Accept </a> </button>
+    text-decoration: none;" href ='http://localhost/Tutorly_/php_files/setAccepted.php?id=<?php echo($id)?>&name=<?php echo($row[$tutorname]) ?>'>Accept </a> </button>
 
  <br>
  <button class="Reject" onclick="return checkDelet()"
 >
     <a style=" color: rgb(254, 9,9);
-    text-decoration: none;" href='http://localhost/Tutorly_/php_files/setRejected.php?id=<?php echo($id)?>'>  Reject  </a></button><br><br>
+    text-decoration: none;" href='http://localhost/Tutorly_/php_files/setRejected.php?id=<?php echo($id)?>&name=<?php echo($row[$tutorname]) ?>'>  Reject  </a></button><br><br>
 
 
 
